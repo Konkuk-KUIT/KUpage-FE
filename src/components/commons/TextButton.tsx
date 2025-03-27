@@ -5,7 +5,10 @@ interface TextButtonProps {
 const TextButton = ({ text, onClick }: TextButtonProps) => {
   return (
     <>
-      <button className="text-20 font-700 text-white bg-no" onClick={onClick}>
+      <button
+        className="text-24 font-700 text-white bg-gray border-border rounded-8 px-160 py-20 whitespace-nowrap"
+        onClick={onClick}
+      >
         {text}
       </button>
     </>
