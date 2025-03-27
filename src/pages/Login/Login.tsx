@@ -21,7 +21,7 @@ const Login = () => {
         <div className="mt-32">
           <TextButton text="디스코드로 로그인하기" />
         </div>
-      </div>{' '}
+      </div>
     </div>
   );
 };
