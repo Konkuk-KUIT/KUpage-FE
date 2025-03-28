@@ -6,6 +6,7 @@
 @layer base {
   :root {
     font-size: 62.5%;
+    word-break: keep-all;
   }
 
   body {
@@ -86,4 +87,15 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4fe570;
+  border-radius: 2px;
 }
