@@ -40,7 +40,7 @@ const Counter = ({ end = 100, duration = 2000 }: CounterProps) => {
     };
   }, [end, duration]);
 
-  return <div className="text-main font-700 text-48">{count}</div>;
+  return <div className="text-main font-700 text-48 w-56">{count}</div>;
 };
 
 export default Counter;
