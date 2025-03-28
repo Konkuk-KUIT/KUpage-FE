@@ -3,6 +3,7 @@ import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 import InProgressBox from '../../components/home/InProgressBox';
 import ProjectCard from '../../components/home/ProjectCard';
 import StaffContent from '../../components/home/StaffContent';
+import EventCardGrid from '../../components/home/EventCardGrid';
 
 // TODO: 추후 서버 데이터 반영하면 지우기
 const projectList = [
@@ -105,6 +106,15 @@ const Home = () => {
         </div>
 
         <StaffContent />
+
+        <div className="flex-center flex-col mb-260">
+          <h2 className="text-white text-48 font-700">KUIT 5기 주요 일정</h2>
+          <p className="text-white text-24 font-500 leading-[4rem] mt-12">
+            일정을 클릭해 상세 내용을 확인해보세요!
+          </p>
+
+          <EventCardGrid />
+        </div>
       </div>
     </div>
   );
