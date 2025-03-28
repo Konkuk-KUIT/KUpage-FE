@@ -63,6 +63,11 @@ export default {
       gray: '#2C373F',
       border: '#868686',
     },
+    extend: {
+      backgroundImage: {
+        'signup-gradient': 'linear-gradient(180deg, #16202B 0%, #1E2C33 50.01%, #203636 100%)',
+      },
+    },
   },
   plugins: [],
 };
