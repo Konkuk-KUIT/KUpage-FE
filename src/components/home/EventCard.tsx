@@ -21,7 +21,7 @@ const EventCard = ({
     'transition-all duration-1000 cursor-pointer rounded-10 h-252 shrink-0 overflow-hidden flex-col';
   const selectedClasses = 'bg-main w-684 text-gray px-36 py-40 gap-20 flex items-start';
   const shrunkClasses = 'bg-gray w-172 text-white flex-center';
-  const defaultClasses = 'bg-gray w-300 text-white flex-center';
+  const defaultClasses = 'bg-gray w-300 text-white flex-center border-border border-2';
 
   return (
     <div

@@ -15,7 +15,7 @@ const EventCardGrid = () => {
   const selectedRow = selectedIndex >= 0 ? Math.floor(selectedIndex / CARDS_PER_ROW) : null;
 
   return (
-    <div className="flex flex-wrap gap-32 w-1296 mx-auto mt-20">
+    <div className="flex flex-wrap gap-32 w-1296 mx-auto mt-84">
       {EVENTS.map((event, index) => {
         const currentRow = Math.floor(index / CARDS_PER_ROW);
         const isSameRow = selectedRow !== null && currentRow === selectedRow;
