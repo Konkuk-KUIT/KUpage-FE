@@ -57,7 +57,7 @@ const StaffCardRow = ({ staffs }: StaffCardRowProps) => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden px-20">
+    <div className="w-full overflow-hidden px-20 max-w-1308">
       <div
         ref={scrollContainerRef}
         className="max-w-full overflow-x-auto touch-pan-x custom-scrollbar"
