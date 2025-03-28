@@ -19,7 +19,7 @@ const Login = () => {
           </p>
         </div>
         <div className="mt-32">
-          <TextButton text="디스코드로 로그인하기" />
+          <TextButton text="디스코드로 로그인하기" px="px-160" py="py-20" />
         </div>
       </div>
     </div>

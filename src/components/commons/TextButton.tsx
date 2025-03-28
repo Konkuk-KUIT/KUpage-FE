@@ -1,12 +1,14 @@
 interface TextButtonProps {
   text: string;
   onClick?: () => void;
+  px?: string;
+  py?: string;
 }
-const TextButton = ({ text, onClick }: TextButtonProps) => {
+const TextButton = ({ text, onClick, px, py }: TextButtonProps) => {
   return (
     <>
       <button
-        className="text-24 font-700 text-white bg-gray border-border rounded-8 px-160 py-20 whitespace-nowrap"
+        className={`text-24 font-700 text-white bg-gray border-border rounded-8  whitespace-nowrap ${px} ${py}`}
         onClick={onClick}
       >
         {text}
