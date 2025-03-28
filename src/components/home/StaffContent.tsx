@@ -2,6 +2,7 @@ import { useState } from 'react';
 import StaffCardRow from './StaffCardRow';
 import STAFFS from '../../constants/StaffConstants';
 import RoleChip from './RoleChip';
+import { ROLE } from '../../constants/RoleConstants';
 
 interface StaffContentProps {
   generation?: 5 | 4;
@@ -9,7 +10,7 @@ interface StaffContentProps {
 
 const StaffContent = ({ generation = 5 }: StaffContentProps) => {
   const [selectedPosition, setSelectedPosition] = useState<string>('운영팀');
-  const positions = ['운영팀', 'Android', 'Web', 'Server', 'PM'];
+  const positions = Object.values(ROLE);
 
   const filteredStaff = STAFFS[generation].filter((member) => member.position === selectedPosition);
 
