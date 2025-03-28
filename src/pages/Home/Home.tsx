@@ -115,6 +115,7 @@ const Home = () => {
 
           <EventCardGrid />
         </div>
+        {/* TODO: floating 버튼 추가 */}
       </div>
     </div>
   );
