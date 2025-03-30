@@ -12,7 +12,7 @@ const SNSInquiryBtn = () => {
   const handleToggle = (type: string, link: string) => {
     if (activeType === type) {
       // 같은 버튼 두 번째 클릭 시 링크 이동
-      window.location.href = link;
+      window.open(link, '_blank');
     } else {
       setActiveType(type); // 새로운 버튼 열기
     }
