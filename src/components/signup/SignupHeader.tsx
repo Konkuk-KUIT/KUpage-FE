@@ -14,7 +14,7 @@ const SignupHeader = ({ nowStep, title, onClick }: SignupHeaderProps) => {
 
         <span>{nowStep}/3</span>
       </div>
-      <p className="text-left px-80 py-40 text-36 font-800">{title}</p>
+      <p className="text-left px-80 pt-40 pb-20 text-36 font-800">{title}</p>
     </div>
   );
 };
