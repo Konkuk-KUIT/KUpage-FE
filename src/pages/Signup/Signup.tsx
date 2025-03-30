@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TextButton from '../../components/commons/TextButton';
 import SignupHeader from '../../components/signup/SignupHeader';
 import SignupInputBox from '../../components/signup/SignupInputBox';
 import SignupSelectBox from '../../components/signup/SignupSelectBox';
 import { COLLEGE_OPTIONS, GRADE_OPTIONS } from '../../constants/signupOptions';
 import DatePickerInput from '../../components/signup/DatePickerInput';
+import { isValidEmail, isValidPhone, isValidStudentId } from '../../utils/validation';
 
 const Signup = () => {
   const [step, setStep] = useState(1);
@@ -30,6 +31,21 @@ const Signup = () => {
   const nextStep = () => setStep((prev) => Math.min(prev + 1, 3));
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
+  const isButtonActive = () => {
+    if (step === 1) return !!form.name.trim();
+    if (step === 2)
+      return (
+        !!form.studentId.trim() &&
+        !!form.grade &&
+        !!form.college &&
+        !!form.major &&
+        isValidStudentId(form.studentId)
+      );
+    if (step === 3)
+      return isValidEmail(form.email) && isValidPhone(form.phone) && !!form.birth.trim();
+    return true;
+  };
+
   const getTitleByStep = (step: number) => {
     switch (step) {
       case 1:
@@ -45,6 +61,13 @@ const Signup = () => {
   const getMajorOptions = () => {
     return COLLEGE_OPTIONS[form.college] || [];
   };
+
+  useEffect(() => {
+    const majors = COLLEGE_OPTIONS[form.college] || [];
+    if (!majors.includes(form.major)) {
+      updateForm('major', majors[0] || '');
+    }
+  }, [form.college]);
 
   return (
     <div className="flex flex-col relative items-center bg-signup-gradient min-h-screen w-screen p-120">
@@ -72,6 +95,8 @@ const Signup = () => {
                 value={form.studentId}
                 onChange={(v) => updateForm('studentId', v)}
                 placeholder="ex) 20231234"
+                isError={form.studentId !== '' && !isValidStudentId(form.studentId)}
+                errorText="* 9자리 숫자로 입력해주세요"
               />
             </div>
             <div className="w-[calc(50%-12px)]">
@@ -121,6 +146,8 @@ const Signup = () => {
                   value={form.email}
                   onChange={(v) => updateForm('email', v)}
                   placeholder="ex) example@email.com"
+                  isError={form.email !== '' && !isValidEmail(form.email)}
+                  errorText="* example@company.com 의 형식으로 입력해주세요."
                 />
               </div>
               <div className="w-[calc(50%-12px)]">
@@ -128,7 +155,9 @@ const Signup = () => {
                   label="전화번호"
                   value={form.phone}
                   onChange={(v) => updateForm('phone', v)}
-                  placeholder="010-1234-5678"
+                  placeholder="01012345678"
+                  isError={form.phone !== '' && !isValidPhone(form.phone)}
+                  errorText="* 휴대폰 번호는 -를 빼고 입력해 주세요. ex(01000000000)"
                 />
               </div>
               <div className="w-[calc(50%-12px)]">
@@ -142,8 +171,12 @@ const Signup = () => {
           </>
         )}
       </div>
-      <div className="w-[70%] absolute bottom-[10%] right-[-10%]">
-        <TextButton text={step == 3 ? '완료하기' : '다음으로'} onClick={nextStep} />
+      <div className="w-[70%] flex justify-end right-[20%] absolute bottom-[10%] ">
+        <TextButton
+          text={step == 3 ? '완료하기' : '다음으로'}
+          onClick={isButtonActive() ? nextStep : undefined}
+          isActive={isButtonActive()}
+        />
       </div>
     </div>
   );
