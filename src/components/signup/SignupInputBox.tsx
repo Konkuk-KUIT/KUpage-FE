@@ -18,7 +18,7 @@ const SignupInputBox = ({
   isError = false,
 }: SignupInputBoxProps) => {
   return (
-    <div className="flex flex-col text-white w-full max-w-[100%] relative">
+    <div className="flex flex-col mt-8 text-white w-full max-w-[100%] relative">
       <div className="flex justify-between items-center mb-8">
         <label className="text-24 font-700 text-left">{label}</label>
         {helperText && <span className="text-13 font-400 text-[#D5DA40]">{helperText}</span>}
@@ -31,7 +31,9 @@ const SignupInputBox = ({
         className={`w-full bg-gray border-2 rounded-8 px-16 py-12 text-16 transition
           ${isError ? 'border-red-500' : 'border-border'}`}
       />
-      {isError && <span className="mt-8 text-13 font-400 text-[#D5DA40]">{errorText}</span>}
+      {isError && (
+        <span className="text-13 font-400 left-8 top-100 absolute text-[#D5DA40]">{errorText}</span>
+      )}
     </div>
   );
 };

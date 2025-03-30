@@ -9,7 +9,7 @@ interface SelectBoxProps {
 
 const SignupSelectBox = ({ label, value, onChange, options }: SelectBoxProps) => {
   return (
-    <div className="flex flex-col text-white w-full max-w-[100%] relative">
+    <div className="flex flex-col mt-8 text-white w-full max-w-[100%] relative">
       <label className="mb-8 text-24 font-700 text-left">{label}</label>
       <select
         value={value}
