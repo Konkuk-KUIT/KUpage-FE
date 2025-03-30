@@ -4,6 +4,7 @@ import InProgressBox from '../../components/home/InProgressBox';
 import ProjectCard from '../../components/home/ProjectCard';
 import StaffContent from '../../components/home/StaffContent';
 import EventCardGrid from '../../components/home/EventCardGrid';
+import SNSInquiryBtn from '../../components/home/SNSInquiryBtn';
 
 // TODO: 추후 서버 데이터 반영하면 지우기
 const projectList = [
@@ -36,7 +37,7 @@ const projectList = [
 
 const Home = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen relative">
       <div
         className="min-h-screen flex-center w-screen flex-col gap-320"
         style={{
@@ -115,8 +116,9 @@ const Home = () => {
 
           <EventCardGrid />
         </div>
-        {/* TODO: floating 버튼 추가 */}
       </div>
+
+      <SNSInquiryBtn />
     </div>
   );
 };
