@@ -3,17 +3,22 @@ interface TextButtonProps {
   onClick?: () => void;
   px?: string;
   py?: string;
+  isActive?: boolean;
 }
-const TextButton = ({ text, onClick, px, py }: TextButtonProps) => {
+
+const TextButton = ({ text, onClick, px, py, isActive = false }: TextButtonProps) => {
+  const baseClasses = `text-24 font-700 rounded-8 whitespace-nowrap transition-colors duration-200 ${px} ${py}`;
+  const activeClasses = 'bg-[#4FE570] text-[#2C373F] border-none';
+  const inactiveClasses = 'bg-[#2C373F] text-white border border-[#868686]';
+
   return (
-    <>
-      <button
-        className={`text-24 font-700 text-white bg-gray border-border rounded-8  whitespace-nowrap ${px} ${py}`}
-        onClick={onClick}
-      >
-        {text}
-      </button>
-    </>
+    <button
+      className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+      onClick={onClick}
+      disabled={!isActive}
+    >
+      {text}
+    </button>
   );
 };
 
