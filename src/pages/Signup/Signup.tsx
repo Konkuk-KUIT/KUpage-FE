@@ -3,9 +3,9 @@ import TextButton from '../../components/commons/TextButton';
 import SignupHeader from '../../components/signup/SignupHeader';
 import { COLLEGE_OPTIONS } from '../../constants/signupOptions';
 import { isValidEmail, isValidPhone, isValidStudentId } from '../../utils/validation';
-import SignupStepOne from './SignupStepOne';
-import SignupStepTwo from './SignupStepTwo';
-import SignupStepThree from './SignupStepThree';
+import SignupStepOne from '../../components/signup/SignupStepOne';
+import SignupStepTwo from '../../components/signup/SignupStepTwo';
+import SignupStepThree from '../../components/signup/SignupStepThree';
 import { SignupFormKey } from '../../utils/types';
 
 const Signup = () => {

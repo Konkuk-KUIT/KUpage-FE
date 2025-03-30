@@ -1,4 +1,4 @@
-import SignupInputBox from '../../components/signup/SignupInputBox';
+import SignupInputBox from './SignupInputBox';
 
 interface SignupStepOneProps {
   name: string;
