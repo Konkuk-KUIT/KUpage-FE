@@ -68,7 +68,6 @@ const Signup = () => {
       <div className="w-[70%]">
         <SignupHeader nowStep={step} title={getTitleByStep(step)} onClick={prevStep} />
       </div>
-
       <div className="w-[70%] flex flex-col gap-24 mt-20 ">
         {step === 1 && <SignupStepOne name={form.name} onChange={(v) => updateForm('name', v)} />}
         {step === 2 && <SignupStepTwo form={form} updateForm={updateForm} />}

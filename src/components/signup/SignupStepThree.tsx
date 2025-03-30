@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import SignupInputBox from '../../components/signup/SignupInputBox';
-import DatePickerInput from '../../components/signup/DatePickerInput';
+import Calendar from '../../components/signup/Calendar';
 import { isValidEmail, isValidPhone } from '../../utils/validation';
 import { SignupForm } from '../../utils/types';
 
@@ -9,6 +10,17 @@ interface SignupStepThreeProps {
 }
 
 const SignupStepThree = ({ form, updateForm }: SignupStepThreeProps) => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    form.birth ? new Date(form.birth) : null
+  );
+
+  useEffect(() => {
+    if (selectedDate) {
+      const formatted = selectedDate.toISOString().split('T')[0];
+      updateForm('birth', formatted);
+    }
+  }, [selectedDate]);
+
   return (
     <div className="flex flex-wrap gap-24">
       <div className="w-[calc(50%-12px)]">
@@ -20,6 +32,7 @@ const SignupStepThree = ({ form, updateForm }: SignupStepThreeProps) => {
           helperText="*PM/Designer는 선택사항입니다."
         />
       </div>
+
       <div className="w-[calc(50%-12px)]">
         <SignupInputBox
           label="Email"
@@ -30,6 +43,7 @@ const SignupStepThree = ({ form, updateForm }: SignupStepThreeProps) => {
           errorText="* example@company.com 의 형식으로 입력해주세요."
         />
       </div>
+
       <div className="w-[calc(50%-12px)]">
         <SignupInputBox
           label="전화번호"
@@ -40,12 +54,9 @@ const SignupStepThree = ({ form, updateForm }: SignupStepThreeProps) => {
           errorText="* 휴대폰 번호는 -를 빼고 입력해 주세요. ex(01000000000)"
         />
       </div>
+
       <div className="w-[calc(50%-12px)]">
-        <DatePickerInput
-          label="생년월일"
-          value={form.birth}
-          onChange={(v) => updateForm('birth', v)}
-        />
+        <Calendar label="생년월일" selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
       </div>
     </div>
   );
