@@ -24,8 +24,8 @@ const DatePickerInput = ({ label, value, onChange }: DatePickerInputProps) => {
 
   return (
     <div className="flex flex-col text-white mt-8">
-      <label className="mb-8 text-24 font-700 text-left">{label}</label>
-      <div className="w-full relative bg-gray rounded-8 px-16 py-12">
+      <label className="mb-12 text-24 font-700 text-left">{label}</label>
+      <div className="w-full relative bg-gray  border-2 border-[#868686] border-solid rounded-8 px-16 py-12">
         <DatePicker
           selected={selectedDate}
           onChange={handleChange}
