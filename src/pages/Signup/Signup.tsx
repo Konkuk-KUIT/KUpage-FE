@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
+
 import TextButton from '../../components/commons/TextButton';
 import SignupHeader from '../../components/signup/SignupHeader';
-import { COLLEGE_OPTIONS } from '../../constants/signupOptions';
-import { isValidEmail, isValidPhone, isValidStudentId } from '../../utils/validation';
 import SignupStepOne from '../../components/signup/SignupStepOne';
-import SignupStepTwo from '../../components/signup/SignupStepTwo';
 import SignupStepThree from '../../components/signup/SignupStepThree';
+import SignupStepTwo from '../../components/signup/SignupStepTwo';
+import { COLLEGE_OPTIONS } from '../../constants/signupOptions';
 import { SignupFormKey } from '../../utils/types';
+import { isValidEmail, isValidPhone, isValidStudentId } from '../../utils/validation';
 
 const Signup = () => {
   const [step, setStep] = useState(1);

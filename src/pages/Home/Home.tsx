@@ -1,10 +1,10 @@
-import GreenButton from '../../components/commons/GreenButton';
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
+import GreenButton from '../../components/commons/GreenButton';
+import EventCardGrid from '../../components/home/EventCardGrid';
 import InProgressBox from '../../components/home/InProgressBox';
 import ProjectCard from '../../components/home/ProjectCard';
-import StaffContent from '../../components/home/StaffContent';
-import EventCardGrid from '../../components/home/EventCardGrid';
 import SNSInquiryBtn from '../../components/home/SNSInquiryBtn';
+import StaffContent from '../../components/home/StaffContent';
 
 // TODO: 추후 서버 데이터 반영하면 지우기
 const projectList = [
