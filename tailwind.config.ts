@@ -26,6 +26,7 @@ export default {
       24: '2.4rem',
       28: '2.8rem',
       32: '3.2rem',
+      36: '3.6rem',
       48: '4.8rem',
       80: '8.0rem',
     },
@@ -62,6 +63,11 @@ export default {
       main: '#4FE570',
       gray: '#2C373F',
       border: '#868686',
+    },
+    extend: {
+      backgroundImage: {
+        'signup-gradient': 'linear-gradient(180deg, #16202B 0%, #1E2C33 50.01%, #203636 100%)',
+      },
     },
   },
   plugins: [],

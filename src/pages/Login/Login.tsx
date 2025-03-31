@@ -3,7 +3,7 @@ import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 
 const Login = () => {
   return (
-    <div className="flex items-center justify-between bg-gray min-h-screen w-screen px-120">
+    <div className="flex items-center justify-between bg-signup-gradient  min-h-screen w-screen px-120">
       <img src={BigKUITLogo} alt="KUIT Logo" className="w-[55rem] " />
       <div className="text-left justify-between">
         <div className="h-[40rem]">
@@ -19,9 +19,9 @@ const Login = () => {
           </p>
         </div>
         <div className="mt-32">
-          <TextButton text="디스코드로 로그인하기" />
+          <TextButton text="디스코드로 로그인하기" px="px-160" py="py-20" />
         </div>
-      </div>{' '}
+      </div>
     </div>
   );
 };
