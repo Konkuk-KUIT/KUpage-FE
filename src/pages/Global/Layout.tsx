@@ -17,13 +17,13 @@ const Layout = ({ routes_children }: RoutesChildren) => {
   const { pathname } = useLocation();
 
   return (
-    <>
+    <div id="layout" className="h-full w-full">
       {routes_children.find((child) => matchPath(child.path, pathname))?.hasHeader && <Header />}
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
       {routes_children.find((child) => matchPath(child.path, pathname))?.hasFooter && <Footer />}
-    </>
+    </div>
   );
 };
 

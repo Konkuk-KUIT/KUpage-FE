@@ -8,12 +8,12 @@ import Signup from './pages/Signup/Signup';
 
 const Router = () => {
   const routes_children_auth = [
-    { path: '/login', element: <Login /> },
-    { path: '/signup', element: <Signup /> },
+    { path: '/login', element: <Login />, hasHeader: true, hasFooter: true },
+    { path: '/signup', element: <Signup />, hasHeader: true, hasFooter: true },
   ];
 
   const routes_children = [
-    { path: '/', element: <Home /> },
+    { path: '/', element: <Home />, hasHeader: true, hasFooter: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
   ];
