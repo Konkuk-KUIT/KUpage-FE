@@ -27,6 +27,7 @@ export default {
       28: '2.8rem',
       32: '3.2rem',
       36: '3.6rem',
+      48: '4.8rem',
       80: '8.0rem',
     },
     fontWeight: {
