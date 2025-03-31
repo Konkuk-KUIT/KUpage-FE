@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Home, Layout } from 'lucide-react';
 
 import ErrorPage from './pages/Global/ErrorPage';
+import Layout from './pages/Global/Layout';
+import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 
@@ -19,7 +20,7 @@ const Router = () => {
 
   const routes = [
     {
-      element: <Layout />,
+      element: <Layout routes_children={routes_children} />,
       errorElement: <ErrorPage />,
       children: routes_children,
 
@@ -30,7 +31,7 @@ const Router = () => {
     },
   ];
 
-  const router = createBrowserRouter(routes, { basename: '/app' });
+  const router = createBrowserRouter(routes, { basename: '/KUpage-FE/' });
   return <RouterProvider router={router} />;
 };
 

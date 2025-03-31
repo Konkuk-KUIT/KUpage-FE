@@ -1,13 +1,9 @@
-import Signup from './pages/Signup/Signup';
+import Router from './Router';
 
 import './App.css';
 
 function App() {
-  return (
-    <>
-      <Signup />
-    </>
-  );
+  return <Router />;
 }
 
 export default App;
