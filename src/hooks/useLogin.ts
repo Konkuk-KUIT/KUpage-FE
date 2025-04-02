@@ -1,14 +1,15 @@
+import { ENDPOINTS } from '../config';
 import useApi from './useApi';
 
 const useLogin = () => {
   const { api } = useApi();
 
   const login = () => {
-    api.post('/members', {});
+    api.post(ENDPOINTS.MEMBERS, {});
   };
 
   const authLogin = () => {
-    api.post('auth', {});
+    api.post(ENDPOINTS.AUTH, {});
   };
 
   return { login, authLogin };
