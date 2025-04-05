@@ -1,10 +1,8 @@
 import { useState } from 'react';
-
-import { ROLE } from '../../constants/RoleConstants';
-import STAFFS from '../../constants/StaffConstants';
-
-import RoleChip from './RoleChip';
 import StaffCardRow from './StaffCardRow';
+import STAFFS from '../../constants/StaffConstants';
+import RoleChip from './RoleChip';
+import { ROLE } from '../../constants/RoleConstants';
 
 interface StaffContentProps {
   generation?: 5 | 4;
