@@ -1,4 +1,3 @@
-import { BASE_NAME } from '../../constants/BaseName';
 import { StaffMember } from '../../constants/StaffConstants';
 
 interface StaffCardFrontProps {
@@ -10,7 +9,7 @@ const StaffCardFront = ({ member }: StaffCardFrontProps) => {
     <div className="w-228 h-auto border-border border-[0.1rem] rounded-10 bg-border absolute [backface-visibility:hidden]">
       {member.imageUrl ? (
         <img
-          src={BASE_NAME + member.imageUrl}
+          src={member.imageUrl}
           alt={member.name}
           className="w-full object-cover rounded-t-10 h-224"
         />
