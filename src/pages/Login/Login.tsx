@@ -1,5 +1,5 @@
-import TextButton from '../../components/commons/TextButton';
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
+import TextButton from '../../components/commons/TextButton';
 
 const Login = () => {
   return (
