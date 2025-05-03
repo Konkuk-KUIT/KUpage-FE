@@ -74,7 +74,7 @@ const Signup = () => {
         {step === 2 && <SignupStepTwo form={form} updateForm={updateForm} />}
         {step === 3 && <SignupStepThree form={form} updateForm={updateForm} />}
       </div>
-      <div className="w-[70%] flex justify-end right-[20%] absolute bottom-[10%] ">
+      <div className="w-[70%] flex justify-end right-[20%] absolute bottom-[10%]">
         <TextButton
           text={step == 3 ? '완료하기' : '다음으로'}
           onClick={isButtonActive() ? nextStep : undefined}
