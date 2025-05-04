@@ -37,9 +37,9 @@ const projectList = [
 
 const Home = () => {
   return (
-    <div className="h-screen relative">
+    <div className="relative">
       <div
-        className="min-h-screen flex-center w-screen flex-col gap-320"
+        className="min-h-screen w-full flex-center flex-col gap-320"
         style={{
           background: 'var(--1, linear-gradient(180deg, #16202B 0%, #1E2C33 50.01%, #203636 100%))',
         }}
