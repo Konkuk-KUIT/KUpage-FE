@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 import GreenButton from '../../components/commons/GreenButton';
 import EventCardGrid from '../../components/home/EventCardGrid';
@@ -36,6 +37,7 @@ const projectList = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="h-screen relative">
       <div
@@ -103,7 +105,11 @@ const Home = () => {
             ))}
           </div>
 
-          <GreenButton text="프로젝트 더 보기 ->" isBig={false} />
+          <GreenButton
+            text="프로젝트 더 보기 ->"
+            isBig={false}
+            onClick={() => navigate('/projects')}
+          />
         </div>
 
         <StaffContent />
