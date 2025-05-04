@@ -1,5 +1,6 @@
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 import GreenButton from '../../components/commons/GreenButton';
+import KuitAnimation from '../../components/commons/KuitAnimation';
 import EventCardGrid from '../../components/home/EventCardGrid';
 import InProgressBox from '../../components/home/InProgressBox';
 import ProjectCard from '../../components/home/ProjectCard';
@@ -48,9 +49,7 @@ const Home = () => {
           <img src={BigKUITLogo} alt="KUIT Logo" className="w-580 absolute-center" />
           <div className="flex-center flex-col absolute-center gap-20">
             <h1 className="text-80 font-700 whitespace-nowrap">
-              <span className="text-main">KU </span>
-              <span className="text-white">CAN DO</span>
-              <span className="text-main"> IT</span>
+              <KuitAnimation />
             </h1>
             <p className="text-white text-32 font-500">건국대학교 기획/개발 동아리 KUIT</p>
             <GreenButton text="KUIT 5기 지원하러 가기 ->" isBig />
