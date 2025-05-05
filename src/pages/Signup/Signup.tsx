@@ -8,8 +8,12 @@ import SignupStepTwo from '../../components/signup/SignupStepTwo';
 import { COLLEGE_OPTIONS } from '../../constants/signupOptions';
 import { SignupFormKey } from '../../utils/types';
 import { isValidEmail, isValidPhone, isValidStudentId } from '../../utils/validation';
+import { useNavigate } from 'react-router-dom';
+import useSignup from '../../hooks/useSignup';
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const { signup } = useSignup();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     name: '',
@@ -27,7 +31,20 @@ const Signup = () => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, 3));
+  const nextStep = async () => {
+    if (step === 3) {
+      try {
+        await signup(form);
+        navigate('/');
+      } catch (err) {
+        console.error('회원가입 실패:', err);
+        alert('회원가입 중 문제가 발생했습니다.');
+      }
+    } else {
+      setStep((prev) => Math.min(prev + 1, 3));
+    }
+  };
+
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   const isButtonActive = () => {
