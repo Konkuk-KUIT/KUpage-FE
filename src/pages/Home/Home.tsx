@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 import GreenButton from '../../components/commons/GreenButton';
 import KuitAnimation from '../../components/commons/KuitAnimation';
@@ -37,6 +38,7 @@ const projectList = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative">
       <div
@@ -102,7 +104,11 @@ const Home = () => {
             ))}
           </div>
 
-          <GreenButton text="프로젝트 더 보기 ->" isBig={false} />
+          <GreenButton
+            text="프로젝트 더 보기 ->"
+            isBig={false}
+            onClick={() => navigate('/projects')}
+          />
         </div>
 
         <StaffContent />

@@ -5,11 +5,13 @@ import Layout from './pages/Global/Layout';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+import Projects from './pages/Project/Projects';
 
 const Router = () => {
   const routes_children_auth = [
     { path: '/login', element: <Login />, hasHeader: true, hasFooter: true },
     { path: '/signup', element: <Signup />, hasHeader: true, hasFooter: true },
+    { path: '/projects', element: <Projects />, hasHeader: true },
   ];
 
   const routes_children = [
