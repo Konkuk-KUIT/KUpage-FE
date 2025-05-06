@@ -1,5 +1,6 @@
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 import GreenButton from '../../components/commons/GreenButton';
+import KuitAnimation from '../../components/commons/KuitAnimation';
 import EventCardGrid from '../../components/home/EventCardGrid';
 import InProgressBox from '../../components/home/InProgressBox';
 import ProjectCard from '../../components/home/ProjectCard';
@@ -37,9 +38,9 @@ const projectList = [
 
 const Home = () => {
   return (
-    <div className="h-screen relative">
+    <div className="relative">
       <div
-        className="min-h-screen flex-center w-screen flex-col gap-320"
+        className="min-h-screen w-full flex-center flex-col gap-320"
         style={{
           background: 'var(--1, linear-gradient(180deg, #16202B 0%, #1E2C33 50.01%, #203636 100%))',
         }}
@@ -48,12 +49,10 @@ const Home = () => {
           <img src={BigKUITLogo} alt="KUIT Logo" className="w-580 absolute-center" />
           <div className="flex-center flex-col absolute-center gap-20">
             <h1 className="text-80 font-700 whitespace-nowrap">
-              <span className="text-main">KU </span>
-              <span className="text-white">CAN DO</span>
-              <span className="text-main"> IT</span>
+              <KuitAnimation />
             </h1>
             <p className="text-white text-32 font-500">건국대학교 기획/개발 동아리 KUIT</p>
-            <GreenButton text="KUIT 5기 지원하러 가기 ->" isBig />
+            <GreenButton text="KUIT 6기 지원하러 가기 ->" isBig />
           </div>
         </div>
 
@@ -64,7 +63,7 @@ const Home = () => {
           </div>
 
           <p className="text-white text-24 font-500 leading-[4rem] mt-72">
-            2023년에 시작된 KUIT은 어느덧 5기를 맞이했습니다.
+            2023년에 시작된 KUIT은 어느덧 6기를 맞이했습니다.
             <br />
             KUIT은 학기 중에는 파트별로 스터디를 진행하며,
             <br />
@@ -73,7 +72,7 @@ const Home = () => {
           </p>
 
           <p className="text-main text-32 font-700 leading-[5rem] mt-72">
-            KUIT 5기 모집이 시작됩니다.
+            KUIT 6기 모집이 시작됩니다.
             <br />한 학기 동안 함께 성장할 여러분의 지원을 기다리고 있습니다!
           </p>
         </div>
@@ -109,7 +108,7 @@ const Home = () => {
         <StaffContent />
 
         <div className="flex-center flex-col mb-260">
-          <h2 className="text-white text-48 font-700">KUIT 5기 주요 일정</h2>
+          <h2 className="text-white text-48 font-700">KUIT 6기 주요 일정</h2>
           <p className="text-white text-24 font-500 leading-[4rem] mt-12">
             일정을 클릭해 상세 내용을 확인해보세요!
           </p>
