@@ -34,8 +34,10 @@ export default {
       28: '2.8rem',
       32: '3.2rem',
       36: '3.6rem',
+      40: '4.0rem',
       48: '4.8rem',
       80: '8.0rem',
+      88: '8.8rem',
     },
     fontWeight: {
       400: '400',
