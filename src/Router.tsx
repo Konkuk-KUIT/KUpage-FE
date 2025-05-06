@@ -5,6 +5,7 @@ import Layout from './pages/Global/Layout';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+import Recruit from './pages/Recruit/Recruit';
 
 const Router = () => {
   const routes_children_auth = [
@@ -14,6 +15,7 @@ const Router = () => {
 
   const routes_children = [
     { path: '/', element: <Home />, hasHeader: true, hasFooter: true },
+    { path: '/recruit', element: <Recruit />, hasHeader: true, hasFooter: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
   ];
