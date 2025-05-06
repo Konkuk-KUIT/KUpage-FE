@@ -1,18 +1,18 @@
-interface RoleChipProps {
-  role: string;
+interface TextChipProps {
+  text: string;
   isSelected: boolean;
   onClick: () => void;
 }
 
-const RoleChip = ({ role, isSelected, onClick }: RoleChipProps) => {
+const TextChip = ({ text, isSelected, onClick }: TextChipProps) => {
   return (
     <button
       className={`px-24 py-12 rounded-full text-20 font-700 ${isSelected ? 'bg-main text-gray' : 'border-2 border-border bg-gray text-white'}`}
       onClick={onClick}
     >
-      {role}
+      {text}
     </button>
   );
 };
 
-export default RoleChip;
+export default TextChip;
