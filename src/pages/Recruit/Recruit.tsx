@@ -12,34 +12,63 @@ const Recruit = () => {
       >
         <RecruitHeader />
 
-        <div className="flex-center flex-col gap-100">
-          <h2 className="text-white text-48 font-700">모집 개요</h2>
-          <div className="flex gap-52">
-            <RecruitDescriptionBlock
-              title="KUIT의 인재상"
-              content={`책임감을 가지고 팀과 함께\n프로덕트를 만들어\n나갈 수 있는 누구나!`}
-              isBig={true}
-            />
+        <div className="flex-center flex-col pt-68 gap-320">
+          <div className="flex-center flex-col gap-100">
+            <h2 className="text-white text-48 font-700">모집 개요</h2>
+            <div className="flex gap-52">
+              <RecruitDescriptionBlock
+                title="KUIT의 인재상"
+                content={`책임감을 가지고 팀과 함께\n프로덕트를 만들어\n나갈 수 있는 누구나!`}
+                isBig={true}
+              />
 
-            <RecruitDescriptionBlock
-              title="지원 자격"
-              content={`지원 자격입니다. 지원 자격\n입니다. 지원 자격입니다. 지\n원 자격입니다.`}
-              isBig={true}
-            />
+              <RecruitDescriptionBlock
+                title="지원 자격"
+                content={`지원 자격입니다. 지원 자격\n입니다. 지원 자격입니다. 지\n원 자격입니다.`}
+                isBig={true}
+              />
 
-            <RecruitDescriptionBlock
-              title="KUIT의 인재상"
-              content={
-                <div className="text-white text-24 text-center">
-                  <p className="font-700">1차 서류</p>
-                  <p className="font-500">지원서 작성 및 포트폴리오 제출</p>
+              <RecruitDescriptionBlock
+                title="KUIT의 인재상"
+                content={
+                  <div className="text-white text-24 text-center">
+                    <p className="font-700">1차 서류</p>
+                    <p className="font-500">지원서 작성 및 포트폴리오 제출</p>
 
-                  <p className="font-700 mt-28">1차 서류</p>
-                  <p className="font-500">지원서 작성 및 포트폴리오 제출</p>
-                </div>
-              }
-              isBig={true}
-            />
+                    <p className="font-700 mt-28">1차 서류</p>
+                    <p className="font-500">지원서 작성 및 포트폴리오 제출</p>
+                  </div>
+                }
+                isBig={true}
+              />
+            </div>
+          </div>
+
+          <div className="flex-center flex-col gap-60">
+            <h2 className="text-white text-48 font-700">모집 일정</h2>
+
+            <div className="grid grid-cols-2 gap-x-80 gap-y-60">
+              <RecruitDescriptionBlock
+                title="서류 접수"
+                content={`2025. 09. 00 (월)\n~ 00. 00 (월) 23:59`}
+                isBig={false}
+              />
+              <RecruitDescriptionBlock
+                title="서류 결과 발표"
+                content={`2025. 00. 00 (월) 23:59`}
+                isBig={false}
+              />
+              <RecruitDescriptionBlock
+                title="대면 면접"
+                content={`2025. 09. 00 (월)\n~ 00. 00 (월) 23:59`}
+                isBig={false}
+              />
+              <RecruitDescriptionBlock
+                title="최종 결과 발표"
+                content={`2025. 00. 00 (월) 23:59`}
+                isBig={false}
+              />
+            </div>
           </div>
         </div>
       </div>
