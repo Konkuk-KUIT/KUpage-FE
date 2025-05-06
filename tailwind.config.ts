@@ -14,6 +14,13 @@ const PX_ENTRIES = createPxEntries(500);
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     spacing: PX_ENTRIES,
     fontSize: {
       8: '0.8rem',
