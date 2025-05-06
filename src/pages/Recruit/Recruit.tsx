@@ -1,4 +1,5 @@
 import RecruitDescriptionBlock from '../../components/recruit/RecruitDescriptionBlock';
+import RecruitFieldSection from '../../components/recruit/RecruitFieldSection';
 import RecruitHeader from '../../components/recruit/RecruitHeader';
 
 const Recruit = () => {
@@ -69,6 +70,11 @@ const Recruit = () => {
                 isBig={false}
               />
             </div>
+          </div>
+
+          <div className="flex-center flex-col gap-32">
+            <h2 className="text-white text-48 font-700">모집 분야</h2>
+            <RecruitFieldSection />
           </div>
         </div>
       </div>
