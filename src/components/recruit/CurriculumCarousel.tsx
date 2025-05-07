@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import CarouselBtnLeft from '../../assets/imgs/CarouselBtnLeft.svg';
 import CarouselBtnRight from '../../assets/imgs/CarouselBtnRight.svg';
 import { CURRICULUM } from '../../constants/curriculumConstants';
