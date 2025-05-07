@@ -1,3 +1,4 @@
+import CurriculumCarousel from '../../components/recruit/CurriculumCarousel';
 import RecruitDescriptionBlock from '../../components/recruit/RecruitDescriptionBlock';
 import RecruitFieldSection from '../../components/recruit/RecruitFieldSection';
 import RecruitHeader from '../../components/recruit/RecruitHeader';
@@ -75,6 +76,18 @@ const Recruit = () => {
           <div className="flex-center flex-col gap-32">
             <h2 className="text-white text-48 font-700">모집 분야</h2>
             <RecruitFieldSection />
+          </div>
+
+          <div className="flex-center flex-col gap-40">
+            <div className="flex-center flex-col gap-20 text-white">
+              <h2 className="text-48 font-700">커리큘럼</h2>
+              <p className="text-24 font-500 leading-[4rem]">
+                KUIT 5기는 Android, Web, Server, PM 파트로 이루어져 있고, <br />
+                학기 중 9주간 스터디가 진행됩니다.
+              </p>
+              <h3 className="text-32 font-700">희망하는 파트의 커리큘럼을 확인해보세요!</h3>
+            </div>
+            <CurriculumCarousel />
           </div>
         </div>
       </div>
