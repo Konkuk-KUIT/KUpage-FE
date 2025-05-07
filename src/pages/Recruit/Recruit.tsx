@@ -1,4 +1,5 @@
 import CurriculumCarousel from '../../components/recruit/CurriculumCarousel';
+import FAQAccordion from '../../components/recruit/FAQAccordion';
 import RecruitDescriptionBlock from '../../components/recruit/RecruitDescriptionBlock';
 import RecruitFieldSection from '../../components/recruit/RecruitFieldSection';
 import RecruitHeader from '../../components/recruit/RecruitHeader';
@@ -14,7 +15,7 @@ const Recruit = () => {
       >
         <RecruitHeader />
 
-        <div className="flex-center flex-col pt-68 gap-320">
+        <div className="flex-center flex-col pt-68 gap-320 mb-176">
           <div className="flex-center flex-col gap-100">
             <h2 className="text-white text-48 font-700">모집 개요</h2>
             <div className="flex gap-52">
@@ -88,6 +89,11 @@ const Recruit = () => {
               <h3 className="text-32 font-700">희망하는 파트의 커리큘럼을 확인해보세요!</h3>
             </div>
             <CurriculumCarousel />
+          </div>
+
+          <div className="flex-center flex-col gap-40">
+            <h2 className="text-white text-48 font-700">자주 묻는 질문</h2>
+            <FAQAccordion />
           </div>
         </div>
       </div>
