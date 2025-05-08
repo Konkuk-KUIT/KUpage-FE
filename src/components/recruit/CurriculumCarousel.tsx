@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CarouselBtnLeft from '../../assets/imgs/CarouselBtnLeft.svg';
 import CarouselBtnRight from '../../assets/imgs/CarouselBtnRight.svg';
 import { CURRICULUM } from '../../constants/curriculumConstants';
-import TextChip from '../commons/RoleChip';
+import TextChip from '../commons/TextChip';
 
 const CurriculumCarousel = () => {
   const [selectedPart, setSelectedPart] = useState('Android');

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TextChip from '../commons/RoleChip';
+import TextChip from '../commons/TextChip';
 import { RECRUIT_PART_INFO } from '../../constants/RecruitCostants';
 
 const RecruitFieldCard = ({ title, content }: { title: string; content: React.ReactNode }) => (

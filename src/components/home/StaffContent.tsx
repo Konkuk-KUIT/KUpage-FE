@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ROLE } from '../../constants/RoleConstants';
 import STAFFS from '../../constants/StaffConstants';
 
-import TextChip from '../commons/RoleChip';
+import TextChip from '../commons/TextChip';
 import StaffCardRow from './StaffCardRow';
 
 interface StaffContentProps {

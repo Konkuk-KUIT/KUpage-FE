@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ROLE } from '../../constants/RoleConstants';
-import TextChip from '../commons/RoleChip';
+import TextChip from '../commons/TextChip';
 
 const RoleChipRow = () => {
   const [selectedRole, setSelectedRole] = useState<string>(ROLE.OPERATIONS_TEAM);
