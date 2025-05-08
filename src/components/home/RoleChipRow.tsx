@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ROLE } from '../../constants/RoleConstants';
-import RoleChip from './RoleChip';
+import TextChip from '../commons/TextChip';
 
 const RoleChipRow = () => {
   const [selectedRole, setSelectedRole] = useState<string>(ROLE.OPERATIONS_TEAM);
@@ -8,9 +8,9 @@ const RoleChipRow = () => {
   return (
     <div className="mt-44 flex-center gap-16">
       {Object.values(ROLE).map((role) => (
-        <RoleChip
+        <TextChip
           key={role}
-          role={role}
+          text={role}
           isSelected={selectedRole === role}
           onClick={() => setSelectedRole(role)}
         />
