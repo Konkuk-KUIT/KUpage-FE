@@ -1,3 +1,4 @@
+import SNSInquiryBtn from '../../components/home/SNSInquiryBtn';
 import CurriculumCarousel from '../../components/recruit/CurriculumCarousel';
 import FAQAccordion from '../../components/recruit/FAQAccordion';
 import RecruitDescriptionBlock from '../../components/recruit/RecruitDescriptionBlock';
@@ -97,6 +98,8 @@ const Recruit = () => {
           </div>
         </div>
       </div>
+
+      <SNSInquiryBtn />
     </div>
   );
 };
