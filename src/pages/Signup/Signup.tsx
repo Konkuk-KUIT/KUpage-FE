@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import TextButton from '../../components/commons/TextButton';
 import SignupHeader from '../../components/signup/SignupHeader';
@@ -6,10 +7,9 @@ import SignupStepOne from '../../components/signup/SignupStepOne';
 import SignupStepThree from '../../components/signup/SignupStepThree';
 import SignupStepTwo from '../../components/signup/SignupStepTwo';
 import { COLLEGE_OPTIONS } from '../../constants/signupOptions';
+import useSignup from '../../hooks/useSignup';
 import { SignupFormKey } from '../../utils/types';
 import { isValidEmail, isValidPhone, isValidStudentId } from '../../utils/validation';
-import { useNavigate } from 'react-router-dom';
-import useSignup from '../../hooks/useSignup';
 
 const Signup = () => {
   const navigate = useNavigate();

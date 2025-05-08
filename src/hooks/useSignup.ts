@@ -29,7 +29,7 @@ const useSignup = () => {
       birthday: form.birth,
     };
 
-    const response = await api.post('/members', payload, {
+    const response = await api.post('/signup', payload, {
       headers: {
         Authorization: `Bearer ${guestToken}`,
       },
