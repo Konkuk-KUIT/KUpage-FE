@@ -38,8 +38,8 @@ export const CREATORS: CreatorInfo[] = [
     roles: ['Frontend 파트원'],
     name: '이수아',
     position: 'KUIT 4기 Web 부원',
-    email: 'example@gmail.com',
-    imageUrl: '',
+    email: 'leesooa0309@naver.com',
+    imageUrl: '/staff/lee_sooa.jpg',
   },
   {
     part: 'Frontend',
