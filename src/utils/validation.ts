@@ -9,6 +9,6 @@ export const isValidEmail = (email: string) => {
 };
 
 export const isValidPhone = (phone: string) => {
-  const phoneRegex = /^\d{10,11}$/;
+  const phoneRegex = /^010-\d{3,4}-\d{4}$/;
   return phoneRegex.test(phone);
 };
