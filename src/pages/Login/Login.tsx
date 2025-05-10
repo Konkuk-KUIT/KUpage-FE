@@ -4,8 +4,6 @@ const Login = () => {
   const DISCORD_AUTH_URL = `https://discord.com/api/oauth2/authorize?client_id=${import.meta.env.VITE_DISCORD_CLIENT_ID}&redirect_uri=${encodeURIComponent(import.meta.env.VITE_DISCORD_REDIRECT_URI)}&response_type=code&scope=identify%20email`;
 
   const handleDiscordLogin = () => {
-    console.log('client_id', import.meta.env.VITE_DISCORD_CLIENT_ID);
-    console.log('redirect_uri', import.meta.env.VITE_DISCORD_REDIRECT_URI);
     window.location.href = DISCORD_AUTH_URL;
   };
 
