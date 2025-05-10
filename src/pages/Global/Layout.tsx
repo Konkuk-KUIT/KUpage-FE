@@ -17,7 +17,7 @@ const Layout = ({ routes_children }: RoutesChildren) => {
   const { pathname } = useLocation();
 
   return (
-    <div id="layout" className="h-full w-full">
+    <div id="layout" className="h-screen w-full md:overflow-x-hidden md:h-screen md:w-screen">
       {routes_children.find((child) => matchPath(child.path, pathname))?.hasHeader && <Header />}
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
