@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
+
 import { StaffMember } from '../../constants/StaffConstants';
+
 import StaffCard from './StaffCard';
 
 interface StaffCardRowProps {
@@ -61,7 +63,7 @@ const StaffCardRow = ({ staffs }: StaffCardRowProps) => {
     <div className="w-full overflow-hidden px-20 max-w-1308">
       <div
         ref={scrollContainerRef}
-        className="max-w-full overflow-x-auto touch-pan-x custom-scrollbar"
+        className="max-w-full overflow-x-auto overflow-y-hidden touch-pan-x custom-scrollbar"
         style={{
           WebkitOverflowScrolling: 'touch',
           scrollbarWidth: 'thin',
