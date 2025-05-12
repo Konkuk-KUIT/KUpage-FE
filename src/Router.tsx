@@ -11,13 +11,13 @@ const Router = () => {
   const routes_children_auth = [
     { path: '/login', element: <Login />, hasHeader: true, hasFooter: true },
     { path: '/signup', element: <Signup />, hasHeader: true, hasFooter: true },
-    { path: '/projects', element: <Projects />, hasHeader: true },
   ];
 
   const routes_children = [
     { path: '/', element: <Home />, hasHeader: true, hasFooter: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
+    { path: '/projects', element: <Projects />, hasHeader: true },
   ];
 
   const routes = [
