@@ -95,15 +95,24 @@ const Home = () => {
             KUIT에서 진행된 프로젝트를 확인해보세요!
           </h3>
 
-          <div className="mt-60 flex-center gap-32 mb-60 overflow-scroll">
-            {projectList.map((project, idx) => (
-              <ProjectCard
-                key={idx}
-                img={project.img}
-                title={project.title}
-                description={project.description}
-              />
-            ))}
+          <div
+            className="w-[95vw] max-w-1308 mx-auto mt-60 mb-60 overflow-x-auto custom-scrollbar"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#4FE570 #1a1a1a',
+            }}
+          >
+            <div className="flex flex-row flex-nowrap gap-32 pb-8">
+              {projectList.map((project, idx) => (
+                <ProjectCard
+                  key={idx}
+                  img={project.img}
+                  title={project.title}
+                  description={project.description}
+                />
+              ))}
+            </div>
           </div>
 
           <GreenButton
