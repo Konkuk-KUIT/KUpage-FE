@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 import GreenButton from '../../components/commons/GreenButton';
 import KuitAnimation from '../../components/commons/KuitAnimation';
@@ -62,6 +63,7 @@ const Home = () => {
           <div className="flex-center gap-84">
             <InProgressBox title="진행된 프로젝트" count={18} />
             <InProgressBox title="진행된 스터디" count={29} />
+            <InProgressBox title="거쳐간 사람들" count={298} counters="명" />
           </div>
 
           <p className="text-white text-24 font-500 leading-[4rem] mt-72">

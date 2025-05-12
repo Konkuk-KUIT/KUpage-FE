@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type EasingFunction = (t: number) => number;
 
@@ -55,7 +55,7 @@ const Counter = ({ end = 100, duration = 2000 }: CounterProps) => {
   };
 
   return (
-    <div ref={ref} className="text-main font-700 text-48 w-56">
+    <div ref={ref} className="text-main font-700 text-48">
       {count}
     </div>
   );
