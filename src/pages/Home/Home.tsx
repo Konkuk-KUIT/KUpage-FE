@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
 import GreenButton from '../../components/commons/GreenButton';
 import KuitAnimation from '../../components/commons/KuitAnimation';
@@ -62,6 +63,7 @@ const Home = () => {
           <div className="flex-center gap-84">
             <InProgressBox title="진행된 프로젝트" count={18} />
             <InProgressBox title="진행된 스터디" count={29} />
+            <InProgressBox title="거쳐간 사람들" count={298} counters="명" />
           </div>
 
           <p className="text-white text-24 font-500 leading-[4rem] mt-72">
@@ -93,15 +95,24 @@ const Home = () => {
             KUIT에서 진행된 프로젝트를 확인해보세요!
           </h3>
 
-          <div className="mt-60 flex-center gap-32 mb-60 overflow-scroll">
-            {projectList.map((project, idx) => (
-              <ProjectCard
-                key={idx}
-                img={project.img}
-                title={project.title}
-                description={project.description}
-              />
-            ))}
+          <div
+            className="w-[95vw] max-w-1308 mx-auto mt-60 mb-60 overflow-x-auto custom-scrollbar"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#4FE570 #1a1a1a',
+            }}
+          >
+            <div className="flex flex-row flex-nowrap gap-32 pb-8">
+              {projectList.map((project, idx) => (
+                <ProjectCard
+                  key={idx}
+                  img={project.img}
+                  title={project.title}
+                  description={project.description}
+                />
+              ))}
+            </div>
           </div>
 
           <GreenButton
