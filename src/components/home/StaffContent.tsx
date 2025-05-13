@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ROLE } from '../../constants/RoleConstants';
 import STAFFS from '../../constants/StaffConstants';
 
-import RoleChip from './RoleChip';
+import TextChip from '../commons/TextChip';
 import StaffCardRow from './StaffCardRow';
 
 interface StaffContentProps {
@@ -26,9 +26,9 @@ const StaffContent = ({ generation = 5 }: StaffContentProps) => {
       <p className="text-white text-24 font-500">카드를 클릭해 뒷면을 확인해보세요!</p>
       <div className="mt-44 flex-center gap-16">
         {positions.map((position) => (
-          <RoleChip
+          <TextChip
             key={position}
-            role={position}
+            text={position}
             isSelected={selectedPosition === position}
             onClick={() => handlePositionChange(position)}
           />
