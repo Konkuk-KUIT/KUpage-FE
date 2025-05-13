@@ -33,7 +33,7 @@ const Recruit = () => {
               />
 
               <RecruitDescriptionBlock
-                title="KUIT의 인재상"
+                title="지원 방법"
                 content={
                   <div className="text-white text-24 text-center">
                     <p className="font-700">1차 서류</p>
