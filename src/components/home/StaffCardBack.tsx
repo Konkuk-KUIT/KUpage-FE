@@ -1,40 +1,43 @@
-import { BASE_NAME } from '../../constants/BaseName';
 import { StaffMember } from '../../constants/StaffConstants';
+import Github from '../../assets/imgs/Github.svg';
 
 interface StaffCardBackProps {
   member: StaffMember;
 }
 
-// TODO: 뒷면 디자인 나오면 수정하기
 const StaffCardBack = ({ member }: StaffCardBackProps) => {
   return (
-    <div className="w-228 h-auto border-border border-[0.1rem] rounded-10 bg-border absolute [backface-visibility:hidden] [transform:rotateY(180deg)]">
-      {member.imageUrl ? (
-        <img
-          src={BASE_NAME + member.imageUrl}
-          alt={member.name}
-          className="w-full object-cover rounded-t-10 h-224"
-        />
-      ) : (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 200 200"
-          className="w-full h-full bg-gray-200"
-        >
-          <path
-            d="M100 60
-                   a30 30 0 0 1 0 60
-                   a30 30 0 0 1 0 -60
-                   M60 180
-                   C60 130 140 130 140 180"
-            fill="#9e9e9e"
-          />
-        </svg>
-      )}
-
-      <div className="bg-gray  items-start text-white text-16 flex rounded-b-10 flex-col px-[1.4rem] py-16 gap-[0.6rem]">
-        <h3 className="font-700">{member.name}</h3>
-        <p className="font-500">{member.role}</p>
+    <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-10 overflow-hidden border border-border bg-white shadow-lg flex flex-col">
+      <div className="flex justify-end p-20">
+        <h3 className="text-16 font-700 text-black">{member.name}</h3>
+      </div>
+      <hr className="w-full h-[1px] bg-border"></hr>
+      <div className="flex-grow overflow-y-auto p-12 relative text-start">
+        <pre className="text-14 text-black whitespace-pre-wrap">
+          {member.description || '잘 부탁드립니다!'}
+        </pre>
+        <div className="absolute bottom-20 right-20 flex items-center gap-4">
+          {member.siteLink && (
+            <a
+              href={member.siteLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Personal Website"
+            >
+              <img src={Github} className="size-36" />
+            </a>
+          )}
+          {member.githubLink && (
+            <a
+              href={member.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+            >
+              <img src={Github} className="size-36" />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
