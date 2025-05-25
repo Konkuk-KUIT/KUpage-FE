@@ -8,6 +8,8 @@ import Signup from './pages/Signup/Signup';
 import Projects from './pages/Project/Projects';
 import Recruit from './pages/Recruit/Recruit';
 import Creators from './pages/Creators/Creators';
+import { path } from 'framer-motion/client';
+import Articles from './pages/Article/Articles';
 
 const Router = () => {
   const routes_children_auth = [
@@ -22,6 +24,7 @@ const Router = () => {
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },
+    { path: '/articles', element: <Articles />, hasHeader: true },
   ];
 
   const routes = [
