@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './pages/Global/ErrorPage';
 import Layout from './pages/Global/Layout';
 import Home from './pages/Home/Home';
+import DiscordCallback from './pages/Login/DiscoreCallback';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Projects from './pages/Project/Projects';
@@ -15,6 +16,7 @@ const Router = () => {
   const routes_children_auth = [
     { path: '/login', element: <Login />, hasHeader: true, hasFooter: true },
     { path: '/signup', element: <Signup />, hasHeader: true, hasFooter: true },
+    { path: '/discordcallback', element: <DiscordCallback />, hasHeader: false, hasFooter: false },
   ];
 
   const routes_children = [

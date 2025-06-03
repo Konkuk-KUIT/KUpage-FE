@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import SignupInputBox from '../../components/signup/SignupInputBox';
+
 import Calendar from '../../components/signup/Calendar';
-import { isValidEmail, isValidPhone } from '../../utils/validation';
+import SignupInputBox from '../../components/signup/SignupInputBox';
 import { SignupForm } from '../../utils/types';
+import { isValidEmail, isValidPhone } from '../../utils/validation';
 
 interface SignupStepThreeProps {
   form: Pick<SignupForm, 'github' | 'email' | 'phone' | 'birth'>;
@@ -49,9 +50,9 @@ const SignupStepThree = ({ form, updateForm }: SignupStepThreeProps) => {
           label="전화번호"
           value={form.phone}
           onChange={(v) => updateForm('phone', v)}
-          placeholder="01012345678"
+          placeholder="010-1234-5678"
           isError={form.phone !== '' && !isValidPhone(form.phone)}
-          errorText="* 휴대폰 번호는 -를 빼고 입력해 주세요. ex(01000000000)"
+          errorText="* 휴대폰 번호는 010-1234-5678 형식으로 입력해주세요.)"
         />
       </div>
 
