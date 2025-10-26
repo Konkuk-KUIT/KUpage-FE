@@ -3,7 +3,7 @@ import TeamCard from './TeamCard';
 
 const TeamMatchingBody = () => {
   return (
-    <div className="w-full h-full mt-8">
+    <div className="w-full h-full mt-8 flex flex-row">
       <div
         className="w-[40%] h-full p-[47px]"
         style={{
@@ -12,6 +12,7 @@ const TeamMatchingBody = () => {
       >
         <TeamCard />
       </div>
+      <div className="w-[60%] h-full p-[47px]"></div>
     </div>
   );
 };
