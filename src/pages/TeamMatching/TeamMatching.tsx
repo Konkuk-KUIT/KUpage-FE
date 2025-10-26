@@ -3,7 +3,7 @@ import TeamMatchingBody from '../../components/TeamMatching/TeamMatchingBody';
 
 const TeamMatching = () => {
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full min-h-screen flex flex-col bg-gray">
       <TeamMatchingHeader />
       <TeamMatchingBody />
     </div>
