@@ -22,11 +22,11 @@ const Router = () => {
     { path: '/', element: <Home />, hasHeader: true, hasFooter: true },
     { path: '/recruit', element: <Recruit />, hasHeader: true, hasFooter: true },
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
+    { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },
     { path: '/articles', element: <Articles />, hasHeader: true },
-    { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
   ];
 
   const routes = [
