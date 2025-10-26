@@ -10,6 +10,7 @@ import Recruit from './pages/Recruit/Recruit';
 import Creators from './pages/Creators/Creators';
 import { path } from 'framer-motion/client';
 import Articles from './pages/Article/Articles';
+import TeamMatching from './pages/TeamMatching/TeamMatching';
 
 const Router = () => {
   const routes_children_auth = [
@@ -25,6 +26,7 @@ const Router = () => {
     { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },
     { path: '/articles', element: <Articles />, hasHeader: true },
+    { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
   ];
 
   const routes = [
