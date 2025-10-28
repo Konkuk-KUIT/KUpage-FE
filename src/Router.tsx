@@ -23,7 +23,7 @@ const Router = () => {
     { path: '/recruit', element: <Recruit />, hasHeader: true, hasFooter: true },
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
     { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
-    { path: '/team-matching/apply', element: <IdeaRegister />, hasHeader: true },
+    { path: '/team-matching/register', element: <IdeaRegister />, hasHeader: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },

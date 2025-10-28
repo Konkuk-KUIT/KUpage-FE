@@ -2,8 +2,8 @@ import { useFileUploader } from '../../../hooks/useFileUploader';
 import { styles } from './ideaRegisterStyle.constants';
 import { FileType } from './types/fileType';
 
-import FolderIcon from '../../../assets/imgs/FolderIcon.svg';
-import ImageIcon from '../../../assets/imgs/ImageIcon.svg';
+import FolderIcon from '../../../assets/imgs/FolderIcon.svg?react';
+import ImageIcon from '../../../assets/imgs/ImageIcon.svg?react';
 
 interface Props {
   fileType: FileType;
@@ -36,16 +36,16 @@ const IdeaRegisterFileInput = ({ fileType, text, subText }: Props) => {
           />
         )
       ) : (
-        <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-gray-100">
-          {/* ✅ label로 감싸서 클릭 시 input이 트리거되도록 */}
+        <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-[#4f5e69]">
           <label className="cursor-pointer flex flex-col items-center justify-center">
             {fileType === 'image' ? (
-              <img src={ImageIcon} alt="image icon" className="w-[80px] h-[80px]" />
+              <ImageIcon className="text-[#2f383f] w-[107px] h-[107px]" />
             ) : (
-              <div>
-                <img src={FolderIcon} alt="folder icon" className="w-[80px] h-[80px]" />
-
-                <span className="mt-4 text-gray-500 text-[18px]">파일 업로드</span>
+              <div className="flex flex-col items-center justify-center">
+                <FolderIcon className="text-darkblue w-[39px] h-[32px]" />
+                <div className="mt-4 text-[#2f383f] text-[15px] text-600">
+                  최대 50MB까지 업로드가 가능해요.
+                </div>
               </div>
             )}
 
