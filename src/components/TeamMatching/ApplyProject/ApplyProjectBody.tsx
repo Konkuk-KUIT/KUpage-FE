@@ -1,12 +1,7 @@
 import { APPLICATION_TYPE } from './applicationType.constants';
 import { useFileUploader } from '../../../hooks/useFileUploader';
-
-const styles = {
-  text: 'w-full text-left font-600 text-[32px]',
-  subtext: 'text-[13px] font-400 text-[#d5da40]',
-  input:
-    'w-full px-[22px] py-[25px] rounded-[10px] border-[2px] border-solid border-border bg-gray placeholder:text-border',
-};
+import { styles } from './applyProjectStyle.constants';
+import ApplyProjectTextInput from './ApplyProjectTextInput';
 
 const ApplyProjectBody = () => {
   const imgUploader = useFileUploader('image');
@@ -21,12 +16,10 @@ const ApplyProjectBody = () => {
         <input className={styles.input} placeholder="내용을 입력해주세요."></input>
       </div>
 
-      <div className="w-full flex flex-col gap-[10px]">
-        <div className={styles.text}>
-          서비스에 대한 한 줄 소개를 입력해주세요. <span className="text-[#d5da40]">*</span>
-        </div>
-        <input className={styles.input} placeholder="내용을 입력해주세요."></input>
-      </div>
+      <ApplyProjectTextInput
+        label={'서비스에 대한 한 줄 소개를 입력해주세요.'}
+        textAreaHeight={271}
+      />
 
       <div className="w-full flex flex-col gap-[10px]">
         <div className="w-full flex flex-col text-left font-600 text-32px">
@@ -94,6 +87,16 @@ const ApplyProjectBody = () => {
           </div>
         )}
       </div>
+
+      <ApplyProjectTextInput
+        label={'서비스의 핵심 기능과 그에 따른 개발 요구사항을 적어주세요.'}
+        textAreaHeight={442}
+      />
+
+      <ApplyProjectTextInput
+        label={'함께 프로젝트를 진행하고 싶은 개발자에 대해 설명해주세요.'}
+        textAreaHeight={442}
+      />
     </div>
   );
 };
