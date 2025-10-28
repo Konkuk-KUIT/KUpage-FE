@@ -1,4 +1,3 @@
-import React from 'react';
 import RoundedSquareButton from '../commons/RoundedSquareButton';
 import RightUpArrow from '../../assets/imgs/RightUpArrow.svg';
 

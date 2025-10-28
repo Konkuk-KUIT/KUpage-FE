@@ -2,6 +2,9 @@ import { useFileUploader } from '../../../hooks/useFileUploader';
 import { styles } from './ideaRegisterStyle.constants';
 import { FileType } from './types/fileType';
 
+import FolderIcon from '../../../assets/imgs/FolderIcon.svg';
+import ImageIcon from '../../../assets/imgs/ImageIcon.svg';
+
 interface Props {
   fileType: FileType;
   text: string;
@@ -34,12 +37,25 @@ const IdeaRegisterFileInput = ({ fileType, text, subText }: Props) => {
         )
       ) : (
         <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-gray-100">
-          <input
-            type="file"
-            accept={fileType === 'image' ? 'image/*' : 'application/pdf'}
-            onChange={fileUploader.handleChange}
-            className="block"
-          />
+          {/* ✅ label로 감싸서 클릭 시 input이 트리거되도록 */}
+          <label className="cursor-pointer flex flex-col items-center justify-center">
+            {fileType === 'image' ? (
+              <img src={ImageIcon} alt="image icon" className="w-[80px] h-[80px]" />
+            ) : (
+              <div>
+                <img src={FolderIcon} alt="folder icon" className="w-[80px] h-[80px]" />
+
+                <span className="mt-4 text-gray-500 text-[18px]">파일 업로드</span>
+              </div>
+            )}
+
+            <input
+              type="file"
+              accept={fileType === 'image' ? 'image/*' : 'application/pdf'}
+              onChange={fileUploader.handleChange}
+              className="hidden" // ✅ 기본 input 숨김
+            />
+          </label>
         </div>
       )}
     </div>
