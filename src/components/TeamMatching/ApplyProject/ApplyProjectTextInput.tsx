@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { styles } from './applyProjectStyle.constants';
+import clsx from 'clsx';
 
 interface Props {
   label: string;
@@ -7,10 +8,15 @@ interface Props {
 }
 
 const ApplyProjectTextInput = ({ label, textAreaHeight }: Props) => {
+  const TEXT_LIMITATION = 500;
+  const [textValue, setTextValue] = useState<string>('');
   const [currentLength, setCurrentLength] = useState<number>(0);
 
   const textEditHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setCurrentLength(e.target.textLength);
+    const newValue = e.target.value;
+    if (newValue.length > TEXT_LIMITATION) return;
+    setTextValue(newValue);
+    setCurrentLength(newValue.length);
   };
 
   return (
@@ -24,8 +30,11 @@ const ApplyProjectTextInput = ({ label, textAreaHeight }: Props) => {
           style={{ height: textAreaHeight + 'px' }}
           placeholder="내용을 입력해주세요."
           onChange={textEditHandler}
+          value={textValue}
         ></textarea>
-        <span className="absolute bottom-[10px] right-[10px] text-border">{currentLength}/500</span>
+        <span className={clsx('absolute bottom-[10px] right-[10px] text-border')}>
+          {currentLength}/{TEXT_LIMITATION}
+        </span>
       </div>
     </div>
   );

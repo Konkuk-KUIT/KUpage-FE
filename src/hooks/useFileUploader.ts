@@ -1,6 +1,5 @@
 import { useState } from 'react';
-
-type FileType = 'image' | 'pdf';
+import { FileType } from '../components/TeamMatching/ApplyProject/types/fileType';
 
 export const useFileUploader = (acceptType: FileType) => {
   const [file, setFile] = useState<File | null>(null);

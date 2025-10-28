@@ -1,12 +1,9 @@
 import { APPLICATION_TYPE } from './applicationType.constants';
-import { useFileUploader } from '../../../hooks/useFileUploader';
 import { styles } from './applyProjectStyle.constants';
 import ApplyProjectTextInput from './ApplyProjectTextInput';
+import ApplyProjectFileInput from './ApplyProjectFileInput';
 
 const ApplyProjectBody = () => {
-  const imgUploader = useFileUploader('image');
-  const pdfUploader = useFileUploader('pdf');
-
   return (
     <div className="w-full flex flex-col gap-[130px]">
       <div className="w-full flex flex-col gap-[10px]">
@@ -39,54 +36,17 @@ const ApplyProjectBody = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col gap-[10px]">
-        <div className="w-full flex flex-col text-left font-600 text-32px">
-          <span className={styles.text}>
-            메인 이미지를 등록해주세요. <span className="text-[#d5da40]">*</span>
-          </span>
-          <span className={styles.subtext}>* 330 X 130 사이즈의 이미지를 권장해요.</span>
-        </div>
-        {imgUploader.file ? (
-          <img
-            src={imgUploader.url}
-            alt="imgFile"
-            className="w-full h-[501px] flex items-center justify-center rounded-[10px]"
-          />
-        ) : (
-          <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-gray-100">
-            <input
-              type="file"
-              accept="image/*"
-              onChange={imgUploader.handleChange}
-              className="block"
-            />
-          </div>
-        )}
-      </div>
+      <ApplyProjectFileInput
+        text={'메인 이미지를 등록해주세요.'}
+        subText={'330 X 130 사이즈의 이미지를 권장해요.'}
+        fileType={'image'}
+      />
 
-      <div className="w-full flex flex-col gap-[10px]">
-        <div className="w-full flex flex-col text-left font-600 text-32px">
-          <span className={styles.text}>
-            서비스 소개서 파일을 업로드해주세요. <span className="text-[#d5da40]">*</span>
-          </span>
-          <span className={styles.subtext}>* PDF 파일만 업로드가 가능해요.</span>
-        </div>
-        {pdfUploader.file ? (
-          <iframe
-            src={pdfUploader.url}
-            className="w-full h-[501px] flex items-center justify-center rounded-[10px]"
-          />
-        ) : (
-          <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-gray-100">
-            <input
-              type="file"
-              accept="application/pdf"
-              onChange={pdfUploader.handleChange}
-              className="block"
-            />
-          </div>
-        )}
-      </div>
+      <ApplyProjectFileInput
+        text={'서비스 소개서 파일을 업로드해주세요.'}
+        subText={'PDF 파일만 업로드가 가능해요.'}
+        fileType={'pdf'}
+      />
 
       <ApplyProjectTextInput
         label={'서비스의 핵심 기능과 그에 따른 개발 요구사항을 적어주세요.'}
