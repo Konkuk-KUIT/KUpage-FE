@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { styles } from './applyProjectStyle.constants';
 import clsx from 'clsx';
+import { styles } from './ideaRegisterStyle.constants';
 
 interface Props {
   label: string;
   textAreaHeight: number;
 }
 
-const ApplyProjectTextInput = ({ label, textAreaHeight }: Props) => {
+const IdeaRegisterTextInput = ({ label, textAreaHeight }: Props) => {
   const TEXT_LIMITATION = 500;
   const [textValue, setTextValue] = useState<string>('');
   const [currentLength, setCurrentLength] = useState<number>(0);
@@ -40,4 +40,4 @@ const ApplyProjectTextInput = ({ label, textAreaHeight }: Props) => {
   );
 };
 
-export default ApplyProjectTextInput;
+export default IdeaRegisterTextInput;

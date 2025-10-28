@@ -1,5 +1,5 @@
 import { useFileUploader } from '../../../hooks/useFileUploader';
-import { styles } from './applyProjectStyle.constants';
+import { styles } from './ideaRegisterStyle.constants';
 import { FileType } from './types/fileType';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
   subText: string;
 }
 
-const ApplyProjectFileInput = ({ fileType, text, subText }: Props) => {
+const IdeaRegisterFileInput = ({ fileType, text, subText }: Props) => {
   const fileUploader = useFileUploader(fileType);
 
   return (
@@ -46,4 +46,4 @@ const ApplyProjectFileInput = ({ fileType, text, subText }: Props) => {
   );
 };
 
-export default ApplyProjectFileInput;
+export default IdeaRegisterFileInput;

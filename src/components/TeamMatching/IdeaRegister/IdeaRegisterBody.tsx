@@ -1,9 +1,9 @@
 import { APPLICATION_TYPE } from './applicationType.constants';
-import { styles } from './applyProjectStyle.constants';
-import ApplyProjectTextInput from './ApplyProjectTextInput';
-import ApplyProjectFileInput from './ApplyProjectFileInput';
+import IdeaRegisterFileInput from './IdeaRegisterFileInput';
+import { styles } from './ideaRegisterStyle.constants';
+import IdeaRegisterTextInput from './IdeaRegisterTextInput';
 
-const ApplyProjectBody = () => {
+const IdeaRegisterBody = () => {
   return (
     <div className="w-full flex flex-col gap-[130px]">
       <div className="w-full flex flex-col gap-[10px]">
@@ -13,7 +13,7 @@ const ApplyProjectBody = () => {
         <input className={styles.input} placeholder="내용을 입력해주세요."></input>
       </div>
 
-      <ApplyProjectTextInput
+      <IdeaRegisterTextInput
         label={'서비스에 대한 한 줄 소개를 입력해주세요.'}
         textAreaHeight={271}
       />
@@ -36,24 +36,24 @@ const ApplyProjectBody = () => {
         </div>
       </div>
 
-      <ApplyProjectFileInput
+      <IdeaRegisterFileInput
         text={'메인 이미지를 등록해주세요.'}
         subText={'330 X 130 사이즈의 이미지를 권장해요.'}
         fileType={'image'}
       />
 
-      <ApplyProjectFileInput
+      <IdeaRegisterFileInput
         text={'서비스 소개서 파일을 업로드해주세요.'}
         subText={'PDF 파일만 업로드가 가능해요.'}
         fileType={'pdf'}
       />
 
-      <ApplyProjectTextInput
+      <IdeaRegisterTextInput
         label={'서비스의 핵심 기능과 그에 따른 개발 요구사항을 적어주세요.'}
         textAreaHeight={442}
       />
 
-      <ApplyProjectTextInput
+      <IdeaRegisterTextInput
         label={'함께 프로젝트를 진행하고 싶은 개발자에 대해 설명해주세요.'}
         textAreaHeight={442}
       />
@@ -61,4 +61,4 @@ const ApplyProjectBody = () => {
   );
 };
 
-export default ApplyProjectBody;
+export default IdeaRegisterBody;
