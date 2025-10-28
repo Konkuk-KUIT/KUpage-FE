@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { APPLICATION_TYPE } from './applicationType.constants';
+import { useFileUploader } from '../../../hooks/useFileUploader';
 
 const styles = {
   text: 'w-full text-left font-600 text-[32px]',
@@ -9,16 +9,8 @@ const styles = {
 };
 
 const ApplyProjectBody = () => {
-  const [imgFile, setImgFile] = useState<File | null>(null);
-  const [imgUrl, setImgUrl] = useState<string | undefined>(undefined);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setImgFile(file);
-    const url = URL.createObjectURL(file);
-    setImgUrl(url);
-  };
+  const imgUploader = useFileUploader('image');
+  const pdfUploader = useFileUploader('pdf');
 
   return (
     <div className="w-full flex flex-col gap-[130px]">
@@ -61,15 +53,44 @@ const ApplyProjectBody = () => {
           </span>
           <span className={styles.subtext}>* 330 X 130 사이즈의 이미지를 권장해요.</span>
         </div>
-        {imgFile ? (
+        {imgUploader.file ? (
           <img
-            src={imgUrl}
+            src={imgUploader.url}
             alt="imgFile"
             className="w-full h-[501px] flex items-center justify-center rounded-[10px]"
           />
         ) : (
           <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-gray-100">
-            <input type="file" accept="image/*" onChange={handleChange} className="block" />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={imgUploader.handleChange}
+              className="block"
+            />
+          </div>
+        )}
+      </div>
+
+      <div className="w-full flex flex-col gap-[10px]">
+        <div className="w-full flex flex-col text-left font-600 text-32px">
+          <span className={styles.text}>
+            서비스 소개서 파일을 업로드해주세요. <span className="text-[#d5da40]">*</span>
+          </span>
+          <span className={styles.subtext}>* PDF 파일만 업로드가 가능해요.</span>
+        </div>
+        {pdfUploader.file ? (
+          <iframe
+            src={pdfUploader.url}
+            className="w-full h-[501px] flex items-center justify-center rounded-[10px]"
+          />
+        ) : (
+          <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-gray-100">
+            <input
+              type="file"
+              accept="application/pdf"
+              onChange={pdfUploader.handleChange}
+              className="block"
+            />
           </div>
         )}
       </div>
