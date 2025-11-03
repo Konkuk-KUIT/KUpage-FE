@@ -1,4 +1,4 @@
-import ProjectFormSection from '../../components/Project/ProjectFormSection';
+import FormSection from '../../components/commons/FormSection';
 import SelectableChipGroup from '../../components/Project/SelectableChipGroup';
 import ProjectFormImg from '../../components/Project/ProjectFormImg';
 import ProjectFormLink from '../../components/Project/ProjectFormLink';
@@ -9,10 +9,10 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import ProjectReviewEditor from '../../components/Project/ProjectReviewEditor';
 import KUITLogo from '../../assets/imgs/KUITLogo.svg';
 import CreateButton from '../../components/commons/CreateButton';
-import { IFormValues } from '../../types/ProjectFromTypes';
+import { ProjectFormValues } from '../../types/ProjectFormTypes';
 
 const ProjectForm = () => {
-  const { handleSubmit, control, reset } = useForm<IFormValues>();
+  const { handleSubmit, control, reset } = useForm<ProjectFormValues>();
   const APP_TYPE = ['Web', 'Android', 'iOS', 'PC 프로그램', '크로스플랫폼', '하이브리드 앱'];
   const APP_FIELD = [
     '헬스케어',
@@ -36,7 +36,7 @@ const ProjectForm = () => {
     '커리어',
     '블록체인',
   ];
-  const onSubmit: SubmitHandler<IFormValues> = (data) => {
+  const onSubmit: SubmitHandler<ProjectFormValues> = (data) => {
     alert(JSON.stringify(data));
     reset();
   };
@@ -48,7 +48,7 @@ const ProjectForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-128 px-48 py-60 mt-144 bg-signup-gradient w-full"
       >
-        <ProjectFormSection title="서비스명을 입력해주세요." required>
+        <FormSection title="서비스명을 입력해주세요." required>
           <Controller
             name="title"
             control={control}
@@ -58,8 +58,8 @@ const ProjectForm = () => {
               <ProjectFormInput value={field.value} onChange={field.onChange} max={50} />
             )}
           />
-        </ProjectFormSection>
-        <ProjectFormSection title="서비스에 대한 한 줄 소개를 입력해주세요." required>
+        </FormSection>
+        <FormSection title="서비스에 대한 한 줄 소개를 입력해주세요." required>
           <Controller
             name="desc"
             control={control}
@@ -69,17 +69,17 @@ const ProjectForm = () => {
               <ProjectFormInput value={field.value} onChange={field.onChange} max={100} isLength />
             )}
           />
-        </ProjectFormSection>
-        <ProjectFormSection title="서비스에 대한 상세 설명이 담긴 페이지의 링크를 업로드해주세요.">
+        </FormSection>
+        <FormSection title="서비스에 대한 상세 설명이 담긴 페이지의 링크를 업로드해주세요.">
           <Controller
             name="link"
             control={control}
             defaultValue={''}
             render={({ field }) => <ProjectFormLink link={field.value} setLink={field.onChange} />}
           />
-        </ProjectFormSection>
-        <ProjectFormSection title="해당하는 기수 및 앱 유형을 선택해주세요" required gap={28}>
-          <ProjectFormSection title="기수" gap={12} fontSize={24}>
+        </FormSection>
+        <FormSection title="해당하는 기수 및 앱 유형을 선택해주세요" required gap={28}>
+          <FormSection title="기수" gap={12} fontSize={24}>
             <Controller
               name="cohort"
               control={control}
@@ -92,8 +92,8 @@ const ProjectForm = () => {
                 />
               )}
             />
-          </ProjectFormSection>
-          <ProjectFormSection
+          </FormSection>
+          <FormSection
             title="앱 유형"
             desc="* 해당하는 카테고리를 모두 선택해주세요. (최대 3개)"
             gap={12}
@@ -113,9 +113,9 @@ const ProjectForm = () => {
                 />
               )}
             />
-          </ProjectFormSection>
-        </ProjectFormSection>
-        <ProjectFormSection
+          </FormSection>
+        </FormSection>
+        <FormSection
           title="서비스의 해당 분야를 선택해주세요."
           desc="* 최대 두 개까지 선택이 가능합니다."
         >
@@ -132,8 +132,8 @@ const ProjectForm = () => {
               />
             )}
           />
-        </ProjectFormSection>
-        <ProjectFormSection
+        </FormSection>
+        <FormSection
           title="프로젝트를 개발하는 데 활용한 기술을 입력 및 선택해주세요."
           desc=" * 최대 10개까지 선택이 가능합니다."
         >
@@ -151,8 +151,8 @@ const ProjectForm = () => {
               />
             )}
           />
-        </ProjectFormSection>
-        <ProjectFormSection
+        </FormSection>
+        <FormSection
           title="메인 이미지를 등록해주세요."
           desc="* 330X130 사이즈의 이미지를 권장해요."
           required
@@ -164,8 +164,8 @@ const ProjectForm = () => {
             rules={{ required: '필수 입력 항목입니다.' }}
             render={({ field }) => <ProjectFormImg setResultImg={field.onChange} />}
           />
-        </ProjectFormSection>
-        <ProjectFormSection
+        </FormSection>
+        <FormSection
           title="파일을 업로드해주세요."
           desc=" * PDF 파일만 업로드가 가능해요."
           required
@@ -179,8 +179,8 @@ const ProjectForm = () => {
               <ProjectFormFile fileName={field.value} setFileName={field.onChange} />
             )}
           />
-        </ProjectFormSection>
-        <ProjectFormSection
+        </FormSection>
+        <FormSection
           title="프로젝트에 함께한 팀원 이름을 등록해주세요."
           desc="* 공동 편집자로 자동등록됩니다. (최대 12명까지 등록 가능)"
           required
@@ -201,7 +201,7 @@ const ProjectForm = () => {
               />
             )}
           />
-        </ProjectFormSection>
+        </FormSection>
         <Controller
           name="review"
           control={control}

@@ -7,7 +7,7 @@ interface ProjectFormSection {
   fontSize?: number;
 }
 
-const ProjectFormSection = ({
+const FormSection = ({
   title,
   desc,
   required,
@@ -26,4 +26,4 @@ const ProjectFormSection = ({
   );
 };
 
-export default ProjectFormSection;
+export default FormSection;

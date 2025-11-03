@@ -1,4 +1,4 @@
-export interface IFormValues {
+export interface ProjectFormValues {
   title: string;
   desc: string;
   link: string;
