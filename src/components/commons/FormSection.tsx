@@ -1,5 +1,5 @@
 interface ProjectFormSection {
-  title: string;
+  title: React.ReactNode;
   desc?: string;
   required?: boolean;
   children?: React.ReactNode;
