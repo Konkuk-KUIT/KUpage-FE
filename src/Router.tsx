@@ -11,6 +11,7 @@ import Recruit from './pages/Recruit/Recruit';
 import Creators from './pages/Creators/Creators';
 import { path } from 'framer-motion/client';
 import Articles from './pages/Article/Articles';
+import ProjectForm from './pages/Project/ProjectForm';
 
 const Router = () => {
   const routes_children_auth = [
@@ -26,6 +27,7 @@ const Router = () => {
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },
+    { path: '/projects/form', element: <ProjectForm /> },
     { path: '/articles', element: <Articles />, hasHeader: true },
   ];
 

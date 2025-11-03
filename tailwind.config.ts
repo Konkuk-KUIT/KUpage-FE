@@ -73,6 +73,8 @@ export default {
       main: '#4FE570',
       gray: '#2C373F',
       border: '#868686',
+      yellow: '#D5DA40',
+      deepGray: '#4F5E69',
     },
     extend: {
       backgroundImage: {
