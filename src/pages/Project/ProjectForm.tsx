@@ -6,10 +6,10 @@ import ProjectFormFile from '../../components/Project/ProjectFormFile';
 import ProjectCohortDropdown from '../../components/Project/ProjectCohortDropdown';
 import ProjectFormInput from '../../components/Project/ProjectFormInput';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { IFormValues } from '../../utils/types';
 import ProjectReviewEditor from '../../components/Project/ProjectReviewEditor';
 import KUITLogo from '../../assets/imgs/KUITLogo.svg';
 import CreateButton from '../../components/commons/CreateButton';
+import { IFormValues } from '../../types/ProjectFromTypes';
 
 const ProjectForm = () => {
   const { handleSubmit, control, reset } = useForm<IFormValues>();
