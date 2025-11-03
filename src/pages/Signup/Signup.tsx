@@ -8,8 +8,8 @@ import SignupStepThree from '../../components/signup/SignupStepThree';
 import SignupStepTwo from '../../components/signup/SignupStepTwo';
 import { COLLEGE_OPTIONS } from '../../constants/signupOptions';
 import useSignup from '../../hooks/useSignup';
-import { SignupFormKey } from '../../utils/types';
 import { isValidEmail, isValidPhone, isValidStudentId } from '../../utils/validation';
+import { SignupFormKey } from '../../types/SignupFormTypes';
 
 const Signup = () => {
   const navigate = useNavigate();
