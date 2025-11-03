@@ -9,7 +9,7 @@ export const ideaRegisterSchema = z.object({
     .string()
     .min(1, { message: '1자 이상 입력해주세요' })
     .max(500, { message: '500자 이하로 입력해주세요' }),
-  appType: z.enum(['web', 'android', 'ios', 'pc', 'cross', 'hybrid']),
+  appType: z.enum(['web', 'android', 'ios', 'pc', 'cross', 'hybrid']).nullable(),
   mainImg: z
     .any()
     .refine((files) => files?.length > 0, '이미지 파일을 업로드해주세요.')
