@@ -53,6 +53,7 @@ button:hover {
 }
 button:focus,
 input:focus,
+textarea:focus,
 button:focus-visible {
   outline: none;
 }
