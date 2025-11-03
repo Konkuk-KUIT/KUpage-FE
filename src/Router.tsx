@@ -12,6 +12,7 @@ import Creators from './pages/Creators/Creators';
 import { path } from 'framer-motion/client';
 import Articles from './pages/Article/Articles';
 import ProjectForm from './pages/Project/ProjectForm';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 const Router = () => {
   const routes_children_auth = [
@@ -24,11 +25,12 @@ const Router = () => {
     { path: '/', element: <Home />, hasHeader: true, hasFooter: true },
     { path: '/recruit', element: <Recruit />, hasHeader: true, hasFooter: true },
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
-    ...routes_children_auth,
-    { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },
     { path: '/projects/form', element: <ProjectForm /> },
     { path: '/articles', element: <Articles />, hasHeader: true },
+    { path: '/portfolio/upload', element: <Portfolio />, hasHeader: true },
+    ...routes_children_auth,
+    { path: '/*', element: <ErrorPage /> },
   ];
 
   const routes = [
