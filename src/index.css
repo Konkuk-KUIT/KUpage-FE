@@ -52,6 +52,7 @@ button:hover {
   border-color: none;
 }
 button:focus,
+input:focus,
 button:focus-visible {
   outline: none;
 }
