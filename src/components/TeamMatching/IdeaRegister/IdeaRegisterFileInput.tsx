@@ -1,78 +1,12 @@
-// import { useFileUploader } from '../../../hooks/useFileUploader';
-// import { styles } from './ideaRegisterStyle.constants';
-// import { FileType } from './types/fileType';
-
-// import FolderIcon from '../../../assets/imgs/FolderIcon.svg?react';
-// import ImageIcon from '../../../assets/imgs/ImageIcon.svg?react';
-
-// interface Props {
-//   fileType: FileType;
-//   text: string;
-//   subText: string;
-// }
-
-// const IdeaRegisterFileInput = ({ fileType, text, subText }: Props) => {
-//   const fileUploader = useFileUploader(fileType);
-
-//   return (
-//     <div className="w-full flex flex-col gap-[10px]">
-//       <div className="w-full flex flex-col text-left font-600 text-32px">
-//         <span className={styles.text}>
-//           {text} <span className="text-[#d5da40]">*</span>
-//         </span>
-//         <span className={styles.subtext}>* {subText}</span>
-//       </div>
-//       {fileUploader.file ? (
-//         fileType === 'image' ? (
-//           <img
-//             src={fileUploader.url}
-//             alt="imgFile"
-//             className="w-full h-[501px] flex items-center justify-center rounded-[10px]"
-//           />
-//         ) : (
-//           <iframe
-//             src={fileUploader.url}
-//             className="w-full h-[501px] flex items-center justify-center rounded-[10px]"
-//           />
-//         )
-//       ) : (
-//         <div className="w-full h-[501px] flex items-center justify-center rounded-[10px] bg-[#4f5e69]">
-//           <label className="cursor-pointer flex flex-col items-center justify-center">
-//             {fileType === 'image' ? (
-//               <ImageIcon className="text-[#2f383f] w-[107px] h-[107px]" />
-//             ) : (
-//               <div className="flex flex-col items-center justify-center">
-//                 <FolderIcon className="text-darkblue w-[39px] h-[32px]" />
-//                 <div className="mt-4 text-[#2f383f] text-[15px] text-600">
-//                   최대 50MB까지 업로드가 가능해요.
-//                 </div>
-//               </div>
-//             )}
-
-//             <input
-//               type="file"
-//               accept={fileType === 'image' ? 'image/*' : 'application/pdf'}
-//               onChange={fileUploader.handleChange}
-//               className="hidden" // ✅ 기본 input 숨김
-//             />
-//           </label>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default IdeaRegisterFileInput;
 import { Controller, useFormContext } from 'react-hook-form';
-import { styles } from './ideaRegisterStyle.constants';
-import { FileType } from './types/fileType';
+import { styles } from '../../../constants/IdeaRegister/ideaRegisterStyle.constants';
 import FolderIcon from '../../../assets/imgs/FolderIcon.svg?react';
 import ImageIcon from '../../../assets/imgs/ImageIcon.svg?react';
 import { useMemo } from 'react';
 
 interface Props {
-  name: 'mainImg' | 'pdfFile';
-  fileType: FileType; // 'image' | 'pdf'
+  name: 'imageUrl' | 'serviceIntroFile';
+  fileType: 'image' | 'pdf';
   text: string;
   subText: string;
 }

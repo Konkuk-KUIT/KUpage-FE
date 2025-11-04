@@ -29,4 +29,6 @@ export const APPLICATION_TYPE = [
     name: '하이브리드 앱',
     value: '하이브리드앱',
   },
-];
+] as const;
+
+export type ApplicationTypeValue = (typeof APPLICATION_TYPE)[number]['value'];

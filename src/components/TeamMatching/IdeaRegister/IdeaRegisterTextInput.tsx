@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import { styles } from './ideaRegisterStyle.constants';
+import { styles } from '../../../constants/IdeaRegister/ideaRegisterStyle.constants';
 import { useFormContext } from 'react-hook-form';
 
 interface Props {
-  name: 'description' | 'coreFunc' | 'developerDesc';
+  name: 'topicSummary' | 'featureRequirements' | 'preferredDeveloper';
   label: string;
   textAreaHeight: number;
 }

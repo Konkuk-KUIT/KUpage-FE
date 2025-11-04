@@ -6,37 +6,29 @@ import {
   ideaRegisterSchema,
   IdeaRegisterSchema,
 } from '../../../components/TeamMatching/IdeaRegister/schema/ideaRegisterSchema';
-import { useEffect } from 'react';
+import useIdeaRegister from '../../../hooks/useIdeaRegister';
+import { IdeaRegisterInfo } from '../../../constants/IdeaRegister/IdeaRegitster';
 
 const IdeaRegister = () => {
   const methods = useForm<IdeaRegisterSchema>({
     resolver: zodResolver(ideaRegisterSchema),
     defaultValues: {
-      name: '',
-      description: '',
+      serviceName: '',
+      topicSummary: '',
       appType: [],
-      mainImg: undefined,
-      pdfFile: undefined,
-      coreFunc: '',
-      developerDesc: '',
+      imageUrl: undefined,
+      serviceIntroFile: undefined,
+      featureRequirements: '',
+      preferredDeveloper: '',
     },
     mode: 'onSubmit',
     shouldFocusError: false,
   });
-  const { handleSubmit } = methods;
-
-  const onSubmit = (data: IdeaRegisterSchema) => {
-    console.log('✅ 제출 성공:', data);
-  };
-  const onError = (errors: any) => {
-    console.log('❌ 유효성 에러:', errors);
-  };
 
   return (
     <FormProvider {...methods}>
       <form
         noValidate
-        onSubmit={handleSubmit(onSubmit, onError)}
         className="w-full min-h-screen flex flex-col justify-start p-[46px] bg-darkblue"
       >
         <IdeaRegisterHeader />
