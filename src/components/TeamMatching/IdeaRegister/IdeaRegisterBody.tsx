@@ -1,16 +1,24 @@
+import { useFormContext } from 'react-hook-form';
 import { APPLICATION_TYPE } from './applicationType.constants';
 import IdeaRegisterFileInput from './IdeaRegisterFileInput';
 import { styles } from './ideaRegisterStyle.constants';
 import IdeaRegisterTextInput from './IdeaRegisterTextInput';
+import AppTypeToggle from './AppTypeToggle';
 
 const IdeaRegisterBody = () => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <div className="w-full flex flex-col gap-[130px]">
       <div className="w-full flex flex-col gap-[10px]">
         <div className={styles.text}>
           서비스명을 입력해주세요. <span className="text-[#d5da40]">*</span>
         </div>
-        <input className={styles.input} placeholder="내용을 입력해주세요."></input>
+        <input className={styles.input} placeholder="내용을 입력해주세요." {...register('name')} />
+        {errors.name && <p className="text-red-400">{String(errors.name.message)}</p>}
       </div>
 
       <IdeaRegisterTextInput
@@ -26,14 +34,11 @@ const IdeaRegisterBody = () => {
           </span>
         </div>
         <div className="w-full flex flex-row gap-[10px]">
-          {APPLICATION_TYPE.map((appType) => {
-            return (
-              <button className="bg-gray flex items-center justify-center h-[48px] px-[24px] py-[11px] rounded-24 border-solid border-[2px] border-white hover:text-darkblue hover:bg-main hover:border-main">
-                {appType.name}
-              </button>
-            );
-          })}
+          {APPLICATION_TYPE.map((appType) => (
+            <AppTypeToggle name={appType.name} value={appType.value} />
+          ))}
         </div>
+        {errors.appType && <p className="text-red-400">{String(errors.appType.message)}</p>}
       </div>
 
       <IdeaRegisterFileInput

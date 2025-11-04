@@ -1,4 +1,5 @@
 import { FormProvider, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import IdeaRegisterBody from '../../../components/TeamMatching/IdeaRegister/IdeaRegisterBody';
 import IdeaRegisterHeader from '../../../components/TeamMatching/IdeaRegister/IdeaRegisterHeader';
 import {
@@ -12,7 +13,7 @@ const IdeaRegister = () => {
     defaultValues: {
       name: '',
       description: '',
-      appType: null,
+      appType: [],
       mainImg: null,
       pdfFile: null,
       coreFunc: '',
@@ -39,29 +40,3 @@ const IdeaRegister = () => {
 };
 
 export default IdeaRegister;
-
-function zodResolver(ideaRegisterSchema: any):
-  | import('react-hook-form').Resolver<
-      {
-        name: string;
-        description: string;
-        appType: 'web' | 'android' | 'ios' | 'pc' | 'cross' | 'hybrid' | null;
-        mainImg: any;
-        pdfFile: any;
-        coreFunc: string;
-        developerDesc: string;
-      },
-      any,
-      {
-        name: string;
-        description: string;
-        appType: 'web' | 'android' | 'ios' | 'pc' | 'cross' | 'hybrid' | null;
-        mainImg: any;
-        pdfFile: any;
-        coreFunc: string;
-        developerDesc: string;
-      }
-    >
-  | undefined {
-  throw new Error('Function not implemented.');
-}
