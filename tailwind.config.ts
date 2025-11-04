@@ -74,6 +74,7 @@ export default {
       gray: '#2C373F',
       darkblue: '#16202b',
       border: '#868686',
+      red: '#ea3414',
     },
     extend: {
       backgroundImage: {

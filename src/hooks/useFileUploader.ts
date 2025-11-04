@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileType } from '../components/TeamMatching/ApplyProject/types/fileType';
+import { FileType } from '../components/TeamMatching/IdeaRegister/types/fileType';
 
 export const useFileUploader = (acceptType: FileType) => {
   const [file, setFile] = useState<File | null>(null);

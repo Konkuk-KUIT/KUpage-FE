@@ -6,6 +6,7 @@ import {
   ideaRegisterSchema,
   IdeaRegisterSchema,
 } from '../../../components/TeamMatching/IdeaRegister/schema/ideaRegisterSchema';
+import { useEffect } from 'react';
 
 const IdeaRegister = () => {
   const methods = useForm<IdeaRegisterSchema>({
@@ -14,25 +15,31 @@ const IdeaRegister = () => {
       name: '',
       description: '',
       appType: [],
-      mainImg: null,
-      pdfFile: null,
+      mainImg: undefined,
+      pdfFile: undefined,
       coreFunc: '',
       developerDesc: '',
     },
+    mode: 'onSubmit',
+    shouldFocusError: false,
   });
   const { handleSubmit } = methods;
 
   const onSubmit = (data: IdeaRegisterSchema) => {
     console.log('✅ 제출 성공:', data);
   };
+  const onError = (errors: any) => {
+    console.log('❌ 유효성 에러:', errors);
+  };
 
   return (
     <FormProvider {...methods}>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        onSubmit={handleSubmit(onSubmit, onError)}
         className="w-full min-h-screen flex flex-col justify-start p-[46px] bg-darkblue"
       >
-        <IdeaRegisterHeader onSubmit={onSubmit} />
+        <IdeaRegisterHeader />
         <IdeaRegisterBody />
       </form>
     </FormProvider>

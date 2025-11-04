@@ -1,23 +1,22 @@
-import { useState } from 'react';
 import clsx from 'clsx';
 import { styles } from './ideaRegisterStyle.constants';
+import { useFormContext } from 'react-hook-form';
 
 interface Props {
+  name: 'description' | 'coreFunc' | 'developerDesc';
   label: string;
   textAreaHeight: number;
 }
 
-const IdeaRegisterTextInput = ({ label, textAreaHeight }: Props) => {
+const IdeaRegisterTextInput = ({ name, label, textAreaHeight }: Props) => {
   const TEXT_LIMITATION = 500;
-  const [textValue, setTextValue] = useState<string>('');
-  const [currentLength, setCurrentLength] = useState<number>(0);
-
-  const textEditHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const newValue = e.target.value;
-    if (newValue.length > TEXT_LIMITATION) return;
-    setTextValue(newValue);
-    setCurrentLength(newValue.length);
-  };
+  const {
+    register,
+    watch,
+    formState: { errors },
+  } = useFormContext();
+  const value: string = watch(name) ?? '';
+  const length = value.length;
 
   return (
     <div className="w-full flex flex-col gap-[10px]">
@@ -29,13 +28,13 @@ const IdeaRegisterTextInput = ({ label, textAreaHeight }: Props) => {
           className={styles.input}
           style={{ height: textAreaHeight + 'px' }}
           placeholder="내용을 입력해주세요."
-          onChange={textEditHandler}
-          value={textValue}
+          {...register(name)}
         ></textarea>
         <span className={clsx('absolute bottom-[10px] right-[10px] text-border')}>
-          {currentLength}/{TEXT_LIMITATION}
+          {length}/{TEXT_LIMITATION}
         </span>
       </div>
+      {errors[name] && <p style={{ color: 'red' }}>{String(errors[name]?.message)}</p>}
     </div>
   );
 };

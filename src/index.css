@@ -1,7 +1,4 @@
 @import './styles/reset.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   :root {
@@ -74,3 +71,7 @@ button:focus-visible {
   background-color: #4fe570;
   border-radius: 2px;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

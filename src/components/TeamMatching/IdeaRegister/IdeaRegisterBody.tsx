@@ -18,10 +18,10 @@ const IdeaRegisterBody = () => {
           서비스명을 입력해주세요. <span className="text-[#d5da40]">*</span>
         </div>
         <input className={styles.input} placeholder="내용을 입력해주세요." {...register('name')} />
-        {errors.name && <p className="text-red-400">{String(errors.name.message)}</p>}
+        {errors.name && <p style={{ color: 'red' }}>{String(errors.name.message)}</p>}
       </div>
-
       <IdeaRegisterTextInput
+        name={'description'}
         label={'서비스에 대한 한 줄 소개를 입력해주세요.'}
         textAreaHeight={271}
       />
@@ -35,30 +35,34 @@ const IdeaRegisterBody = () => {
         </div>
         <div className="w-full flex flex-row gap-[10px]">
           {APPLICATION_TYPE.map((appType) => (
-            <AppTypeToggle name={appType.name} value={appType.value} />
+            <AppTypeToggle key={appType.id} name={appType.name} value={appType.value} />
           ))}
         </div>
-        {errors.appType && <p className="text-red-400">{String(errors.appType.message)}</p>}
+        {errors.appType && <p style={{ color: 'red' }}>{String(errors.appType.message)}</p>}
       </div>
 
       <IdeaRegisterFileInput
+        name={'mainImg'}
         text={'메인 이미지를 등록해주세요.'}
         subText={'330 X 130 사이즈의 이미지를 권장해요.'}
         fileType={'image'}
       />
 
       <IdeaRegisterFileInput
+        name={'pdfFile'}
         text={'서비스 소개서 파일을 업로드해주세요.'}
         subText={'PDF 파일만 업로드가 가능해요.'}
         fileType={'pdf'}
       />
 
       <IdeaRegisterTextInput
+        name={'coreFunc'}
         label={'서비스의 핵심 기능과 그에 따른 개발 요구사항을 적어주세요.'}
         textAreaHeight={442}
       />
 
       <IdeaRegisterTextInput
+        name={'developerDesc'}
         label={'함께 프로젝트를 진행하고 싶은 개발자에 대해 설명해주세요.'}
         textAreaHeight={442}
       />
