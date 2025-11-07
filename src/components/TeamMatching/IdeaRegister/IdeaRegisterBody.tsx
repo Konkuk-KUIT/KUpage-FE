@@ -22,10 +22,10 @@ const IdeaRegisterBody = () => {
           placeholder="내용을 입력해주세요."
           {...register('serviceName')}
         />
-        {errors.name && <p style={{ color: 'red' }}>{String(errors.name.message)}</p>}
+        {errors.serviceName && <p style={{ color: 'red' }}>{String(errors.serviceName.message)}</p>}
       </div>
       <IdeaRegisterTextInput
-        name={'topicSummary'}
+        name={'featureRequirements'}
         label={'서비스에 대한 한 줄 소개를 입력해주세요.'}
         textAreaHeight={271}
       />
