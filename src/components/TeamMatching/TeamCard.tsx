@@ -8,7 +8,7 @@ const TeamCard = () => {
 
       <div className="w-full flex flex-row justify-between">
         <div className="flex items-center justify-center group-hover:text-darkblue">abc</div>
-        <div className="flex items-center justify-center h-48 px-28 rounded-24 border-[2px] group-hover:text-darkblue group-hover:border-darkblue">
+        <div className="flex items-center justify-center text-20 font-700 h-48 px-[23px] rounded-24 border-[2px] group-hover:text-darkblue group-hover:border-darkblue">
           Android
         </div>
       </div>
