@@ -4,6 +4,8 @@ export const ENDPOINTS = {
   MEMBERS: '/members',
   AUTH: '/auth',
   IDEAS: '/ideas',
+  IMG_UPLOAD: '/pre-signed/article/image',
+  FILE_UPLOAD: '/pre-signed/article/file',
 } as const;
 
 export type EndpointKey = keyof typeof ENDPOINTS;
