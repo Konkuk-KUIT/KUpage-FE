@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "axios": "^1.9.0",
+    "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.9.4",
     "lucide-react": "^0.484.0",
@@ -50,5 +51,6 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
-  }
+  },
+  "packageManager": "pnpm@9.14.0+sha512.100738ce99825e11ad8179a169c8e25ca6b8eea4be329c157f47990581ee7411148de541b4052b6cff4ebf0da3b54a039d879898234e0f84416c2dd27be5a378"
 }
