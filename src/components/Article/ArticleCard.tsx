@@ -1,4 +1,4 @@
-interface ArticleCardProps {
+export interface ArticleCardProps {
   title: string;
   userName: string;
   createdAt: string;

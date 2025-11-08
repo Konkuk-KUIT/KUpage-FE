@@ -9,7 +9,7 @@ import LeaderIcon from '/Leader.svg';
 /**
  * todo: api와 연동
  */
-const isLogin = true;
+const isLogin: boolean = true;
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
