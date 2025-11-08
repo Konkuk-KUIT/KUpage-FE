@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import classNames from 'classnames';
 import { Check, Pencil } from 'lucide-react';
 
@@ -10,10 +11,6 @@ import LeaderIcon from '/Leader.svg';
  * TODO: 임시로 게시글이 비었는지, 안비었는지 확인하기 위함
  */
 const isEmpty: boolean = false;
-/**
- * TODO: 수정 버튼 클릭 시 수정 페이지로 이동하기 위함
- */
-const isEdit: boolean = false;
 /**
  * TODO: 게시글 데이터, key props를 위한 임시 id 추가
  */
@@ -45,6 +42,8 @@ const tempArticles: ({ id: number } & ArticleCardProps)[] = [
 ];
 
 const MyPage = () => {
+  const [isEdit, setIsEdit] = useState(false);
+
   return (
     <div
       className="min-h-screen w-full px-40 py-60 flex flex-col"
@@ -77,8 +76,9 @@ const MyPage = () => {
       </div>
       <div className="flex justify-end w-full mb-24">
         <button
+          onClick={() => setIsEdit(!isEdit)}
           className={classNames(
-            'p-16 rounded-full w-60 h-60 flex items-center justify-center',
+            'p-16 rounded-full w-60 h-60 flex items-center justify-center transition-colors',
             isEdit ? 'bg-main' : 'bg-gray border border-border'
           )}
         >
@@ -104,6 +104,13 @@ const MyPage = () => {
                 title={article.title}
                 userName={article.userName}
                 createdAt={article.createdAt}
+                isEdit={isEdit}
+                onDelete={() => {
+                  alert('삭제');
+                }}
+                onEdit={() => {
+                  // TODO: 수정 페이지로 이동
+                }}
               />
             ))}
           </div>
