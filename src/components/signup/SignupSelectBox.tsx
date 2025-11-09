@@ -7,6 +7,9 @@ interface SelectBoxProps {
   options: string[];
 }
 
+/**
+ * src/components/form/SelectBox.tsx와 동일 UI(대체 가능)
+ */
 const SignupSelectBox = ({ label, value, onChange, options }: SelectBoxProps) => {
   return (
     <div className="flex flex-col mt-8 text-white w-full max-w-[100%] relative">
