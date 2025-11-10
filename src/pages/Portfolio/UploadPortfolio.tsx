@@ -13,7 +13,7 @@ const tagSuggestionsRow1 = ['프로젝트', '학력', '수상', '스킬 스택']
 const tagSuggestionsRow2 = ['연합동아리', '인턴', 'SI 기업', '서비스 기업', '금융권'];
 const allTagSuggestions = [...tagSuggestionsRow1, ...tagSuggestionsRow2];
 
-const Portfolio = () => {
+const UploadPortfolio = () => {
   const {
     register,
     handleSubmit,
@@ -327,4 +327,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default UploadPortfolio;
