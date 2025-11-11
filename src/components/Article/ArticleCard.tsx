@@ -41,7 +41,7 @@ const ArticleCard = ({
             <button
               name="edit"
               onClick={onEdit}
-              className="p-4 flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="p-4 flex-center hover:opacity-80 transition-opacity"
             >
               <Pencil size={20} color="#fff" strokeWidth={2} />
             </button>
