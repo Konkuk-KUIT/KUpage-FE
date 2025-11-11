@@ -12,6 +12,7 @@ import Creators from './pages/Creators/Creators';
 import Articles from './pages/Article/Articles';
 import ProjectForm from './pages/Project/ProjectForm';
 import UploadPortfolio from './pages/Portfolio/UploadPortfolio';
+import PortfolioList from './pages/Portfolio/PortfolioList';
 
 const Router = () => {
   const routes_children_auth = [
@@ -28,6 +29,7 @@ const Router = () => {
     { path: '/projects/form', element: <ProjectForm /> },
     { path: '/articles', element: <Articles />, hasHeader: true },
     { path: '/portfolio/upload', element: <UploadPortfolio />, hasHeader: true },
+    { path: '/portfolio/list', element: <PortfolioList />, hasHeader: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
   ];
