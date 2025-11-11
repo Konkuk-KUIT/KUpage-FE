@@ -73,29 +73,29 @@ const Header = () => {
             <>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center justify-between w-[123px] h-[69px] gap-8 px-12 py-8 bg-[#1E2C33] border border-[#3D5053] rounded-full cursor-pointer hover:bg-[#203636] transition-colors"
+                className="flex items-center justify-between w-[123px] h-[69px] gap-8 px-12 py-8 border border-border rounded-full cursor-pointer hover:bg-[#203636] transition-colors"
               >
                 {/* todo: 임시로 파트장 프로필 이미지 사용 */}
                 <img src={LeaderIcon} alt="Profile" className="w-[55px] h-[55px] rounded-full" />
                 <img
                   src={ArrowDown}
                   alt="Toggle"
-                  className={`w-[24px] h-[24px] transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  className={`w-6 h-6 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                 />
               </button>
 
               {/* 드롭다운 메뉴 */}
               {isDropdownOpen && (
-                <div className="absolute right-0 top-[calc(100%+8px)] w-[160px] bg-[#1E2C33] border border-[#3D5053] rounded-[8px] shadow-lg overflow-hidden z-floating">
+                <div className="absolute right-0 top-[calc(100%+8px)] w-[160px] border border-border rounded-[8px] shadow-lg overflow-hidden z-floating bg-[#27373f]">
                   <button
                     onClick={handleMyPageClick}
-                    className="w-full px-16 py-12 text-left text-white text-16 hover:bg-[#203636] transition-colors"
+                    className="w-full px-16 py-12 text-left text-white text-16"
                   >
                     마이페이지
                   </button>
                   <button
                     onClick={handleLogout}
-                    className="w-full px-16 py-12 text-left text-white text-16 hover:bg-[#203636] transition-colors"
+                    className="w-full px-16 py-12 text-left text-white text-16"
                   >
                     로그아웃
                   </button>
