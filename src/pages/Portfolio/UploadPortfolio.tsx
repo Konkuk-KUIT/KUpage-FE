@@ -6,12 +6,12 @@ import SelectableChipGroup from '../../components/Project/SelectableChipGroup';
 import FileBtn from '../../assets/imgs/FileBtn.svg';
 import ProjectFormLink from '../../components/Project/ProjectFormLink';
 import TextChip from '../../components/commons/TextChip';
-
-const PART_OPTIONS = ['Android', 'Design', 'Web', 'iOS', 'Server', 'PM'];
-
-const tagSuggestionsRow1 = ['프로젝트', '학력', '수상', '스킬 스택'];
-const tagSuggestionsRow2 = ['연합동아리', '인턴', 'SI 기업', '서비스 기업', '금융권'];
-const allTagSuggestions = [...tagSuggestionsRow1, ...tagSuggestionsRow2];
+import {
+  ALL_TAG_SUGGESTIONS,
+  PART_OPTIONS,
+  TAG_SUGGESTIONS_ROW1,
+  TAG_SUGGESTIONS_ROW2,
+} from '../../constants/PortfolioConstants';
 
 const UploadPortfolio = () => {
   const {
@@ -84,7 +84,7 @@ const UploadPortfolio = () => {
     }
   };
 
-  const customTags = currentTags.filter((tag) => !allTagSuggestions.includes(tag));
+  const customTags = currentTags.filter((tag) => !ALL_TAG_SUGGESTIONS.includes(tag));
 
   return (
     <div className="relative">
@@ -237,7 +237,7 @@ const UploadPortfolio = () => {
               </div>
 
               <div className="flex flex-wrap gap-12 mt-12">
-                {tagSuggestionsRow1.map((tag) => (
+                {TAG_SUGGESTIONS_ROW1.map((tag) => (
                   <TextChip
                     key={tag}
                     text={tag}
@@ -247,7 +247,7 @@ const UploadPortfolio = () => {
                 ))}
               </div>
               <div className="flex flex-wrap gap-12 mt-12">
-                {tagSuggestionsRow2.map((tag) => (
+                {TAG_SUGGESTIONS_ROW2.map((tag) => (
                   <TextChip
                     key={tag}
                     text={tag}
