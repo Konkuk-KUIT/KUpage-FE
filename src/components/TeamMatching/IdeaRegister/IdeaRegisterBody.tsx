@@ -25,7 +25,7 @@ const IdeaRegisterBody = () => {
         {errors.serviceName && <p style={{ color: 'red' }}>{String(errors.serviceName.message)}</p>}
       </div>
       <IdeaRegisterTextInput
-        name={'featureRequirements'}
+        name={'topicSummary'}
         label={'서비스에 대한 한 줄 소개를 입력해주세요.'}
         textAreaHeight={271}
       />
