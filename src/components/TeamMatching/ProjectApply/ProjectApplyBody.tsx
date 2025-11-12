@@ -1,4 +1,5 @@
 import { PART_TYPE } from '../../../constants/ProjectApply/partType.constants';
+import ToggleButton from '../IdeaRegister/ToggleButton';
 import AppTypeToggle from '../IdeaRegister/ToggleButton';
 
 const ProjectApplyBody = () => {
@@ -22,7 +23,13 @@ const ProjectApplyBody = () => {
         <span>파트를 선택해주세요</span>
         <div className="w-full flex flex-row gap-[10px]">
           {PART_TYPE.map((partType) => (
-            <AppTypeToggle key={partType.id} name={partType.name} value={partType.value} />
+            <ToggleButton
+              key={partType.id}
+              name={partType.name}
+              value={partType.value}
+              field={'appliedPart'}
+              limitNum={1}
+            />
           ))}
         </div>
       </div>
