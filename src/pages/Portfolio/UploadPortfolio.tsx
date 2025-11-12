@@ -12,6 +12,7 @@ import {
   TAG_SUGGESTIONS_ROW1,
   TAG_SUGGESTIONS_ROW2,
 } from '../../constants/PortfolioConstants';
+import TextButton from '../../components/commons/TextButton';
 
 const UploadPortfolio = () => {
   const {
@@ -20,7 +21,7 @@ const UploadPortfolio = () => {
     control,
     setValue,
     watch,
-    formState: { errors },
+    formState: { isValid },
   } = useForm<FormData>({
     defaultValues: {
       shortDescription: '',
@@ -31,6 +32,7 @@ const UploadPortfolio = () => {
       tags: [],
       visibility: null,
     },
+    mode: 'onChange',
   });
 
   useEffect(() => {
@@ -95,25 +97,17 @@ const UploadPortfolio = () => {
         }}
       >
         <form onSubmit={handleSubmit(onSubmit)}>
-          <section className="flex justify-between items-center w-full px-48 pt-100 mb-64">
+          <section className="sticky top-0 z-popup flex justify-between items-center w-full px-48 pt-100 pb-32 bg-darkblue">
             <h1 className="text-64 font-700 text-white">Portfolio</h1>
-            <button
-              type="submit"
-              className="w-176 h-72 text-24 font-700 rounded-10 whitespace-nowrap cursor-pointer border-2 border-border bg-gray-700 text-white hover:bg-gray-600"
-            >
-              완료하기
-            </button>
+            <TextButton text="완료하기" isActive={isValid} px="px-48" py="py-20" />
           </section>
 
-          <div className="flex flex-col gap-132 px-48">
+          <div className="flex flex-col gap-132 px-48 pt-32">
             <FormSection title="서비스에 대한 한 줄 소개를 입력해주세요." required>
               <input
                 {...register('shortDescription', { required: '한 줄 소개를 입력해주세요.' })}
                 className="w-full h-72 p-16 bg-gray text-24 text-white border-2 border-border rounded-10"
               />
-              {errors.shortDescription && (
-                <p className="text-main text-14 text-left">{errors.shortDescription.message}</p>
-              )}
             </FormSection>
 
             <FormSection title="파트를 선택해주세요." required>
@@ -130,7 +124,6 @@ const UploadPortfolio = () => {
                   />
                 )}
               />
-              {errors.part && <p className="text-main text-14 text-left">{errors.part.message}</p>}
             </FormSection>
 
             <FormSection
@@ -164,9 +157,6 @@ const UploadPortfolio = () => {
                   </label>
                 )}
               />
-              {errors.portfolioFile && (
-                <p className="text-main text-14 text-left">{errors.portfolioFile.message}</p>
-              )}
             </FormSection>
 
             <FormSection
@@ -206,9 +196,6 @@ const UploadPortfolio = () => {
                   {currentDescLength} / 800
                 </span>
               </div>
-              {errors.detailedDescription && (
-                <p className="text-main text-14 text-left">{errors.detailedDescription.message}</p>
-              )}
             </FormSection>
 
             <FormSection
@@ -268,7 +255,6 @@ const UploadPortfolio = () => {
                   ))}
                 </div>
               )}
-              {errors.tags && <p className="text-main text-14 text-left">{errors.tags.message}</p>}
             </FormSection>
 
             <FormSection title="포트폴리오의 공개 범위를 설정해주세요." required>
@@ -316,9 +302,6 @@ const UploadPortfolio = () => {
                   </div>
                 )}
               />
-              {errors.visibility && (
-                <p className="text-main text-14 text-left">{errors.visibility.message}</p>
-              )}
             </FormSection>
           </div>
         </form>
