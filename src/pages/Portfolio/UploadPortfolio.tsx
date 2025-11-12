@@ -209,7 +209,7 @@ const UploadPortfolio = () => {
               desc="* 최대 5개까지 선택이 가능합니다."
               required
             >
-              <div className="flex gap-8">
+              <div className="relative w-full">
                 <input
                   value={currentTag}
                   onChange={(e) => setCurrentTag(e.target.value)}
@@ -219,8 +219,25 @@ const UploadPortfolio = () => {
                       handleAddTag(currentTag);
                     }
                   }}
-                  className="flex-grow h-72 p-16 bg-gray text-24 text-white border-2 border-border rounded-10"
+                  className="w-full h-72 p-16 pr-180 bg-gray text-24 text-white border-2 border-border rounded-10"
                 />
+                <div className="absolute right-0 top-0">
+                  <button
+                    type="button"
+                    onClick={() => handleAddTag(currentTag)}
+                    disabled={currentTag.trim() === ''}
+                    className={`absolute right-0 top-0
+                              h-72 px-16 py-8 rounded-r-10 text-24 font-700 whitespace-nowrap 
+                              transition-colors duration-200 border
+                              ${
+                                currentTag.trim() !== ''
+                                  ? 'bg-main text-gray border-main'
+                                  : 'bg-border text-white border-border cursor-default'
+                              }`}
+                  >
+                    직접 추가하기
+                  </button>
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-12 mt-12">
