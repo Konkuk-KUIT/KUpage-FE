@@ -10,7 +10,7 @@ const TeamMatchingDetailContainer = () => {
 
   return (
     <main className="w-full h-full flex flex-col justify-start gap-[20px]">
-      <RoundedSquareButton text={'이 프로젝트 지원하기'} />
+      <RoundedSquareButton>이 프로젝트 지원하기</RoundedSquareButton>
 
       <section className="w-full flex flex-col items-start gap-[22px]">
         <div className="font-600 text-[32px]">ChatDiary</div>

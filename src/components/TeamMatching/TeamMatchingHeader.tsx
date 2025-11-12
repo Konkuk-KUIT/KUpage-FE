@@ -10,7 +10,7 @@ const TeamMatchingHeader = () => {
         </h3>
       </div>
       <div className="w-[30%] flex flex-row justify-end">
-        <RoundedSquareButton text={'아이디어 등록하기'} />
+        <RoundedSquareButton>아이디어 등록하기</RoundedSquareButton>
       </div>
       {/* TODO : PM 계정만 이 요소 보이도록 수정 */}
       <div className="absolute bottom-[10px] right-[10px] font-[700] text-[24px] cursor-pointer">
