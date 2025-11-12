@@ -1,4 +1,6 @@
-@import './styles/reset.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
@@ -72,6 +74,33 @@ button:focus-visible {
   border-radius: 2px;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.react-datepicker__day-name {
+  @apply w-24 h-24 text-16 mx-8 mt-12;
+}
+
+.react-datepicker__current-month {
+  @apply text-16 text-black;
+}
+
+.react-datepicker__month-dropdown,
+.react-datepicker__month-option,
+.react-datepicker__year-dropdown,
+.react-datepicker__year-option,
+.react-datepicker__month-read-view,
+.react-datepicker__year-read-view {
+  @apply text-black;
+}
+
+.react-datepicker__current-month {
+  display: none;
+}
+
+.react-datepicker__month-dropdown-container,
+.react-datepicker__year-dropdown-container {
+  @apply text-black bg-white;
+}
+
+.react-datepicker__month-select,
+.react-datepicker__year-select {
+  @apply text-black bg-white;
+}
