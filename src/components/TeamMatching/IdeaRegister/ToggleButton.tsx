@@ -1,9 +1,16 @@
 import { useFormContext } from 'react-hook-form';
 import clsx from 'clsx';
 
-const AppTypeToggle = ({ name, value }: { name: string; value: string }) => {
+interface Props {
+  name: string;
+  value: string;
+  field: string;
+  limitNum: number;
+}
+
+const ToggleButton = ({ name, value, field, limitNum }: Props) => {
   const { watch, setValue } = useFormContext();
-  const selected: string[] = watch('appType') ?? [];
+  const selected: string[] = watch(field) ?? [];
 
   const isActive = selected.includes(value);
   const toggle = () => {
@@ -11,11 +18,11 @@ const AppTypeToggle = ({ name, value }: { name: string; value: string }) => {
     if (isActive) {
       nextValues = selected.filter((v) => v !== value);
     } else {
-      if (selected.length >= 3) return;
+      if (selected.length >= limitNum) return;
       nextValues = [...selected, value];
     }
 
-    setValue('appType', nextValues, { shouldValidate: true, shouldDirty: true });
+    setValue(field, nextValues, { shouldValidate: true, shouldDirty: true });
   };
 
   return (
@@ -34,4 +41,4 @@ const AppTypeToggle = ({ name, value }: { name: string; value: string }) => {
   );
 };
 
-export default AppTypeToggle;
+export default ToggleButton;
