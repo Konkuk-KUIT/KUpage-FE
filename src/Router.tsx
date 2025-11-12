@@ -10,6 +10,7 @@ import Projects from './pages/Project/Projects';
 import Recruit from './pages/Recruit/Recruit';
 import Creators from './pages/Creators/Creators';
 import Articles from './pages/Article/Articles';
+import TeamMatching from './pages/TeamMatching/TeamMatching';
 import ProjectForm from './pages/Project/ProjectForm';
 import UploadPortfolio from './pages/Portfolio/UploadPortfolio';
 import PortfolioList from './pages/Portfolio/PortfolioList';
@@ -25,6 +26,7 @@ const Router = () => {
     { path: '/', element: <Home />, hasHeader: true, hasFooter: true },
     { path: '/recruit', element: <Recruit />, hasHeader: true, hasFooter: true },
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
+    { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
     { path: '/projects', element: <Projects />, hasHeader: true },
     { path: '/projects/form', element: <ProjectForm /> },
     { path: '/articles', element: <Articles />, hasHeader: true },

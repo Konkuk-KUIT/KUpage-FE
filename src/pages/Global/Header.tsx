@@ -4,7 +4,7 @@ import KUITLogo from '../../assets/imgs/KUITLogo.svg';
 
 const Header = () => {
   return (
-    <header className="w-full h-[141px] flex items-center justify-between px-40 bg-gradient-to-b from-[#16202B] via-[#1E2C33] to-[#203636] border-b-2 border-[#3D5053]">
+    <header className="w-full h-[141px] flex items-center justify-between px-40 bg-gray">
       <div className="flex items-center justify-between w-full">
         {/* Logo and Navigation */}
         <div className="flex items-center gap-[58px]">
