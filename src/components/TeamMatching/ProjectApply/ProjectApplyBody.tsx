@@ -1,6 +1,8 @@
 import { PART_TYPE } from '../../../constants/ProjectApply/partType.constants';
 import ToggleButton from '../IdeaRegister/ToggleButton';
-import AppTypeToggle from '../IdeaRegister/ToggleButton';
+import { styles } from '../../../constants/IdeaRegister/ideaRegisterStyle.constants';
+import ProjectApplyFileInput from './ProjectApplyFileInput';
+import ProjectApplyTextInput from './ProjectApplyTextInput';
 
 const ProjectApplyBody = () => {
   // TODO: Context API로 선택된 프로젝트 관련 정보 내려받기
@@ -19,19 +21,25 @@ const ProjectApplyBody = () => {
           쉽게 작성해보세요!
         </div>
       </div>
-      <div>
-        <span>파트를 선택해주세요</span>
-        <div className="w-full flex flex-row gap-[10px]">
-          {PART_TYPE.map((partType) => (
-            <ToggleButton
-              key={partType.id}
-              name={partType.name}
-              value={partType.value}
-              field={'appliedPart'}
-              limitNum={1}
-            />
-          ))}
+      <div className="w-full flex flex-col gap-132 p-48">
+        <div className="w-full flex flex-col gap-16">
+          <div className={styles.text}>
+            파트를 선택해주세요 <span className="text-[#d5da40]">*</span>
+          </div>
+          <div className="w-full flex flex-row gap-[10px]">
+            {PART_TYPE.map((partType) => (
+              <ToggleButton
+                key={partType.id}
+                name={partType.name}
+                value={partType.value}
+                field={'appliedPart'}
+                limitNum={1}
+              />
+            ))}
+          </div>
         </div>
+        <ProjectApplyFileInput />
+        <ProjectApplyTextInput />
       </div>
     </div>
   );
