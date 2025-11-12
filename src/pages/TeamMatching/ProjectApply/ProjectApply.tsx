@@ -23,7 +23,7 @@ const ProjectApply = () => {
     <FormProvider {...methods}>
       <form
         noValidate
-        className="h-full [background:var(--1,linear-gradient(180deg,#16202B_0%,#1E2C33_50.01%,#203636_100%))]"
+        className="min-h-screen [background:var(--1,linear-gradient(180deg,#16202B_0%,#1E2C33_50.01%,#203636_100%))]"
       >
         <ProjectApplyHeader />
         <ProjectApplyBody />
