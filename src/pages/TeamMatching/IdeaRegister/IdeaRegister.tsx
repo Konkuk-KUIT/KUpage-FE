@@ -6,8 +6,6 @@ import {
   ideaRegisterSchema,
   IdeaRegisterSchema,
 } from '../../../components/TeamMatching/IdeaRegister/schema/ideaRegisterSchema';
-import useIdeaRegister from '../../../hooks/useIdeaRegister';
-import { IdeaRegisterInfo } from '../../../constants/IdeaRegister/IdeaRegitster';
 
 const IdeaRegister = () => {
   const methods = useForm<IdeaRegisterSchema>({
