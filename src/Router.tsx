@@ -13,6 +13,7 @@ import Articles from './pages/Article/Articles';
 import TeamMatching from './pages/TeamMatching/TeamMatching';
 import IdeaRegister from './pages/TeamMatching/IdeaRegister/IdeaRegister';
 import ProjectForm from './pages/Project/ProjectForm';
+import ProjectApply from './pages/TeamMatching/ProjectApply/ProjectApply';
 
 const Router = () => {
   const routes_children_auth = [
@@ -27,6 +28,8 @@ const Router = () => {
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
     { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
     { path: '/team-matching/register', element: <IdeaRegister />, hasHeader: true },
+    { path: '/team-matching/apply', element: <ProjectApply />, hasHeader: true },
+
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },
