@@ -12,7 +12,6 @@ import MyPage from './pages/MyPage/MyPage';
 import MyPageEdit from './pages/MyPage/MyPageEdit';
 import PortfolioList from './pages/Portfolio/PortfolioList';
 import UploadPortfolio from './pages/Portfolio/UploadPortfolio';
-import ProjectForm from './pages/Project/ProjectForm';
 import Projects from './pages/Project/Projects';
 import Recruit from './pages/Recruit/Recruit';
 import Signup from './pages/Signup/Signup';
@@ -21,6 +20,8 @@ import IdeaRegister from './pages/TeamMatching/IdeaRegister/IdeaRegister';
 import ProjectApply from './pages/TeamMatching/ProjectApply/ProjectApply';
 import TeamMatching from './pages/TeamMatching/TeamMatching';
 import Building from './pages/Building/Building';
+import ProjectForm from './pages/Project/ProjectForm';
+import MemberManagement from './pages/Admin/MemberManagement';
 
 const Router = () => {
   const routes_children_auth = [
@@ -52,7 +53,11 @@ const Router = () => {
     { path: '/building', element: <Building />, hasHeader: true },
     { path: '/keyword', element: <Navigate to="/building" replace />, hasHeader: true },
     ...routes_children_auth,
-    { path: '/*', element: <ErrorPage />, hasHeader: true, hasFooter: true },
+    { path: '/*', element: <ErrorPage /> },
+    { path: '/projects', element: <Projects />, hasHeader: true },
+    { path: '/projects/form', element: <ProjectForm /> },
+    { path: '/articles', element: <Articles />, hasHeader: true },
+    { path: '/admin/member', element: <MemberManagement />, hasHeader: true },
   ];
 
   const routes = [
