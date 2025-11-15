@@ -1,8 +1,9 @@
 import React from 'react';
+import { MemberManagementType } from '../../constants/MemberManagementConstants';
 
 interface MemberManagementChipProps {
   size?: 'medium' | 'small';
-  type: '대기' | '승인' | '거부';
+  type: MemberManagementType;
   value: number;
 }
 

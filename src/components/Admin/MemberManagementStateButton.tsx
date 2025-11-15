@@ -1,5 +1,7 @@
+import { MemberManagementType } from '../../constants/MemberManagementConstants';
+
 interface MemberManagementStateButtonProps {
-  type: '대기' | '승인' | '거부';
+  type: MemberManagementType;
 }
 
 const typeClass = {
@@ -8,7 +10,7 @@ const typeClass = {
   거부: 'bg-[#FF5252]',
 } as const;
 
-const MemberManagementStateButton = ({ type = '대기' }: MemberManagementStateButtonProps) => {
+const MemberManagementStateButton = ({ type }: MemberManagementStateButtonProps) => {
   return (
     <button
       type="button"

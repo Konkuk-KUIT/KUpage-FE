@@ -1,16 +1,16 @@
+import { MANAGEMENT_TYPE, MemberManagementType } from '../../constants/MemberManagementConstants';
 import TextButton from '../commons/TextButton';
 import MemberManagementChip from './MemberManagementChip';
 import MemberManagementStateButton from './MemberManagementStateButton';
 
 interface MemberManagementRowProps {
   id: number;
-  type: '대기' | '승인' | '거부';
+  type: MemberManagementType;
   email: string;
   phone: string;
 }
 
 const MemberManagementRow = ({ id, type, email, phone }: MemberManagementRowProps) => {
-  const MANAGEMENT_TYPE = ['대기', '승인', '거부'] as const;
   return (
     <div className="w-full h-112 flex items-center border-b-[3px] border-gray">
       <div className="flex flex-col flex-center gap-4 ml-8 mr-124">
