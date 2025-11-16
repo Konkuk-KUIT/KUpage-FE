@@ -4,6 +4,7 @@ import { Check, Pencil } from 'lucide-react';
 
 import Github from '../../assets/imgs/Github.svg';
 import ArticleCard, { type ArticleCardProps } from '../../components/Article/ArticleCard';
+import { NewTextButton } from '../../components/commons/TextButton';
 
 import LeaderIcon from '/Leader.svg';
 
@@ -59,7 +60,8 @@ const MyPage = () => {
             <div className="flex flex-col">
               <div className="flex items-center gap-8 text-white text-32 font-700 mb-8">
                 <p>나윤상</p>
-                <a href="https://github.com/">
+                {/**TODO: 유저 github link로 바꿀 것 */}
+                <a href="https://github.com/" target="_blank">
                   <img src={Github} alt="Github" className="w-32 h-32 rounded-full" />
                 </a>
               </div>
@@ -69,9 +71,12 @@ const MyPage = () => {
               </div>
             </div>
           </div>
-          <button className="px-28 py-24 rounded-10 bg-gray border border-border text-white font-700 text-24">
+          <NewTextButton
+            color="gray"
+            className="hover:bg-main hover:text-gray hover:border-none transition-colors duration-200 self-start mt-[24px]"
+          >
             수정하기
-          </button>
+          </NewTextButton>
         </section>
       </div>
       <div className="flex justify-end w-full mb-24">
