@@ -32,7 +32,7 @@ const IdeaRegisterTextInput = ({ label, textAreaHeight }: Props) => {
           onChange={textEditHandler}
           value={textValue}
         ></textarea>
-        <span className={clsx('absolute bottom-[10px] right-[10px] text-border')}>
+        <span className={'absolute bottom-[10px] right-[10px] text-border'}>
           {currentLength}/{TEXT_LIMITATION}
         </span>
       </div>
