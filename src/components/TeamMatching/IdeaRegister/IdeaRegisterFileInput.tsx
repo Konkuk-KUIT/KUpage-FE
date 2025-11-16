@@ -1,5 +1,5 @@
 import { useFileUploader } from '../../../hooks/useFileUploader';
-import { styles } from './ideaRegisterStyle.constants';
+import { styles } from './constants/ideaRegisterStyle.constants';
 import { FileType } from './types/fileType';
 
 import FolderIcon from '../../../assets/imgs/FolderIcon.svg?react';

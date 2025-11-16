@@ -1,6 +1,6 @@
-import { APPLICATION_TYPE } from './applicationType.constants';
+import { APPLICATION_TYPE } from './constants/applicationType.constants';
 import IdeaRegisterFileInput from './IdeaRegisterFileInput';
-import { styles } from './ideaRegisterStyle.constants';
+import { styles } from './constants/ideaRegisterStyle.constants';
 import IdeaRegisterTextInput from './IdeaRegisterTextInput';
 
 const IdeaRegisterBody = () => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import { styles } from './ideaRegisterStyle.constants';
+import { styles } from './constants/ideaRegisterStyle.constants';
 
 interface Props {
   label: string;
