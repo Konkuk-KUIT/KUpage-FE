@@ -15,7 +15,7 @@ const AppTypeToggle = ({ name, value }: { name: string; value: string }) => {
       nextValues = [...selected, value];
     }
 
-    setValue('appType', nextValues, { shouldValidate: true, shouldDirty: true });
+    setValue('appType', nextValues, { shouldValidate: false, shouldDirty: true });
   };
 
   return (
