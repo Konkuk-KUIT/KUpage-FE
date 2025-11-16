@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Check, Pencil } from 'lucide-react';
 
 import Github from '../../assets/imgs/Github.svg';
@@ -77,7 +77,7 @@ const MyPage = () => {
       <div className="flex justify-end w-full mb-24">
         <button
           onClick={() => setIsEdit(!isEdit)}
-          className={classNames(
+          className={clsx(
             'p-16 rounded-full w-60 h-60 flex items-center justify-center transition-colors',
             isEdit ? 'bg-main' : 'bg-gray border border-border'
           )}

@@ -11,12 +11,8 @@ import MyPage from './pages/MyPage/MyPage';
 import ProjectForm from './pages/Project/ProjectForm';
 import Projects from './pages/Project/Projects';
 import Recruit from './pages/Recruit/Recruit';
-import Creators from './pages/Creators/Creators';
-import { path } from 'framer-motion/client';
-import Articles from './pages/Article/Articles';
-import TeamMatching from './pages/TeamMatching/TeamMatching';
-import ProjectForm from './pages/Project/ProjectForm';
 import Signup from './pages/Signup/Signup';
+import TeamMatching from './pages/TeamMatching/TeamMatching';
 
 const Router = () => {
   const routes_children_auth = [
