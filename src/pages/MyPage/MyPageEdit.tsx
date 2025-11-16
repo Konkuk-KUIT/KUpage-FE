@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
+import TextButton from '../../components/commons/TextButton';
 import InputBox from '../../components/form/InputBox';
 import SelectBox, { Option } from '../../components/form/SelectBox';
 
@@ -47,7 +48,7 @@ const MyPageEdit = () => {
   return (
     <div className="relative">
       <div
-        className="min-h-screen w-full px-40 pb-60 flex flex-col"
+        className="min-h-screen w-full pb-60 flex flex-col"
         style={{
           background: 'linear-gradient(180deg, #16202B 0%, #1E2C33 50.01%, #203636 100%)',
         }}
@@ -55,14 +56,9 @@ const MyPageEdit = () => {
         <div className="mx-auto w-full">
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center">
             <div className="flex justify-end w-full pt-[105px] pb-[56px] pr-[61px]">
-              <button
-                type="submit"
-                className="w-[139px] h-[71px] bg-gray border-border rounded-[10px] text-white font-700 text-[24px]"
-              >
-                완료하기
-              </button>
+              <TextButton text="완료하기" py={'py-[17px]'} px={'px-[28px]'} />
             </div>
-            <div className="grid grid-cols-2 gap-x-24 gap-y-32 max-w-[686px]">
+            <div className="grid grid-cols-2 gap-x-24 gap-y-32 px-[300px] w-full min-w-[686px]">
               <div className="col-span-2">
                 <InputBox label="이름" placeholder="이름을 입력하세요" {...register('name')} />
               </div>
