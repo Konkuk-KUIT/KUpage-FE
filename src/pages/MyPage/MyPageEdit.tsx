@@ -59,7 +59,7 @@ const MyPageEdit = () => {
                 type="submit"
                 className="w-[139px] h-[71px] bg-gray border-border rounded-[10px] text-white font-700 text-[24px]"
               >
-                저장하기
+                완료하기
               </button>
             </div>
             <div className="grid grid-cols-2 gap-x-24 gap-y-32 max-w-[686px]">
