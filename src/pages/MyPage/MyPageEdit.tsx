@@ -58,7 +58,7 @@ const MyPageEdit = () => {
             <div className="flex justify-end w-full pt-[105px] pb-[56px] pr-[61px]">
               <TextButton text="완료하기" py={'py-[17px]'} px={'px-[28px]'} />
             </div>
-            <div className="grid grid-cols-2 gap-x-24 gap-y-32 px-[300px] w-full min-w-[686px]">
+            <div className="grid grid-cols-2 gap-x-24 gap-y-32 px-[300px] w-full max-w-[1440px]">
               <div className="col-span-2">
                 <InputBox label="이름" placeholder="이름을 입력하세요" {...register('name')} />
               </div>
