@@ -50,7 +50,7 @@ const LoginButton = () => {
         <>
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center justify-between w-[123px] h-[69px] gap-8 px-12 py-8 border border-border rounded-full cursor-pointer hover:bg-[#203636] transition-colors"
+            className="flex items-center justify-between w-[123px] h-[69px] gap-8 pr-12 pl-8 py-8 border border-border rounded-full cursor-pointer hover:bg-[#203636] transition-colors"
           >
             {/* todo: 임시로 파트장 프로필 이미지 사용 */}
             <img src={LeaderIcon} alt="Profile" className="w-[55px] h-[55px] rounded-full" />
