@@ -47,7 +47,7 @@ const MyPageEdit = () => {
   return (
     <div className="relative">
       <div
-        className="min-h-screen w-full px-40 py-60 flex flex-col"
+        className="min-h-screen w-full px-40 pb-60 flex flex-col"
         style={{
           background: 'linear-gradient(180deg, #16202B 0%, #1E2C33 50.01%, #203636 100%)',
         }}
