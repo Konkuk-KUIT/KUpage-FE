@@ -11,6 +11,11 @@ import MyPage from './pages/MyPage/MyPage';
 import ProjectForm from './pages/Project/ProjectForm';
 import Projects from './pages/Project/Projects';
 import Recruit from './pages/Recruit/Recruit';
+import Creators from './pages/Creators/Creators';
+import { path } from 'framer-motion/client';
+import Articles from './pages/Article/Articles';
+import TeamMatching from './pages/TeamMatching/TeamMatching';
+import ProjectForm from './pages/Project/ProjectForm';
 import Signup from './pages/Signup/Signup';
 
 const Router = () => {
@@ -24,6 +29,7 @@ const Router = () => {
     { path: '/', element: <Home />, hasHeader: true, hasFooter: true },
     { path: '/recruit', element: <Recruit />, hasHeader: true, hasFooter: true },
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
+    { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
     { path: '/mypage', element: <MyPage />, hasHeader: true, hasFooter: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },

@@ -72,6 +72,7 @@ export default {
       black: '#000',
       main: '#4FE570',
       gray: '#2C373F',
+      darkblue: '#16202b',
       border: '#868686',
       yellow: '#D5DA40',
       deepGray: '#4F5E69',
