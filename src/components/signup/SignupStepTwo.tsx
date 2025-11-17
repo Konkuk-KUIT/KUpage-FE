@@ -1,7 +1,7 @@
 import SignupInputBox from '../../components/signup/SignupInputBox';
 import SignupSelectBox from '../../components/signup/SignupSelectBox';
 import { COLLEGE_OPTIONS, GRADE_OPTIONS } from '../../constants/signupOptions';
-import { SignupForm } from '../../utils/types';
+import { SignupForm } from '../../types/SignupFormTypes';
 
 interface SignupStepTwoProps {
   form: Pick<SignupForm, 'studentId' | 'grade' | 'college' | 'major'>;
