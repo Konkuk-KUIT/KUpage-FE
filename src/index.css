@@ -52,7 +52,10 @@ button:hover {
   border-color: none;
 }
 button:focus,
-button:focus-visible {
+input:focus,
+textarea:focus,
+button:focus-visible,
+select:focus-visible {
   outline: none;
 }
 

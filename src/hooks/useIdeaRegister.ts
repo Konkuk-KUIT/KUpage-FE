@@ -40,11 +40,18 @@ const useIdeaRegister = () => {
   const ideaRegister = async (userInput: IdeaRegisterInfo) => {
     try {
       const imgUploadUrl = await testUploadFile(userInput.imageUrl as File, 'image/png');
-      const pdfUploadUrl = await testUploadFile(userInput.imageUrl as File, 'application/pdf');
-      userInput.imageUrl = imgUploadUrl as string;
-      userInput.serviceIntroFile = pdfUploadUrl as string;
+      const pdfUploadUrl = await testUploadFile(
+        userInput.serviceIntroFile as File,
+        'application/pdf'
+      );
 
-      const res = await api.post(ENDPOINTS.IDEAS, userInput);
+      const toServerData = {
+        ...userInput,
+        imageUrl: imgUploadUrl as string,
+        serviceIntroFile: pdfUploadUrl as string,
+      };
+
+      const res = await api.post(ENDPOINTS.IDEAS, toServerData);
       if (res.data.success) {
         console.log('아이디어 등록 성공');
       }
