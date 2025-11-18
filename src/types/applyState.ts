@@ -14,8 +14,9 @@ export interface ApplyStateResponse {
 }
 
 // 지원자 현황
+export const applicantPart = ['Android', 'iOS', 'Web', 'Server', 'Design'] as const;
 
-export type ApplicantPart = 'Android' | 'Web' | 'iOS' | 'Server' | 'Design';
+export type ApplicantPart = (typeof applicantPart)[number];
 
 export interface ApplicantDetail {
   portfolioUrl: string;
