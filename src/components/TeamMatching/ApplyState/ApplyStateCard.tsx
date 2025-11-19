@@ -1,8 +1,7 @@
 import clsx from 'clsx';
 import TextBadge from '../../commons/TextBadge';
 import type { Dispatch, SetStateAction } from 'react';
-import { ApplyView } from '../../../types/applyState';
-import useApplyState from '../../../hooks/useApplyState';
+import { APPLY_VIEW, ApplyView } from '../../../types/applyState';
 
 const mockData = [
   {
@@ -33,12 +32,17 @@ const mockData = [
 ];
 
 interface Props {
+  teamId: number;
   setViewType: Dispatch<SetStateAction<ApplyView>>;
+  setSelectedTeamId: Dispatch<SetStateAction<number | null>>;
 }
 
-const ApplyStateCard = ({ setViewType }: Props) => {
-  const { getApplicantStateData } = useApplyState();
-  const clickHandler = () => {};
+const ApplyStateCard = ({ teamId, setViewType, setSelectedTeamId }: Props) => {
+  const clickHandler = () => {
+    setViewType(APPLY_VIEW.Detail);
+    setSelectedTeamId(teamId);
+  };
+
   return (
     <div
       className="group w-full h-200 flex flex-row border-2 border-solid rounded-10 border-border cursor-pointer hover:border-main"
