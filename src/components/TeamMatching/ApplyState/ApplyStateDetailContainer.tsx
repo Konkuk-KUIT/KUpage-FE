@@ -1,11 +1,24 @@
-import { applicantPart, ApplicantStateResponse } from '../../../types/applyState';
+import { useState } from 'react';
+import { ApplicantPart, applicantPart, ApplicantStateResponse } from '../../../types/applyState';
 import ApplicantCard from './ApplicantCard';
+import ApplicantModal from './ApplicantModal';
 
 interface Props {
   applicantData: ApplicantStateResponse;
 }
 
 const ApplyStateDetailContainer = ({ applicantData }: Props) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [clickedApplicant, setClickedApplicant] = useState<number | undefined>(undefined);
+  const [clickedAppType, setClickedAppType] = useState<ApplicantPart | undefined>(undefined);
+
+  const selectedApplicant =
+    clickedAppType && clickedApplicant !== null
+      ? applicantData.applicantMap.applicants[clickedAppType].find(
+          (a) => a.applicantId === clickedApplicant
+        )
+      : undefined;
+
   return (
     <div className="w-full flex-1 flex flex-col justify-start bg-darkblue">
       <div className="w-full h-auto flex flex-col items-start gap-24 px-56 py-36 bg-gray">
@@ -29,8 +42,12 @@ const ApplyStateDetailContainer = ({ applicantData }: Props) => {
                   return (
                     <ApplicantCard
                       key={index}
+                      applicantId={applicant.applicantId}
                       nameAndPart={applicant.applicantMemberNameAndPart}
                       part={applicant.part}
+                      setIsModalOpen={setIsModalOpen}
+                      setClickedApplicant={setClickedApplicant}
+                      setClickedAppType={setClickedAppType}
                     />
                   );
                 })}
@@ -39,6 +56,10 @@ const ApplyStateDetailContainer = ({ applicantData }: Props) => {
           );
         })}
       </div>
+
+      {isModalOpen && selectedApplicant && (
+        <ApplicantModal onClose={() => setIsModalOpen(false)} applicantData={selectedApplicant} />
+      )}
     </div>
   );
 };

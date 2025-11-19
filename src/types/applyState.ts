@@ -24,6 +24,7 @@ export interface ApplicantDetail {
 }
 
 export interface Applicant {
+  applicantId: number;
   applicantMemberNameAndPart: string;
   part: ApplicantPart;
   appliedTime: string;
