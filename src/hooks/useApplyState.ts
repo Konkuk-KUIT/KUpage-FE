@@ -5,24 +5,24 @@ import { ApplicantStateResponse, ApplyStateResponse } from '../types/applyState'
 const useApplyState = () => {
   const { api } = useApi();
 
-  const getApplyStateData = () => {
-    api
-      .get<ApiResponse<ApplyStateResponse | ApplyStateResponse[]>>('/teams/applicants')
+  const getApplyStateData = (): Promise<ApplyStateResponse | ApplyStateResponse[] | undefined> => {
+    return api
+      .get<ApiResponse<ApplyStateResponse | ApplyStateResponse[]>>('/teams/applications')
       .then((res) => {
         const data = res.data;
-        if (data.success) return data;
+        if (data.success) return data.result;
       })
       .catch((err) => {
         throw Error(err);
       });
   };
 
-  const getApplicantStateData = () => {
-    api
-      .get<ApiResponse<ApplicantStateResponse>>('/teams/applicants')
+  const getApplicantStateData = (teamId: number): Promise<ApplicantStateResponse | undefined> => {
+    return api
+      .get<ApiResponse<ApplicantStateResponse>>(`/teams/${teamId}/applicants`)
       .then((res) => {
         const data = res.data;
-        if (data.success) return data;
+        if (data.success) return data.result;
       })
       .catch((err) => {
         throw Error(err);

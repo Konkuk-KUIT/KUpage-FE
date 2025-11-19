@@ -1,5 +1,4 @@
 // 지원 현황
-
 export interface ApplyStateResponse {
   teamId: number;
   serviceName: string;
@@ -48,3 +47,11 @@ export interface ApplicantStateResponse {
   mvpFeatures: string;
   applicantMap: ApplicantMap;
 }
+
+// 지원현황 viewType
+export const APPLY_VIEW = {
+  List: 'LIST',
+  Detail: 'DETAIL',
+} as const;
+
+export type ApplyView = (typeof APPLY_VIEW)[keyof typeof APPLY_VIEW];
