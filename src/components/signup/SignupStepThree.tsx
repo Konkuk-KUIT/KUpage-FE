@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import Calendar from '../../components/signup/Calendar';
 import SignupInputBox from '../../components/signup/SignupInputBox';
-import { SignupForm } from '../../utils/types';
 import { isValidEmail, isValidPhone } from '../../utils/validation';
+import { SignupForm } from '../../types/SignupFormTypes';
 
 interface SignupStepThreeProps {
   form: Pick<SignupForm, 'github' | 'email' | 'phone' | 'birth'>;

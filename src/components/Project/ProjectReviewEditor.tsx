@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CreateButton from '../commons/CreateButton';
 import Modal from '../commons/Modal';
 import Search from '../../assets/imgs/Search.svg';
-import ProjectFormSection from './ProjectFormSection';
+import FormSection from '../commons/FormSection';
 import ProjectFormToggle from './ProjectFormToggle';
 import DeleteBtn from '../../assets/imgs/DeleteBtn.svg';
 
@@ -35,7 +35,7 @@ const ProjectReviewEditor = ({ reviews, setReviews }: ProjectReviewEditorProps) 
     <div className="w-full">
       <div className="w-full flex flex-col gap-28">
         <div className="flex justify-between items-center">
-          <ProjectFormSection title="프로젝트 참여 후기를 등록해주세요." />
+          <FormSection title="프로젝트 참여 후기를 등록해주세요." />
           <CreateButton onClick={() => setIsReviewModalOpen(true)}>추가하기</CreateButton>
         </div>
         {reviews.length > 0 ? (
