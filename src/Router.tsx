@@ -7,6 +7,7 @@ import Layout from './pages/Global/Layout';
 import Home from './pages/Home/Home';
 import DiscordCallback from './pages/Login/DiscoreCallback';
 import Login from './pages/Login/Login';
+import MyPageEdit from './pages/MyPage/MyPageEdit';
 import MyPage from './pages/MyPage/MyPage';
 import ProjectForm from './pages/Project/ProjectForm';
 import Projects from './pages/Project/Projects';
@@ -38,6 +39,7 @@ const Router = () => {
     { path: '/articles', element: <Articles />, hasHeader: true },
     { path: '/portfolio/upload', element: <UploadPortfolio />, hasHeader: true },
     { path: '/portfolio/list', element: <PortfolioList />, hasHeader: true },
+    { path: '/mypage/edit', element: <MyPageEdit />, hasHeader: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
   ];
