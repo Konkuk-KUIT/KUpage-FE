@@ -1,5 +1,5 @@
 import useApi from './useApi';
-import { ApiFailure, ApiResponse } from '../types/commonApiResponse';
+import { ApiResponse } from '../types/commonApiResponseTypes';
 import { ApplicantStateResponse, ApplyStateResponse } from '../types/applyStateTypes';
 
 const useApplyState = () => {
