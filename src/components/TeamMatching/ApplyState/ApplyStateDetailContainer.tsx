@@ -19,7 +19,7 @@ const ApplyStateDetailContainer = ({ applicantData }: Props) => {
   const selectedApplicant =
     clickedAppType && clickedApplicant !== null
       ? applicantData.applicantMap.applicants[clickedAppType].find(
-          (a) => a.applicantId === clickedApplicant
+          (a) => a.memberId === clickedApplicant
         )
       : undefined;
 
@@ -46,7 +46,7 @@ const ApplyStateDetailContainer = ({ applicantData }: Props) => {
                   return (
                     <ApplicantCard
                       key={index}
-                      applicantId={applicant.applicantId}
+                      applicantId={applicant.memberId}
                       nameAndPart={applicant.applicantMemberNameAndPart}
                       part={applicant.part}
                       setIsModalOpen={setIsModalOpen}

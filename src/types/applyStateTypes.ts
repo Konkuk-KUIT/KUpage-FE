@@ -24,7 +24,7 @@ export interface ApplicantDetail {
 }
 
 export interface Applicant {
-  applicantId: number;
+  memberId: number;
   applicantMemberNameAndPart: string;
   part: ApplicantPart;
   appliedTime: string;

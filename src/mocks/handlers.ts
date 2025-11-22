@@ -172,7 +172,7 @@ export const handlers = [
           applicants: {
             Android: [
               {
-                applicantId: 0,
+                memberId: 0,
                 applicantMemberNameAndPart: '이서연 - SIXTH Android',
                 part: 'Android',
                 appliedTime: '11/02 (일) 22:40',
@@ -183,7 +183,7 @@ export const handlers = [
                 },
               },
               {
-                applicantId: 1,
+                memberId: 1,
                 applicantMemberNameAndPart: '박민수 - SIXTH Android',
                 part: 'Android',
                 appliedTime: '11/02 (일) 22:40',
@@ -196,7 +196,7 @@ export const handlers = [
             ],
             Web: [
               {
-                applicantId: 2,
+                memberId: 2,
                 applicantMemberNameAndPart: '정하늘 - SIXTH Web',
                 part: 'Web',
                 appliedTime: '11/02 (일) 22:40',
@@ -207,7 +207,7 @@ export const handlers = [
                 },
               },
               {
-                applicantId: 3,
+                memberId: 3,
                 applicantMemberNameAndPart: '오세훈 - SIXTH Web',
                 part: 'Web',
                 appliedTime: '11/02 (일) 22:40',
@@ -220,7 +220,7 @@ export const handlers = [
             ],
             iOS: [
               {
-                applicantId: 4,
+                memberId: 4,
                 applicantMemberNameAndPart: '최유진 - SIXTH iOS',
                 part: 'iOS',
                 appliedTime: '11/02 (일) 22:40',
@@ -233,7 +233,7 @@ export const handlers = [
             ],
             Server: [
               {
-                applicantId: 5,
+                memberId: 5,
                 applicantMemberNameAndPart: '한수민 - SIXTH Server',
                 part: 'Server',
                 appliedTime: '11/02 (일) 22:40',
@@ -246,7 +246,7 @@ export const handlers = [
             ],
             Design: [
               {
-                applicantId: 6,
+                memberId: 6,
                 applicantMemberNameAndPart: '류지호 - SIXTH Design',
                 part: 'Design',
                 appliedTime: '11/02 (일) 22:40',
@@ -257,7 +257,7 @@ export const handlers = [
                 },
               },
               {
-                applicantId: 7,
+                memberId: 7,
                 applicantMemberNameAndPart: '서민재 - SIXTH Design',
                 part: 'Design',
                 appliedTime: '11/02 (일) 22:40',
