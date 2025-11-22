@@ -40,16 +40,16 @@ const ProjectApplyFileInput = () => {
             return (
               <iframe
                 src={url}
-                className="w-full flex items-center justify-center rounded-[10px] h-[106px]"
+                className="w-full flex flex-center rounded-[10px] h-[106px]"
                 title="pdf preview"
               />
             );
           }
 
           return (
-            <div className="w-full flex items-center justify-center rounded-[10px] bg-[#4f5e69] h-[106px]">
-              <label className="cursor-pointer flex flex-col items-center justify-center">
-                <div className="flex flex-col items-center justify-center">
+            <div className="w-full flex flex-center rounded-[10px] bg-[#4f5e69] h-[106px]">
+              <label className="cursor-pointer flex flex-col flex-center">
+                <div className="flex flex-col flex-center">
                   <FolderIcon className="text-darkblue w-[39px] h-[32px]" />
                 </div>
                 <input

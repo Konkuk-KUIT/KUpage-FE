@@ -33,7 +33,6 @@ const Router = () => {
     { path: '/team-matching/apply', element: <ProjectApply />, hasHeader: true },
 
     ...routes_children_auth,
-    { path: '/*', element: <ErrorPage /> },
     { path: '/projects', element: <Projects />, hasHeader: true },
     { path: '/projects/form', element: <ProjectForm /> },
     { path: '/articles', element: <Articles />, hasHeader: true },

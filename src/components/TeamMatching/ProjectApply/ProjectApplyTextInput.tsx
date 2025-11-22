@@ -21,7 +21,7 @@ const IdeaRegisterTextInput = () => {
       <div className="relative">
         <textarea
           className={styles.input}
-          style={{ height: 397 + 'px' }}
+          style={{ height: '397px' }}
           placeholder="내용을 입력해주세요."
           {...register(name)}
         ></textarea>
