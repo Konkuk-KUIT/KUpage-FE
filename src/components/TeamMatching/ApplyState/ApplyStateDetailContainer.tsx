@@ -49,7 +49,7 @@ const ApplyStateDetailContainer = ({ applicantData }: Props) => {
                       applicant={applicant}
                       onClick={(applicant) => {
                         setClickedApplicant(applicant.memberId);
-                        setClickedAppType(applicant.part as ApplicantPart);
+                        setClickedAppType(applicant.part);
                         setIsModalOpen(true);
                       }}
                     />
