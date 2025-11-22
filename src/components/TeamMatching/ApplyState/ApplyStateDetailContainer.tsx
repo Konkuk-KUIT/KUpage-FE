@@ -42,16 +42,16 @@ const ApplyStateDetailContainer = ({ applicantData }: Props) => {
             <div key={idx} className="flex flex-col gap-16">
               <div className="text-48 font-600 text-left">{part}</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-24">
-                {applicantData.applicantMap.applicants[part]?.map((applicant, index) => {
+                {applicantData.applicantMap.applicants[part]?.map((applicant) => {
                   return (
                     <ApplicantCard
-                      key={index}
-                      applicantId={applicant.memberId}
-                      nameAndPart={applicant.applicantMemberNameAndPart}
-                      part={applicant.part}
-                      setIsModalOpen={setIsModalOpen}
-                      setClickedApplicant={setClickedApplicant}
-                      setClickedAppType={setClickedAppType}
+                      key={applicant.memberId}
+                      applicant={applicant}
+                      onClick={(applicant) => {
+                        setClickedApplicant(applicant.memberId);
+                        setClickedAppType(applicant.part as ApplicantPart);
+                        setIsModalOpen(true);
+                      }}
                     />
                   );
                 })}
