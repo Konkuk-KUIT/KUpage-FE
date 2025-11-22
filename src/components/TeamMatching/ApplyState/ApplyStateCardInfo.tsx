@@ -7,7 +7,7 @@ interface Props {
   applyData: ApplyStateResponse;
 }
 
-const ApplyStateCardLeft = ({ applyData }: Props) => {
+const ApplyStateCardInfo = ({ applyData }: Props) => {
   return (
     <div
       className={clsx(
@@ -26,4 +26,4 @@ const ApplyStateCardLeft = ({ applyData }: Props) => {
   );
 };
 
-export default ApplyStateCardLeft;
+export default ApplyStateCardInfo;
