@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import TextBadge from '../../commons/TextBadge';
-import { ApplicantPart } from '../../../types/applyState';
+import { ApplicantPart } from '../../../types/applyStateTypes';
 
 interface Props {
   applicantId: number;

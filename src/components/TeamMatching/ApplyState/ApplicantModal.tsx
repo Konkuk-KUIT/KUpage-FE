@@ -1,4 +1,4 @@
-import { Applicant, ApplicantStateResponse } from '../../../types/applyState';
+import { Applicant, ApplicantStateResponse } from '../../../types/applyStateTypes';
 import TextBadge from '../../commons/TextBadge';
 
 interface Props {

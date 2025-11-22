@@ -1,6 +1,6 @@
 import ChevronLeft from '../../../assets/imgs/ChevronLeft.svg?react';
 import { useNavigate } from 'react-router-dom';
-import { APPLY_VIEW, ApplyView } from '../../../types/applyState';
+import { APPLY_VIEW, ApplyView } from '../../../types/applyStateTypes';
 import { Dispatch, SetStateAction } from 'react';
 
 interface Prop {

@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { ApplicantPart, applicantPart, ApplicantStateResponse } from '../../../types/applyState';
+import {
+  ApplicantPart,
+  applicantPart,
+  ApplicantStateResponse,
+} from '../../../types/applyStateTypes';
 import ApplicantCard from './ApplicantCard';
 import ApplicantModal from './ApplicantModal';
 

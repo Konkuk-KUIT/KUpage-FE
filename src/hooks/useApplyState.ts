@@ -1,16 +1,18 @@
 import useApi from './useApi';
-import { ApiResponse } from '../types/commonApiResponse';
-import { ApplicantStateResponse, ApplyStateResponse } from '../types/applyState';
+import { ApiFailure, ApiResponse } from '../types/commonApiResponse';
+import { ApplicantStateResponse, ApplyStateResponse } from '../types/applyStateTypes';
 
 const useApplyState = () => {
   const { api } = useApi();
 
-  const getApplyStateData = (): Promise<ApplyStateResponse | ApplyStateResponse[] | undefined> => {
+  const getApplyStateData = (): Promise<
+    ApiResponse<ApplyStateResponse | ApplyStateResponse[]> | undefined
+  > => {
     return api
       .get<ApiResponse<ApplyStateResponse | ApplyStateResponse[]>>('/teams/applications')
       .then((res) => {
         const data = res.data;
-        if (data.success) return data.result;
+        return data;
       })
       .catch((err) => {
         throw Error(err);
