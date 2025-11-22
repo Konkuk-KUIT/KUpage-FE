@@ -1,6 +1,6 @@
 import { ENDPOINTS } from '../config';
 import { IdeaRegisterInfo } from '../constants/IdeaRegister/IdeaRegitster';
-import { FileUploadResponse } from '../types/ideas';
+import { FileUploadResponse } from '../types/ideasApiTypes';
 import useApi from './useApi';
 
 const useIdeaRegister = () => {

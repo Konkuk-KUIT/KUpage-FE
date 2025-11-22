@@ -4,6 +4,7 @@ export const ENDPOINTS = {
   MEMBERS: '/members',
   AUTH: '/auth',
   IDEAS: '/ideas',
+  TEAMS: '/teams',
   IMG_UPLOAD: '/pre-signed/article/image',
   FILE_UPLOAD: '/pre-signed/article/file',
 } as const;
