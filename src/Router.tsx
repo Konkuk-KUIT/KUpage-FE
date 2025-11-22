@@ -1,20 +1,23 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import Articles from './pages/Article/Articles';
+import Creators from './pages/Creators/Creators';
 import ErrorPage from './pages/Global/ErrorPage';
 import Layout from './pages/Global/Layout';
 import Home from './pages/Home/Home';
 import DiscordCallback from './pages/Login/DiscoreCallback';
 import Login from './pages/Login/Login';
-import Signup from './pages/Signup/Signup';
+import MyPageEdit from './pages/MyPage/MyPageEdit';
+import MyPage from './pages/MyPage/MyPage';
+import ProjectForm from './pages/Project/ProjectForm';
 import Projects from './pages/Project/Projects';
 import Recruit from './pages/Recruit/Recruit';
-import Creators from './pages/Creators/Creators';
-import Articles from './pages/Article/Articles';
+import Signup from './pages/Signup/Signup';
 import TeamMatching from './pages/TeamMatching/TeamMatching';
 import IdeaRegister from './pages/TeamMatching/IdeaRegister/IdeaRegister';
-import ProjectForm from './pages/Project/ProjectForm';
 import UploadPortfolio from './pages/Portfolio/UploadPortfolio';
 import PortfolioList from './pages/Portfolio/PortfolioList';
+import ApplyState from './pages/TeamMatching/ApplyState/ApplyState';
 
 const Router = () => {
   const routes_children_auth = [
@@ -28,12 +31,17 @@ const Router = () => {
     { path: '/recruit', element: <Recruit />, hasHeader: true, hasFooter: true },
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
     { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
+    { path: '/mypage', element: <MyPage />, hasHeader: true, hasFooter: true },
+    ...routes_children_auth,
+    { path: '/*', element: <ErrorPage /> },
     { path: '/team-matching/register', element: <IdeaRegister />, hasHeader: true },
+    { path: '/team-matching/apply-state', element: <ApplyState />, hasHeader: true },
     { path: '/projects', element: <Projects />, hasHeader: true },
     { path: '/projects/form', element: <ProjectForm /> },
     { path: '/articles', element: <Articles />, hasHeader: true },
     { path: '/portfolio/upload', element: <UploadPortfolio />, hasHeader: true },
     { path: '/portfolio/list', element: <PortfolioList />, hasHeader: true },
+    { path: '/mypage/edit', element: <MyPageEdit />, hasHeader: true },
     ...routes_children_auth,
     { path: '/*', element: <ErrorPage /> },
   ];
