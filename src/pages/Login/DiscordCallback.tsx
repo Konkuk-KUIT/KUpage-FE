@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import useApi from '../../hooks/useApi';
+import useUserStore from '../../hooks/useUserStore';
 
 const DiscordCallback = () => {
   const [searchParams] = useSearchParams();
@@ -22,7 +23,7 @@ const DiscordCallback = () => {
 
         if (data.code === 1000) {
           localStorage.setItem('accessToken', data.result.tokenResponse.accessToken);
-          localStorage.setItem('roles', JSON.stringify(data.result.role));
+          useUserStore.getState().setRoles(data.result.role);
           navigate('/');
         } else if (data.code === 2000) {
           localStorage.setItem('guestToken', data.result.guestToken);
