@@ -2,15 +2,21 @@ import RoundedSquareButton from '../commons/RoundedSquareButton';
 import RightUpArrow from '../../assets/imgs/RightUpArrow.svg';
 import { TeamInfo } from '../../types/teamMatchingApiTypes';
 import TextBadge from '../commons/TextBadge';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   projectData: TeamInfo;
 }
 
 const TeamMatchingDetailContainer = ({ projectData }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <main className="w-full h-full flex flex-col justify-start gap-28">
-      <RoundedSquareButton className={'w-[257px] h-[71px] !px-24'}>
+      <RoundedSquareButton
+        className={'w-[257px] h-[71px] !px-24'}
+        onClick={() => navigate('/team-matching/apply')}
+      >
         이 프로젝트 지원하기
       </RoundedSquareButton>
 
