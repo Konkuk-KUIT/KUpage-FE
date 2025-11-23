@@ -9,6 +9,7 @@ export type ApiFailure = {
   code: number;
   message: string;
   success: false;
+  result?: undefined;
 };
 
 export type ApiResponse<T> = ApiSuccess<T> | ApiFailure;

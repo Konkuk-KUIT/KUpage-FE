@@ -1,6 +1,7 @@
 export interface TeamInfo {
   teamId: number;
   serviceName: string;
+  ownerName: string;
   appType: string;
   topicSummary: string;
   imageUrl: string;
