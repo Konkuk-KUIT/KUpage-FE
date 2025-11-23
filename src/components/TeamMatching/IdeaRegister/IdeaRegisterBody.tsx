@@ -3,7 +3,7 @@ import { APPLICATION_TYPE } from '../../../constants/IdeaRegister/applicationTyp
 import IdeaRegisterFileInput from './IdeaRegisterFileInput';
 import { styles } from '../../../constants/IdeaRegister/ideaRegisterStyle.constants';
 import IdeaRegisterTextInput from './IdeaRegisterTextInput';
-import AppTypeToggle from './AppTypeToggle';
+import ToggleButton from './ToggleButton';
 
 const IdeaRegisterBody = () => {
   const {
@@ -39,7 +39,13 @@ const IdeaRegisterBody = () => {
         </div>
         <div className="w-full flex flex-row gap-[10px]">
           {APPLICATION_TYPE.map((appType) => (
-            <AppTypeToggle key={appType.id} name={appType.name} value={appType.value} />
+            <ToggleButton
+              key={appType.id}
+              name={appType.name}
+              value={appType.value}
+              field={'appType'}
+              limitNum={3}
+            />
           ))}
         </div>
         {errors.appType && <p style={{ color: 'red' }}>{String(errors.appType.message)}</p>}
