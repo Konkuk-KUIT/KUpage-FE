@@ -5,7 +5,7 @@ import Creators from './pages/Creators/Creators';
 import ErrorPage from './pages/Global/ErrorPage';
 import Layout from './pages/Global/Layout';
 import Home from './pages/Home/Home';
-import DiscordCallback from './pages/Login/DiscoreCallback';
+import DiscordCallback from './pages/Login/DiscordCallback';
 import Login from './pages/Login/Login';
 import MyPageEdit from './pages/MyPage/MyPageEdit';
 import MyPage from './pages/MyPage/MyPage';
