@@ -7,7 +7,7 @@ const TeamMatchingHeader = () => {
     navigate('/team-matching/apply-state');
   };
   return (
-    <div className="relative w-full h-[300px] flex flex-row justify-start items-center p-[47px] bg-[#16202b]">
+    <div className="relative w-full h-[300px] flex flex-row justify-start items-center p-[47px] bg-[#16202b] text-white">
       <div className="w-[70%] flex flex-col items-start gap-[10px]">
         <h1 className="font-[700] text-[64px]">Team Matching</h1>
         <h3 className="font-[600] text-[32px] text-left">
