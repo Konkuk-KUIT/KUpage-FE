@@ -5,7 +5,7 @@ import Creators from './pages/Creators/Creators';
 import ErrorPage from './pages/Global/ErrorPage';
 import Layout from './pages/Global/Layout';
 import Home from './pages/Home/Home';
-import DiscordCallback from './pages/Login/DiscoreCallback';
+import DiscordCallback from './pages/Login/DiscordCallback';
 import Login from './pages/Login/Login';
 import MyPageEdit from './pages/MyPage/MyPageEdit';
 import MyPage from './pages/MyPage/MyPage';
@@ -33,13 +33,13 @@ const Router = () => {
     { path: '/creators', element: <Creators />, hasHeader: true, hasFooter: true },
     { path: '/team-matching', element: <TeamMatching />, hasHeader: true },
     { path: '/mypage', element: <MyPage />, hasHeader: true, hasFooter: true },
-    ...routes_children_auth,
-    { path: '/*', element: <ErrorPage /> },
     { path: '/team-matching/register', element: <IdeaRegister />, hasHeader: true },
     { path: '/team-matching/apply', element: <ProjectApply />, hasHeader: true },
+    { path: '/team-matching/apply-state', element: <ApplyState />, hasHeader: true },
+    ...routes_children_auth,
+    { path: '/*', element: <ErrorPage /> },
 
     ...routes_children_auth,
-    { path: '/team-matching/apply-state', element: <ApplyState />, hasHeader: true },
     { path: '/projects', element: <Projects />, hasHeader: true },
     { path: '/projects/form', element: <ProjectForm /> },
     { path: '/articles', element: <Articles />, hasHeader: true },
