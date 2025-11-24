@@ -1,4 +1,4 @@
-import { HTMLAttributes, useEffect, useState } from 'react';
+import { HTMLAttributes } from 'react';
 import { TeamInfo } from '../../types/teamMatchingApiTypes';
 import TextBadge from '../commons/TextBadge';
 import clsx from 'clsx';
@@ -9,15 +9,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const TeamCard = ({ data, selectedTeamId, ...rest }: Props) => {
-  const [isSelected, setIsSelected] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (selectedTeamId === data.teamId) {
-      setIsSelected(true);
-    } else {
-      setIsSelected(false);
-    }
-  }, [selectedTeamId]);
+  const isSelected = selectedTeamId === data.teamId;
 
   return (
     <div

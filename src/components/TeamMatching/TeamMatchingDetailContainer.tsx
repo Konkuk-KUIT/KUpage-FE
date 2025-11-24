@@ -12,7 +12,7 @@ const TeamMatchingDetailContainer = ({ projectData }: Props) => {
   const navigate = useNavigate();
 
   return (
-    <main className="w-full h-full flex flex-col justify-start gap-28">
+    <div className="w-full h-full flex flex-col justify-start gap-28">
       <RoundedSquareButton
         className={'w-[257px] h-[71px] !px-24'}
         onClick={() => navigate('/team-matching/apply')}
@@ -64,7 +64,7 @@ const TeamMatchingDetailContainer = ({ projectData }: Props) => {
           {projectData.preferredDeveloper}
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

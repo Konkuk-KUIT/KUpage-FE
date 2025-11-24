@@ -23,19 +23,22 @@ const TeamMatchingBody = () => {
     }
   }, [teamData]);
 
-  const selectedData = teamData?.result?.teams.find((data) => {
-    if (data.teamId === selectedTeamId) return data;
-  });
+  const selectedData = teamData?.result?.teams.find((data) => data.teamId === selectedTeamId);
 
   const cardClickHandler = (teamId: number) => {
     setSelectedTeamId(teamId);
   };
 
+  if (isError) {
+    return (
+      <div className="w-full h-full mt-8 flex flex-row">
+        <div className="w-full text-center text-24 font-400 p-92">데이터를 불러올 수 없습니다</div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full h-full mt-8 flex flex-row">
-      {isError && (
-        <div className="w-full text-center text-24 font-400 p-92">데이터를 불러올 수 없습니다</div>
-      )}
       {isEnabled && teamData && teamData.success && (
         <>
           <div
@@ -57,7 +60,7 @@ const TeamMatchingBody = () => {
             })}
           </div>
           <div className="w-[60%] h-full p-[47px]">
-            {selectedData && <TeamMatchingDetailContainer projectData={selectedData!} />}
+            {selectedData && <TeamMatchingDetailContainer projectData={selectedData} />}
           </div>
         </>
       )}
