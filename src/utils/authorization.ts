@@ -1,24 +1,22 @@
+import { Auth, AUTH } from '../constants/authName';
+
 export const teamMatchingAuthExtractor = (roles: string[]): string => {
-  const parsedRolesArr = roles.map((role) => {
-    return role.split(' ')[roles.length - 1];
+  const adminKeywords = [AUTH.PRESIDENT, AUTH.VICE_PRESIDENT, AUTH.PART_LEAD, AUTH.ACCOUNTANT];
+
+  const isAdmin = roles.some((role) => {
+    const parts = role.split(' ');
+    const last = parts[parts.length - 1];
+    return adminKeywords.includes(last as Auth);
   });
 
-  const parsedPartArr = roles
-    .filter((role) => role.split(' ').length === 3)
-    .map((role) => {
-      return role.split(' ')[1];
-    });
+  if (isAdmin) return 'admin';
 
-  if (
-    parsedRolesArr.includes('회장') ||
-    parsedRolesArr.includes('부회장') ||
-    parsedRolesArr.includes('파트장') ||
-    parsedRolesArr.includes('총무')
-  ) {
-    return 'admin';
-  } else if (parsedPartArr.includes('PM')) {
-    return 'pm';
-  } else {
-    return 'general';
-  }
+  const isPm = roles.some((role) => {
+    const parts = role.split(' ');
+    return parts.length === 3 && parts[1] === 'PM';
+  });
+
+  if (isPm) return 'pm';
+
+  return 'general';
 };
