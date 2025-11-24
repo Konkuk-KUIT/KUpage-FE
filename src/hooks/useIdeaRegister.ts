@@ -15,12 +15,12 @@ const useIdeaRegister = () => {
     }
   };
 
-  const testUploadFile = async (file: File, mime: string) => {
+  const testUploadFile = async (file: File) => {
     try {
       const res = await api.post<FileUploadResponse>(ENDPOINTS.IMG_UPLOAD, {
-        'Content-Type': mime,
-        'Content-Length': 1500,
-        'Content-Name': 'testImage',
+        'Content-Type': file.type,
+        'Content-Length': file.size,
+        'Content-Name': file.name,
       });
 
       const data = res.data;
@@ -39,11 +39,8 @@ const useIdeaRegister = () => {
 
   const ideaRegister = async (userInput: IdeaRegisterInfo) => {
     try {
-      const imgUploadUrl = await testUploadFile(userInput.imageUrl as File, 'image/png');
-      const pdfUploadUrl = await testUploadFile(
-        userInput.serviceIntroFile as File,
-        'application/pdf'
-      );
+      const imgUploadUrl = await testUploadFile(userInput.imageUrl as File);
+      const pdfUploadUrl = await testUploadFile(userInput.serviceIntroFile as File);
 
       const toServerData = {
         ...userInput,
