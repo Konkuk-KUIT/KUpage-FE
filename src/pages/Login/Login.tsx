@@ -1,5 +1,4 @@
 import BigKUITLogo from '../../assets/imgs/BIGKUITLogo.svg';
-import KuitAnimation from '../../components/commons/KuitAnimation';
 import TextButton from '../../components/commons/TextButton';
 const Login = () => {
   const DISCORD_AUTH_URL = `https://discord.com/api/oauth2/authorize?client_id=${import.meta.env.VITE_DISCORD_CLIENT_ID}&redirect_uri=${encodeURIComponent(import.meta.env.VITE_DISCORD_REDIRECT_URI)}&response_type=code&scope=identify%20email`;
@@ -9,9 +8,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-between bg-signup-gradient  min-h-screen w-screen px-120">
-      <img src={BigKUITLogo} alt="KUIT Logo" className="w-[55rem]" />
-      <div className="text-left justify-between">
+    <div className="flex flex-row items-center justify-center bg-signup-gradient min-h-screen w-full px-120">
+      <img src={BigKUITLogo} alt="KUIT Logo" className="w-54" />
+      <div className="flex flex-col text-left justify-between">
         <div className="h-[40rem]">
           <h1 className="text-80 font-800">
             <span className="text-main">KU </span>
