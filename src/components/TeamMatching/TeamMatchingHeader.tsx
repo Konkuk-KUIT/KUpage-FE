@@ -15,7 +15,9 @@ const TeamMatchingHeader = () => {
         </h3>
       </div>
       <div className="w-[30%] flex flex-row justify-end">
-        <RoundedSquareButton>아이디어 등록하기</RoundedSquareButton>
+        <RoundedSquareButton onClick={() => navigate('/team-matching/register')}>
+          아이디어 등록하기
+        </RoundedSquareButton>
       </div>
       {/* TODO : PM 계정만 이 요소 보이도록 수정 */}
       <div
