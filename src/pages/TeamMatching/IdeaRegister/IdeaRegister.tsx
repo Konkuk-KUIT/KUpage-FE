@@ -13,7 +13,7 @@ const IdeaRegister = () => {
     defaultValues: {
       serviceName: '',
       topicSummary: '',
-      appType: [],
+      appType: undefined,
       imageUrl: undefined,
       serviceIntroFile: undefined,
       featureRequirements: '',

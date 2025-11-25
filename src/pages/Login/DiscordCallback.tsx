@@ -18,12 +18,12 @@ const DiscordCallback = () => {
 
     const fetchToken = async () => {
       try {
-        const response = await api.get(`/oauth2/code/discord?code=${code}`);
+        const response = await api.get(`/oauth2/code/discord?code=${code}`, { skipAuth: true });
         const data = response.data;
 
         if (data.code === 1000) {
           localStorage.setItem('accessToken', data.result.tokenResponse.accessToken);
-          useUserStore.getState().setRoles(data.result.role);
+          useUserStore.getState().setauths(data.result.role);
           navigate('/');
         } else if (data.code === 2000) {
           localStorage.setItem('guestToken', data.result.guestToken);

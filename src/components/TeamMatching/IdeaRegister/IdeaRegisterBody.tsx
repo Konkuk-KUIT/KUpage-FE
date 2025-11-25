@@ -44,7 +44,6 @@ const IdeaRegisterBody = () => {
               name={appType.name}
               value={appType.value}
               field={'appType'}
-              limitNum={3}
             />
           ))}
         </div>

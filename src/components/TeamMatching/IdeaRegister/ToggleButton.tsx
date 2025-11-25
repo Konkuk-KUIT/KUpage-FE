@@ -5,24 +5,18 @@ interface Props {
   name: string;
   value: string;
   field: string;
-  limitNum: number;
 }
 
-const ToggleButton = ({ name, value, field, limitNum }: Props) => {
+const ToggleButton = ({ name, value, field }: Props) => {
   const { watch, setValue } = useFormContext();
-  const selected: string[] = watch(field) ?? [];
+  const selectedValue: string = watch(field);
 
-  const isActive = selected.includes(value);
+  const isActive = selectedValue === value;
+
   const toggle = () => {
-    let nextValues = selected;
-    if (isActive) {
-      nextValues = selected.filter((v) => v !== value);
-    } else {
-      if (selected.length >= limitNum) return;
-      nextValues = [...selected, value];
-    }
+    const nextValue = isActive ? '' : value;
 
-    setValue(field, nextValues, { shouldValidate: true, shouldDirty: true });
+    setValue(field, nextValue, { shouldValidate: true, shouldDirty: true });
   };
 
   return (

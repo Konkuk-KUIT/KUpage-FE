@@ -1,33 +1,13 @@
 export const APPLICATION_TYPE = [
   {
     id: 0,
-    name: 'Web',
-    value: 'Web',
+    name: '네이티브 앱',
+    value: 'Native_App',
   },
   {
     id: 1,
-    name: 'Android',
-    value: 'Android',
-  },
-  {
-    id: 2,
-    name: 'iOS',
-    value: 'iOS',
-  },
-  {
-    id: 3,
-    name: 'PC 프로그램',
-    value: 'PC_프로그램',
-  },
-  {
-    id: 4,
-    name: '크로스플랫폼',
-    value: '크로스플랫폼',
-  },
-  {
-    id: 5,
-    name: '하이브리드 앱',
-    value: '하이브리드앱',
+    name: '웹 앱',
+    value: 'Web_App',
   },
 ] as const;
 
