@@ -2,18 +2,25 @@ import { useFormContext } from 'react-hook-form';
 import RoundedSquareButton from '../../commons/RoundedSquareButton';
 import { IdeaRegisterSchema } from './schema/ideaRegisterSchema';
 import useIdeaRegister from '../../../hooks/useIdeaRegister';
+import { toast } from 'react-toastify';
+import Toast from '../../commons/Toast';
+import { useNavigate } from 'react-router-dom';
 
 const IdeaRegisterHeader = () => {
   const {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<IdeaRegisterSchema>();
+  const navigate = useNavigate();
   const ideaRegister = useIdeaRegister();
 
   const onSubmit = handleSubmit(
     (data) => {
-      console.log('✅ 제출 성공:', data);
-      ideaRegister(data);
+      ideaRegister(data).then(() => {
+        toast(<Toast message="아이디어 등록이 완료되었어요." />, {
+          onClose: () => navigate('/team-matching'),
+        });
+      });
     },
     (errors) => console.log('❌ 유효성 에러:', errors)
   );

@@ -58,9 +58,8 @@ const useIdeaRegister = () => {
       };
 
       const res = await api.post(ENDPOINTS.IDEAS, toServerData);
-      if (res.data.success) {
-        console.log('아이디어 등록 성공');
-      }
+
+      return res.data.success;
     } catch (err) {
       console.error('아이디어 등록 실패:', err);
     }
