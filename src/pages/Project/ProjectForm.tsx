@@ -3,13 +3,14 @@ import SelectableChipGroup from '../../components/Project/SelectableChipGroup';
 import ProjectFormImg from '../../components/Project/ProjectFormImg';
 import ProjectFormLink from '../../components/Project/ProjectFormLink';
 import ProjectFormFile from '../../components/Project/ProjectFormFile';
-import ProjectCohortDropdown from '../../components/Project/ProjectCohortDropdown';
+import ProjectCohortDropdown from '../../components/commons/DropDown';
 import ProjectFormInput from '../../components/Project/ProjectFormInput';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import ProjectReviewEditor from '../../components/Project/ProjectReviewEditor';
 import KUITLogo from '../../assets/imgs/KUITLogo.svg';
 import CreateButton from '../../components/commons/CreateButton';
 import { ProjectFormValues } from '../../types/ProjectFormTypes';
+import { COHORT } from '../../constants/CohortConstants';
 
 const ProjectForm = () => {
   const { handleSubmit, control, reset } = useForm<ProjectFormValues>();
@@ -87,8 +88,9 @@ const ProjectForm = () => {
               rules={{ required: '필수 입력 항목입니다.' }}
               render={({ field }) => (
                 <ProjectCohortDropdown
-                  currentCohort={field.value}
-                  setCurrentCohort={field.onChange}
+                  currentOption={field.value}
+                  setCurrentOption={field.onChange}
+                  options={COHORT}
                 />
               )}
             />

@@ -78,6 +78,7 @@ export default {
       red: '#ea3414',
       yellow: '#D5DA40',
       deepGray: '#4F5E69',
+      lightGray: '#9C9C9C',
     },
     extend: {
       backgroundImage: {
