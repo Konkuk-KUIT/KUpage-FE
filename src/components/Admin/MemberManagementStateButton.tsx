@@ -14,7 +14,7 @@ const MemberManagementStateButton = ({ type }: MemberManagementStateButtonProps)
   return (
     <button
       type="button"
-      className="flex flex-center w-156 h-56 border-2 border-border bg-gray rounded-[6px] gap-8"
+      className="flex-center w-156 h-56 border-2 border-border bg-gray rounded-[6px] gap-8"
     >
       <div className={`w-16 h-16 rounded-full ${typeClass[type]}`}></div>
       <span className="text-white text-20 font-700">{type}</span>

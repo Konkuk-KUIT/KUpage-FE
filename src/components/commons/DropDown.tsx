@@ -1,9 +1,10 @@
+import clsx from 'clsx';
 import ArrowDown from '../../assets/imgs/ArrowDown.svg';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 interface DropdownProps {
   currentOption: string;
-  setCurrentOption: (value: string) => void;
+  setCurrentOption: Dispatch<SetStateAction<string>>;
   options: object;
   width?: number;
   height?: number;
@@ -30,11 +31,11 @@ const Dropdown = ({
         onBlur={() => setIsFocused(false)}
       >
         <span> {currentOption}</span>
-        <img src={ArrowDown} className={`w-24 h-24 ${isFocused && 'rotate-180'}`} />
+        <img src={ArrowDown} className={clsx('w-24 h-24', isFocused && 'rotate-180')} />
       </button>
       {isFocused && (
         <ul
-          className="absolute top-full left-0 right-0 rounded-b-10 border-2 border-border border-solid text-${textSize} font-${fontSize} bg-[#1F3134]"
+          className="absolute top-full left-0 right-0 rounded-b-10 border-2 border-border border-solid bg-[#1F3134]"
           style={{ fontSize: `${textSize}px`, fontWeight }}
         >
           {Object.values(options).map((option) => (

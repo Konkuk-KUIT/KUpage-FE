@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import MemberManagementChip from '../../components/Admin/MemberManagementChip';
-import ProjectCohortDropdown from '../../components/commons/DropDown';
 import MemberManagementRow from '../../components/Admin/MemberManagementRow';
 import MemberManagementSearch from '../../components/Admin/MemberManagementSearch';
 import {
@@ -9,9 +8,10 @@ import {
   MANAGEMENT_MENU_STATE,
   MemberManagementType,
 } from '../../constants/MemberManagementConstants';
+import Dropdown from '../../components/commons/DropDown';
 
 const MemberManagement = () => {
-  const [currentState, setCurrentState] = useState(MANAGEMENT_DROPDOWN_STATE.ALL);
+  const [currentState, setCurrentState] = useState<string>(MANAGEMENT_DROPDOWN_STATE.ALL);
   const getChipType = (state: string): MemberManagementType => MANAGEMENT_CHIP_TYPE_MAP[state];
 
   return (
@@ -19,14 +19,17 @@ const MemberManagement = () => {
       <h1 className="w-full text-start text-white text-64 font-700 mb-52">인원 관리</h1>
       <div className="flex items-center w-full h-68 gap-20 mb-80">
         {MANAGEMENT_MENU_STATE.map((state) => (
-          <div className="flex justify-between items-center w-full h-full px-16 rounded-[6px] border-2 border-border bg-gray">
+          <div
+            key={state}
+            className="flex justify-between items-center w-full h-full px-16 rounded-[6px] border-2 border-border bg-gray"
+          >
             <span className="text-white text-20 font-700">{state}</span>
             <MemberManagementChip type={getChipType(state)} value={32} />
           </div>
         ))}
       </div>
       <div className="w-full flex justify-between items-center">
-        <ProjectCohortDropdown
+        <Dropdown
           currentOption={currentState}
           setCurrentOption={setCurrentState}
           options={MANAGEMENT_DROPDOWN_STATE}
@@ -38,6 +41,7 @@ const MemberManagement = () => {
       <div className="mt-24 border-t-[3px] border-gray">
         {dummyMembers.map((member) => (
           <MemberManagementRow
+            key={member.id}
             id={member.id}
             type={member.type}
             email={member.email}

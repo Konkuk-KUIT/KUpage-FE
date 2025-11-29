@@ -1,5 +1,6 @@
 import React from 'react';
 import { MemberManagementType } from '../../constants/MemberManagementConstants';
+import clsx from 'clsx';
 
 interface MemberManagementChipProps {
   size?: 'medium' | 'small';
@@ -21,7 +22,11 @@ const typeClass = {
 const MemberManagementChip = ({ size = 'medium', type, value }: MemberManagementChipProps) => {
   return (
     <div
-      className={`flex flex-center rounded-[3px] text-gray text-20 font-700 ${sizeClass[size]} ${typeClass[type]}`}
+      className={clsx(
+        'flex-center rounded-[3px] text-gray text-20 font-700',
+        sizeClass[size],
+        typeClass[type]
+      )}
     >
       {value}
     </div>
