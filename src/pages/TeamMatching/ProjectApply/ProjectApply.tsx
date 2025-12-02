@@ -10,8 +10,6 @@ import { useLocation } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import { TeamInfo } from '../../../types/teamMatchingApiTypes';
 import { notification } from '../../../constants/ProjectApply/notification.constants';
-import useUserStore from '../../../hooks/useUserStore';
-import { partExtractor } from '../../../utils/authorization';
 
 interface LocationState {
   teamData?: TeamInfo;
@@ -21,22 +19,13 @@ const ProjectApply = () => {
   const location = useLocation();
   const state = location.state as LocationState | null;
   const teamData = state?.teamData;
-  const { auths } = useUserStore();
-  const userPart = partExtractor(auths);
-  const getDefaultPart = () => {
-    if (userPart.has('Web_App')) return 'Web';
-    if (userPart.has('Native_App')) return 'Android';
-    if (userPart.has('Server')) return 'Server';
-    return undefined;
-  };
-
 
   const methods = useForm<ProjectApplySchema>({
     resolver: zodResolver(projectApplySchema),
     defaultValues: {
       motivation: '',
       portfolioUrl: undefined,
-      appliedPart: getDefaultPart(),
+      appliedPart: undefined,
     },
     mode: 'onChange',
     shouldFocusError: false,
