@@ -34,11 +34,19 @@ export const partExtractor = (roles: string[]): Set<string> => {
     return roleSplit.includes('Android');
   });
 
+  const isServer = roles.some((role) => {
+    const roleSplit = role.split(' ');
+    return roleSplit.includes('Server');
+  });
+
   if (isWeb) {
     partSet.add('Web_App');
   }
   if (isNative) {
     partSet.add('Native_App');
+  }
+  if (isServer) {
+    partSet.add('Server');
   }
 
   return partSet;

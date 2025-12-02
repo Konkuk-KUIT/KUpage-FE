@@ -39,9 +39,12 @@ const TeamMatchingDetailContainer = () => {
     return <div className="w-full min-h-screen flex-center"></div>;
   }
 
+  const isMatchingPart = userPart.has(projectData.appType);
+  const isServerPart = userPart.has('Server');
+
   return (
     <div className="w-full h-full flex flex-col justify-start gap-28">
-      {((userType === 'general' && userPart.has(projectData.appType)) || userType === 'admin') &&
+      {((userType === 'general' && (isMatchingPart || isServerPart)) || userType === 'admin') &&
         canApply && (
           <RoundedSquareButton
             className={'w-[257px] h-[71px] !px-24'}
