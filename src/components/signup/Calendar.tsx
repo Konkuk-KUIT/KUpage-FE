@@ -28,7 +28,7 @@ const Calendar = ({ label, selectedDate, setSelectedDate }: Props) => {
           showYearDropdown
           showMonthDropdown
           scrollableYearDropdown
-          className="w-full bg-gray text-white text-16 rounded-8 placeholder-white"
+          className="w-full bg-gray text-white text-20 rounded-8 placeholder-white"
           wrapperClassName="w-full"
           calendarClassName="bg-gray text-white rounded-lg shadow-lg text-12 z-50"
           dayClassName={() => 'w-36 h-36 text-12 pt-8'}
