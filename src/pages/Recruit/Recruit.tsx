@@ -21,11 +21,11 @@ const Recruit = () => {
                 isBig={true}
               />
 
-              <RecruitDescriptionBlock
+              {/* <RecruitDescriptionBlock
                 title="지원 자격"
                 content={`건국대학교 소속\n재학생/휴학생/졸업유예생`}
                 isBig={true}
-              />
+              /> */}
 
               <RecruitDescriptionBlock
                 title="지원 방법"
