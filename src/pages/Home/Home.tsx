@@ -50,7 +50,11 @@ const Home = () => {
               <KuitAnimation />
             </h1>
             <p className="text-white text-32 font-500">건국대학교 기획/개발 동아리 KUIT</p>
-            <GreenButton text="KUIT 7기 지원하러 가기 ->" isBig />
+            <GreenButton
+              text="KUIT 7기 지원하러 가기 ->"
+              isBig
+              onClick={() => navigate('/recruit')}
+            />
           </div>
         </div>
 
