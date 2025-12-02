@@ -58,9 +58,8 @@ const StaffCardRow = ({ staffs }: StaffCardRowProps) => {
     };
   }, []);
 
-  // TODO: 스크롤바 디자인 바꿔보기
   return (
-    <div className="w-full overflow-hidden px-20 max-w-1308">
+    <div className="overflow-hidden m-auto max-w-1308">
       <div
         ref={scrollContainerRef}
         className="max-w-full overflow-x-auto overflow-y-hidden touch-pan-x custom-scrollbar"
