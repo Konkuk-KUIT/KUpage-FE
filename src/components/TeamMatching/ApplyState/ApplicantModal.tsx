@@ -9,7 +9,7 @@ interface Props {
 const ApplicantModal = ({ onClose, applicantData }: Props) => {
   return (
     <div
-      className="flex h-auto overflow-y-scroll justify-center items-start fixed top-[141px] bottom-0 left-0 right-0 w-full bg-[rgba(0,0,0,0.37)] py-40"
+      className="flex max-h-[750px] h-auto justify-center items-center fixed top-[141px] left-0 w-full bg-[rgba(0,0,0,0.37)]"
       onClick={onClose}
     >
       <div
@@ -40,7 +40,7 @@ const ApplicantModal = ({ onClose, applicantData }: Props) => {
 
         <div className="w-full flex flex-col items-start gap-24">
           <h3 className="text-24 font-600">지원 동기</h3>
-          <div className="w-full px-24 py-20 border-border border-2 bg-gray rounded-10 text-left text-24 font-500 leading-[35px] whitespace-pre-wrap break-words">
+          <div className="w-full max-h-[300px] overflow-y-scroll px-24 py-20 border-border border-2 bg-gray rounded-10 text-left text-24 font-500 leading-[35px] whitespace-pre-wrap break-words">
             {applicantData.applicantDetail.motivation}
           </div>
         </div>
