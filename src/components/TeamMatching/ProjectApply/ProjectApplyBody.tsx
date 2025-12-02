@@ -17,13 +17,6 @@ interface Props {
   teamData: TeamInfo;
 }
 
-const getDefaultPart = (userPart: Set<Part>) => {
-  if (userPart.has('Web_App')) return 'Web';
-  if (userPart.has('Native_App')) return 'Android';
-  if (userPart.has('Server')) return 'Server';
-  return undefined;
-};
-
 const ProjectApplyBody = ({ teamData }: Props) => {
   const { auths } = useUserStore();
   const { setValue } = useFormContext();
@@ -41,7 +34,17 @@ const ProjectApplyBody = ({ teamData }: Props) => {
   });
 
   useEffect(() => {
-    const defaultPart = getDefaultPart();
+    const getDefaultPart = (userPart: Set<Part>) => {
+      if (userPart.has('Web_App') && availableParts.some((part) => part.value === 'Web'))
+        return 'Web';
+      if (userPart.has('Native_App') && availableParts.some((part) => part.value === 'Android'))
+        return 'Android';
+      if (userPart.has('Server') && availableParts.some((part) => part.value === 'Server'))
+        return 'Server';
+      return undefined;
+    };
+
+    const defaultPart = getDefaultPart(userPart);
     if (defaultPart) {
       // availableParts에 해당 파트가 있는지 확인
       const isPartAvailable = availableParts.some((part) => part.value === defaultPart);
@@ -49,7 +52,7 @@ const ProjectApplyBody = ({ teamData }: Props) => {
         setValue('appliedPart', defaultPart, { shouldValidate: true });
       }
     }
-  }, [availableParts]);
+  }, [availableParts, userPart]);
 
   return (
     <div>
@@ -67,14 +70,20 @@ const ProjectApplyBody = ({ teamData }: Props) => {
             파트를 선택해주세요 <span className="text-[#d5da40]">*</span>
           </div>
           <div className="w-full flex flex-row gap-16">
-            {availableParts.map((partType) => (
-              <ToggleButton
-                key={partType.id}
-                name={partType.name}
-                value={partType.value}
-                field={'appliedPart'}
-              />
-            ))}
+            {availableParts.length > 0 ? (
+              availableParts.map((partType) => (
+                <ToggleButton
+                  key={partType.id}
+                  name={partType.name}
+                  value={partType.value}
+                  field={'appliedPart'}
+                />
+              ))
+            ) : (
+              <div className="w-full flex flex-col items-center justify-center">
+                <p className="text-24 font-500">지원 가능한 파트가 없습니다.</p>
+              </div>
+            )}
           </div>
         </div>
         <ProjectApplyFileInput />
