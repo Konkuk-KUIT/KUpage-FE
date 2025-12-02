@@ -9,11 +9,11 @@ interface Props {
 const ApplicantModal = ({ onClose, applicantData }: Props) => {
   return (
     <div
-      className="flex max-h-[750px] h-auto justify-center items-center fixed top-[141px] left-0 w-full bg-[rgba(0,0,0,0.37)]"
+      className="flex h-full justify-center items-center fixed top-40 left-0 w-full bg-[rgba(0,0,0,0.37)]"
       onClick={onClose}
     >
       <div
-        className="flex flex-col gap-40 items-end w-808 h-auto px-52 py-40 rounded-20 z-10 bg-gradient"
+        className="flex flex-col gap-40 items-end w-808 max-h-[730px] h-auto px-52 py-40 rounded-20 z-10 bg-gradient"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="w-full flex flex-col items-start gap-24">
@@ -40,7 +40,7 @@ const ApplicantModal = ({ onClose, applicantData }: Props) => {
 
         <div className="w-full flex flex-col items-start gap-24">
           <h3 className="text-24 font-600">지원 동기</h3>
-          <div className="w-full max-h-[300px] overflow-y-scroll px-24 py-20 border-border border-2 bg-gray rounded-10 text-left text-24 font-500 leading-[35px] whitespace-pre-wrap break-words">
+          <div className="w-full max-h-200 overflow-y-scroll px-24 py-20 border-border border-2 bg-gray rounded-10 text-left text-20 font-400 leading-[35px] whitespace-pre-wrap break-words">
             {applicantData.applicantDetail.motivation}
           </div>
         </div>

@@ -62,7 +62,7 @@ const TeamMatchingDetailContainer = () => {
           {projectData.topicSummary}
         </div>
         <img
-          className="w-full h-[414px] rounded-[10px]"
+          className="w-full h-[414px] rounded-[10px] object-cover"
           src={projectData.imageUrl}
           alt="프로젝트 이미지"
         />
