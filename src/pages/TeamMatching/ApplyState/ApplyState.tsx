@@ -45,7 +45,7 @@ const ApplyState = () => {
 
   return (
     <ApplyStateContext.Provider value={{ userType }}>
-      <div className="w-full h-full flex flex-col bg-gray">
+      <div className="w-full h-full flex flex-col bg-gray relative">
         <ApplyStateHeader viewType={viewType} setViewType={setViewType} />
         {viewType === APPLY_VIEW.List ? (
           applyData?.success ? (
