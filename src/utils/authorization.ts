@@ -1,4 +1,5 @@
 import { Auth, AUTH } from '../constants/authName';
+import { Part } from '../constants/ProjectApply/partType.constants';
 
 export const teamMatchingAuthExtractor = (roles: string[]): string => {
   const adminKeywords = [AUTH.PRESIDENT, AUTH.VICE_PRESIDENT, AUTH.PART_LEAD, AUTH.ACCOUNTANT];
@@ -20,9 +21,8 @@ export const teamMatchingAuthExtractor = (roles: string[]): string => {
 
   return 'general';
 };
-
-export const partExtractor = (roles: string[]): Set<string> => {
-  const partSet = new Set<string>();
+export const partExtractor = (roles: string[]): Set<Part> => {
+  const partSet = new Set<Part>();
 
   const isWeb = roles.some((role) => {
     const roleSplit = role.split(' ');
