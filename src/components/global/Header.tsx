@@ -41,10 +41,10 @@ const Header = ({ isMovable = false }: HeaderProps) => {
             </Link>
 
             <NavLinkItem to="/recruit">Recruit</NavLinkItem>
-            <NavLinkItem to="/projects">Projects</NavLinkItem>
+            {/* <NavLinkItem to="/projects">Projects</NavLinkItem>
             <NavLinkItem to="/articles">KUITLog</NavLinkItem>
             <NavLinkItem to="/portfolio/list">Portfolio</NavLinkItem>
-            <NavLinkItem to="/keyword">Keyword</NavLinkItem>
+            <NavLinkItem to="/keyword">Keyword</NavLinkItem> */}
             <NavLinkItem to="/team-matching">Team matching</NavLinkItem>
           </div>
         </div>
