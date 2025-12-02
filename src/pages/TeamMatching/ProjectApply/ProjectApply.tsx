@@ -24,8 +24,8 @@ const ProjectApply = () => {
     resolver: zodResolver(projectApplySchema),
     defaultValues: {
       motivation: '',
-      appliedPart: undefined,
       portfolioUrl: undefined,
+      appliedPart: undefined,
     },
     mode: 'onChange',
     shouldFocusError: false,

@@ -1,8 +1,10 @@
+import { ApplicationTypeValue } from "../constants/IdeaRegister/applicationType.constants";
+
 export interface TeamInfo {
   teamId: number;
   serviceName: string;
   ownerName: string;
-  appType: string;
+  appType: ApplicationTypeValue;
   topicSummary: string;
   imageUrl: string;
   serviceIntroFile: string;
