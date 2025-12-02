@@ -20,7 +20,7 @@ const ApplyStateCardInfo = ({ applyData }: Props) => {
         userType !== 'general' && 'w-[50%] rounded-l-10'
       )}
     >
-      <h2 className="text-32 font-600">{applyData.serviceName}</h2>
+      <h2 className="text-32 font-600 overflow-hidden truncate">{applyData.serviceName}</h2>
       <h3 className="text-24 font-700 overflow-hidden truncate">{applyData.topicSummary}</h3>
       <div className="flex flex-row items-center justify-between">
         <span className="text-24 font-500">{applyData.nameAndPart}</span>

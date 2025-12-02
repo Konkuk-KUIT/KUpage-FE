@@ -23,7 +23,7 @@ const TeamCard = ({ data, selectedTeamId, ...rest }: Props) => {
       <div className="w-full flex flex-col gap-[5px] overflow-hidden">
         <div
           className={clsx(
-            'text-32 font-600 group-hover:text-darkblue',
+            'text-32 font-600 group-hover:text-darkblue truncate',
             isSelected && 'text-darkblue'
           )}
         >
