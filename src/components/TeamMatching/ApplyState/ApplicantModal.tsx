@@ -13,7 +13,7 @@ const ApplicantModal = ({ onClose, applicantData }: Props) => {
       onClick={onClose}
     >
       <div
-        className="flex flex-col gap-40 items-end w-808 max-h-[730px] h-auto px-52 py-40 rounded-20 z-10 bg-gradient"
+        className="flex flex-col gap-40 items-end w-808 max-h-[750px] h-auto px-52 py-40 rounded-20 z-10 bg-gradient"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="w-full flex flex-col items-start gap-24">
@@ -46,10 +46,10 @@ const ApplicantModal = ({ onClose, applicantData }: Props) => {
         </div>
 
         <button
-          className="group flex justify-center items-center w-140 h-72 rounded-10 bg-gray border-2 border-border hover:bg-main hover:border-main"
+          className="group flex justify-center items-center w-140 h-72 rounded-10 bg-gray border-2 border-border hover:bg-main hover:border-main text-24 font-700 group-hover:text-darkblue"
           onClick={onClose}
         >
-          <span className="text-24 font-700 group-hover:text-darkblue">닫기</span>
+          닫기
         </button>
       </div>
     </div>
