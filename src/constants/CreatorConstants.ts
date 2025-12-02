@@ -7,13 +7,12 @@ export interface CreatorInfo {
   imageUrl: string;
 }
 
-// TODO: 이메일, 이미지 받아서 수정하기
 export const CREATORS: CreatorInfo[] = [
   {
     part: 'PM | Design',
     roles: ['PM 파트장', 'Design 파트장'],
     name: '이지유',
-    position: 'KUIT 5기 파트장',
+    position: 'KUIT 6기 부회장',
     email: 'jeoyeogu@gmail.com',
     imageUrl: '/staff/lee_jiyoo_5.jpg',
   },
@@ -28,11 +27,27 @@ export const CREATORS: CreatorInfo[] = [
   {
     part: 'Frontend',
     roles: ['Frontend 파트원'],
-    name: '김지환',
-    position: 'KUIT 5기 부회장',
-    email: 'turtlehwan@gmail.com',
-    imageUrl: '/staff/kim_jihwan.png',
+    name: '나윤상',
+    position: 'KUIT 6기 Web 파트장',
+    email: 'nayounsang722@gmail.com',
+    imageUrl: '/staff/na_yoonnsang.png',
   },
+  {
+    part: 'Frontend',
+    roles: ['Frontend 파트원'],
+    name: '안태규',
+    position: 'KUIT 6기 Web 튜터',
+    email: 'chrisahn1007@gmail.com',
+    imageUrl: '/staff/ahn_taegyu.jpg',
+  },
+  // {
+  //   part: 'Frontend',
+  //   roles: ['Frontend 파트원'],
+  //   name: '김지환',
+  //   position: 'KUIT 5기 부회장',
+  //   email: 'turtlehwan@gmail.com',
+  //   imageUrl: '/staff/kim_jihwan.png',
+  // },
   {
     part: 'Frontend',
     roles: ['Frontend 파트원'],
@@ -41,14 +56,14 @@ export const CREATORS: CreatorInfo[] = [
     email: 'leesooa0309@naver.com',
     imageUrl: '/staff/lee_sooa.jpg',
   },
-  {
-    part: 'Frontend',
-    roles: ['Frontend 파트원'],
-    name: '지호준',
-    position: 'KUIT 5기 Web 파트장',
-    email: 'junehoji@gmail.com',
-    imageUrl: '/staff/ji_hojun.jpg',
-  },
+  // {
+  //   part: 'Frontend',
+  //   roles: ['Frontend 파트원'],
+  //   name: '지호준',
+  //   position: 'KUIT 5기 Web 파트장',
+  //   email: 'junehoji@gmail.com',
+  //   imageUrl: '/staff/ji_hojun.jpg',
+  // },
   {
     part: 'Backend',
     roles: ['Backend 파트장'],
@@ -60,18 +75,18 @@ export const CREATORS: CreatorInfo[] = [
   {
     part: 'Backend',
     roles: ['Backend 파트원'],
-    name: '김민우',
-    position: 'KUIT 5기 홍보부원',
-    email: 'kmw106933@naver.com',
-    imageUrl: '/staff/kim_minwoo.jpg',
-  },
-  {
-    part: 'Backend',
-    roles: ['Backend 파트원'],
     name: '이영선',
     position: 'KUIT 5기 부회장',
     email: 'leedrkr010323@gmail.com',
     imageUrl: '/staff/lee_youngsun.jpg',
+  },
+  {
+    part: 'Backend',
+    roles: ['Backend 파트원'],
+    name: '김민우',
+    position: 'KUIT 5기 홍보부원',
+    email: 'kmw106933@naver.com',
+    imageUrl: '/staff/kim_minwoo.jpg',
   },
   {
     part: 'Backend',

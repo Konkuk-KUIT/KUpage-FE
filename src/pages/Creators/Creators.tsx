@@ -26,7 +26,7 @@ const Creators = () => {
             KU <span className="text-white">CAN DO</span> IT
           </h1>
           <p className="text-24 font-500 text-white">
-            KUIT 5기 웹페이지 제작자들은 KUIT의 운영진들로 구성되어 있습니다.
+            KUIT 웹페이지 제작자들은 KUIT의 운영진들로 구성되어 있습니다.
             <br /> KUIT의 네트워킹과 소통의 편리함을 제공하고 있으며,
             <br /> 서비스 운영의 인프라 구축을 위해 노력하고 있습니다.
           </p>
