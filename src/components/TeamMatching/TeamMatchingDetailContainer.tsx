@@ -58,7 +58,7 @@ const TeamMatchingDetailContainer = () => {
         <div className="font-600 text-[32px]">{projectData.serviceName}</div>
         <div className="font-700 text-[24px]">{projectData.ownerName}</div>
         <TextBadge text={getAppTypeDisplay(projectData.appType)} />
-        <div className="w-full whitespace-pre-line border-[2px] border-[gray] min-h-[20rem] rounded-[10px] px-20 py-24 text-start text-24 font-500 leading-[35px]">
+        <div className="w-full h-auto min-h-[20rem] whitespace-pre-wrap break-words border-[2px] border-[gray] rounded-[10px] px-20 py-24 text-start text-24 font-500 leading-[35px]">
           {projectData.topicSummary}
         </div>
         <img
@@ -87,14 +87,14 @@ const TeamMatchingDetailContainer = () => {
 
       <section className="w-full flex flex-col items-start gap-12">
         <div className="font-600 text-[32px]">우리 서비스의 기능 요구사항이에요!</div>
-        <div className="w-full whitespace-pre-line border-2 border-[gray] min-h-[20rem] rounded-10 px-20 py-24 text-start text-24 font-500 leading-[35px]">
+        <div className="w-full h-auto min-h-[20rem] whitespace-pre-wrap break-words border-2 border-[gray] rounded-10 px-20 py-24 text-start text-24 font-500 leading-[35px]">
           {projectData.featureRequirements}
         </div>
       </section>
 
       <section className="w-full flex flex-col items-start gap-12">
         <div className="font-600 text-[32px]">이런 팀원을 찾고 있어요!</div>
-        <div className="w-full whitespace-pre-line border-2 border-[gray] min-h-[20rem] rounded-10 px-20 py-24 text-start text-24 font-500 leading-[35px]">
+        <div className="w-full h-auto min-h-[20rem] whitespace-pre-wrap break-words border-2 border-[gray] rounded-10 px-20 py-24 text-start text-24 font-500 leading-[35px]">
           {projectData.preferredDeveloper}
         </div>
       </section>

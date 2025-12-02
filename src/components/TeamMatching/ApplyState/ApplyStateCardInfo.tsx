@@ -21,7 +21,7 @@ const ApplyStateCardInfo = ({ applyData }: Props) => {
       )}
     >
       <h2 className="text-32 font-600">{applyData.serviceName}</h2>
-      <h3 className="text-24 font-700">{applyData.topicSummary}</h3>
+      <h3 className="text-24 font-700 overflow-hidden truncate">{applyData.topicSummary}</h3>
       <div className="flex flex-row items-center justify-between">
         <span className="text-24 font-500">{applyData.nameAndPart}</span>
         <TextBadge

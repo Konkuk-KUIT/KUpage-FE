@@ -20,7 +20,7 @@ const TeamCard = ({ data, selectedTeamId, ...rest }: Props) => {
       )}
       {...rest}
     >
-      <div className="w-full flex flex-col gap-[5px]">
+      <div className="w-full flex flex-col gap-[5px] overflow-hidden">
         <div
           className={clsx(
             'text-32 font-600 group-hover:text-darkblue',
@@ -31,7 +31,7 @@ const TeamCard = ({ data, selectedTeamId, ...rest }: Props) => {
         </div>
         <div
           className={clsx(
-            'text-24 font-700 group-hover:text-darkblue',
+            'text-24 font-700 group-hover:text-darkblue truncate w-full',
             isSelected && 'text-darkblue'
           )}
         >

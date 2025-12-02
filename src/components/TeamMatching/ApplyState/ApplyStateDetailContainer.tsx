@@ -32,7 +32,7 @@ const ApplyStateDetailContainer = ({ applicantData }: Props) => {
         <div className="flex items-center justify-center text-20 font-700 h-48 px-[23px] rounded-24 border-2 border-border">
           {getAppTypeDisplay(applicantData.appType)}
         </div>
-        <div className="w-full border-2 border-border rounded-10 px-24 py-28 text-start text-24 font-500 leading-[35px]">
+        <div className="w-full h-auto min-h-[20rem] whitespace-pre-wrap break-words border-2 border-border rounded-10 px-24 py-28 text-start text-24 font-500 leading-[35px]">
           {applicantData.topicSummary}
         </div>
       </div>
