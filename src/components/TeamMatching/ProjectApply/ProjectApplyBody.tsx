@@ -1,12 +1,7 @@
-import { useEffect } from 'react';
-import { useFormContext } from 'react-hook-form';
-
 import { styles } from '../../../constants/IdeaRegister/ideaRegisterStyle.constants';
-import { Part, PART_TYPE, partMapper } from '../../../constants/ProjectApply/partType.constants';
-import useUserStore from '../../../hooks/useUserStore';
+import { useAvailableParts } from '../../../hooks/useAvailableParts';
 import { TeamInfo } from '../../../types/teamMatchingApiTypes';
 import { getAppTypeDisplay } from '../../../utils/appType';
-import { partExtractor } from '../../../utils/authorization';
 import TextBadge from '../../commons/TextBadge';
 import ToggleButton from '../IdeaRegister/ToggleButton';
 
@@ -18,41 +13,7 @@ interface Props {
 }
 
 const ProjectApplyBody = ({ teamData }: Props) => {
-  const { auths } = useUserStore();
-  const { setValue } = useFormContext();
-  const userPart = partExtractor(auths);
-  const appPart = teamData.appType;
-  const isWebProject = appPart === 'Web_App';
-  const availableParts = PART_TYPE.filter((partType) => {
-    // 프로젝트에 맞는 파트만 표시
-    if (isWebProject && partType.value === 'Android') return false;
-    if (!isWebProject && partType.value === 'Web') return false;
-    return true;
-  }).filter((partType) => {
-    // 유저 역할에 해당되는 파트만 표시
-    return userPart.has(partMapper[partType.value]);
-  });
-
-  useEffect(() => {
-    const getDefaultPart = (userPart: Set<Part>) => {
-      if (userPart.has('Web_App') && availableParts.some((part) => part.value === 'Web'))
-        return 'Web';
-      if (userPart.has('Native_App') && availableParts.some((part) => part.value === 'Android'))
-        return 'Android';
-      if (userPart.has('Server') && availableParts.some((part) => part.value === 'Server'))
-        return 'Server';
-      return undefined;
-    };
-
-    const defaultPart = getDefaultPart(userPart);
-    if (defaultPart) {
-      // availableParts에 해당 파트가 있는지 확인
-      const isPartAvailable = availableParts.some((part) => part.value === defaultPart);
-      if (isPartAvailable) {
-        setValue('appliedPart', defaultPart, { shouldValidate: true });
-      }
-    }
-  }, [availableParts, userPart]);
+  const availableParts = useAvailableParts(teamData);
 
   return (
     <div>
