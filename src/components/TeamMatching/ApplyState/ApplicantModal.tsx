@@ -9,7 +9,7 @@ interface Props {
 const ApplicantModal = ({ onClose, applicantData }: Props) => {
   return (
     <div
-      className="flex h-full justify-center items-start fixed bottom-0 top-[141px] left-0 w-full bg-[rgba(0,0,0,0.37)] py-40"
+      className="flex h-auto overflow-y-scroll justify-center items-start fixed bottom-0 top-[141px] left-0 right-0 w-full bg-[rgba(0,0,0,0.37)] py-40"
       onClick={onClose}
     >
       <div
